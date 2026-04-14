@@ -102,11 +102,11 @@ let diff = {};
 const dataJson = JSON.parse(fs.readFileSync('public/data/election-day/parliament_raw.json', 'utf8'));
 const result = [];
 
-let metaCount = 1;
+let subtitle = 1;
 dataJson.forEach((election) => {
-  if (election.assembly >= 45) {
-    election.metaCount = metaCount;
-    metaCount = metaCount + 1;
+  if (election.assembly >= 45 && election.assembly <= 51) {
+    election.subtitle = subtitle;
+    subtitle = subtitle + 1;
   }
   if (!election.metrics) {
     result.push(election);
