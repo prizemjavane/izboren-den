@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, inject, OnInit, ViewChild } from '@angular/core';
+import { environment } from '@env/environment';
 import { provideEchartsCore } from 'ngx-echarts';
 import * as echarts from 'echarts/core';
 import { CustomChart, LineChart } from 'echarts/charts';
@@ -53,6 +54,8 @@ export class HistoryComponent implements OnInit {
     timeline: [],
     area: [],
   };
+
+  public githubUrl = environment.githubUrl;
 
   private dataService = inject(DataService);
   private cdr = inject(ChangeDetectorRef);
