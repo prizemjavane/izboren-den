@@ -42,7 +42,7 @@
         <p class="text-[0.9375rem] text-slate-600 leading-relaxed mb-4">{{ content.description }}</p>
       }
 
-      @if (content.seriesColor && content.displayValue != null) {
+      @if (content.seriesColor && content.displayValue !== null) {
         <div class="data-card">
           <div class="data-card-main">
             <span class="data-card-value">{{ formatDisplayValue(content.displayValue) }}</span>
@@ -56,7 +56,7 @@
               <span class="data-card-diff" [style.color]="d.color">{{ d.text }}</span>
             }
           </div>
-          @if (content.percent != null) {
+          @if (content.percent !== null) {
             <div class="data-card-percent">{{ content.percent }}%</div>
           }
           @if (content.mandates > 0) {
@@ -64,7 +64,7 @@
               <div class="data-card-mandates-row">
                 <span class="data-card-mandates-num">{{ content.mandates }}</span>
                 <span class="data-card-mandates-label">мандата</span>
-                @if (content.mandatesDiff != null && content.mandatesDiff !== 0 && content.mandatesDiff !== content.mandates) {
+                @if (content.mandatesDiff !== null && content.mandatesDiff !== 0 && content.mandatesDiff !== content.mandates) {
                   <span class="data-card-mandates-diff" [style.color]="content.mandatesDiff > 0 ? '#16a34a' : '#dc2626'">
                     {{ content.mandatesDiff > 0 ? '+' : '' }}{{ content.mandatesDiff }}
                   </span>

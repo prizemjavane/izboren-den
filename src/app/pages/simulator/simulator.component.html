@@ -44,7 +44,7 @@
         </span>
         <span class="stat-value">{{ (this.voted * 0.04)|numberFormat }}</span>
       </div>
-      <div class="stat-card stat-card--featured" [style.--intensity]="activity / 100" [class.cursor-pointer]="activityChart" (click)="showActivityChart = !showActivityChart">
+      <div class="stat-card stat-card--featured" [style.--intensity]="activity / 100" [class.cursor-pointer]="activityChart" (click)="showActivityChart = !showActivityChart" (keydown.enter)="showActivityChart = !showActivityChart" tabindex="0" role="button">
         <span class="flex items-center gap-1">
           <span class="stat-label">Активност</span>
           <span class="stat-tip">

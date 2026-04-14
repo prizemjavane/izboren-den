@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnDestroy, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, inject, Input, OnDestroy, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appTooltip]',
@@ -8,11 +8,13 @@ export class TooltipDirective implements OnDestroy {
   @Input('appTooltip') text = '';
   @Input() tooltipPosition: 'top' | 'bottom' = 'top';
 
+  private el = inject(ElementRef);
+  private renderer = inject(Renderer2);
   private tooltipEl: HTMLElement | null = null;
   private showListener: (() => void) | null = null;
   private hideListener: (() => void) | null = null;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {
+  constructor() {
     const host = this.el.nativeElement;
     this.renderer.setStyle(host, 'position', 'relative');
 
