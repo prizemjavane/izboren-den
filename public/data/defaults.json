@@ -1,0 +1,200 @@
+{
+  "style": {
+    "4% бариера": {
+      "lineStyle": {
+        "color": "red",
+        "type": "dashed",
+        "width": 1
+      },
+      "itemStyle": {
+        "color": "red"
+      },
+      "symbolSize": 3
+    },
+    "БСП": {
+      "lineStyle": {
+        "color": "#df0000"
+      },
+      "itemStyle": {
+        "color": "#df0000"
+      }
+    },
+    "ДПС": {
+      "lineStyle": {
+        "color": "#0060aa"
+      },
+      "itemStyle": {
+        "color": "#0060aa"
+      }
+    },
+    "ДПС-Ново начало": {
+      "lineStyle": {
+        "color": "#0060aa"
+      },
+      "itemStyle": {
+        "color": "#0060aa"
+      }
+    },
+    "АПС": {
+      "lineStyle": {
+        "color": "#0060aa"
+      },
+      "itemStyle": {
+        "color": "#0060aa"
+      }
+    },
+    "ДПС-Ново начало + АПС": {
+      "lineStyle": {
+        "color": "#0060aa"
+      },
+      "itemStyle": {
+        "color": "#0060aa"
+      }
+    },
+    "ГЕРБ": {
+      "lineStyle": {
+        "color": "#5789c4"
+      },
+      "itemStyle": {
+        "color": "#5789c4"
+      }
+    },
+    "ИТН": {
+      "lineStyle": {
+        "color": "#4bb7de"
+      },
+      "itemStyle": {
+        "color": "#4bb7de"
+      }
+    },
+    "АТАКА": {
+      "lineStyle": {
+        "color": "#000"
+      },
+      "itemStyle": {
+        "color": "#000"
+      }
+    },
+    "Продължаваме Промяната": {
+      "lineStyle": {
+        "color": "#f5c518"
+      },
+      "itemStyle": {
+        "color": "#f5c518"
+      }
+    },
+    "ПРОДЪЛЖАВАМЕ ПРОМЯНАТА – ДЕМОКРАТИЧНА БЪЛГАРИЯ": {
+      "lineStyle": {
+        "color": "#530cb7"
+      },
+      "itemStyle": {
+        "color": "#530cb7"
+      }
+    },
+    "ДЕМОКРАТИЧНА БЪЛГАРИЯ": {
+      "lineStyle": {
+        "color": "#1e3a5f"
+      },
+      "itemStyle": {
+        "color": "#1e3a5f"
+      }
+    },
+    "ВЪЗРАЖДАНЕ": {
+      "lineStyle": {
+        "color": "#1a5e1f"
+      },
+      "itemStyle": {
+        "color": "#1a5e1f"
+      }
+    },
+    "localElections": {
+      "lineStyle": {
+        "color": "#FF0000",
+        "type": "solid"
+      }
+    },
+    "parliamentaryElections": {
+      "lineStyle": {
+        "color": "#777777",
+        "type": "solid"
+      }
+    },
+    "presidentialElections": {
+      "lineStyle": {
+        "color": "#00FF00",
+        "type": "solid"
+      }
+    },
+    "Протести": {
+      "itemStyle": {
+        "color": "rgba(255, 173, 177, 0.5)"
+      }
+    },
+    "COVID": {
+      "itemStyle": {
+        "color": "rgba(128, 128, 128, 0.2)"
+      }
+    },
+    "custom": {
+      "lineStyle": {
+        "color": "#0000FF",
+        "type": "solid"
+      }
+    }
+  },
+  "cikCharts": [
+    { "name": "Гласували", "code": "voted" },
+    { "name": "Действителните гласове", "code": "validTotal" },
+    { "name": "Недействителни гласове", "code": "invalid" },
+    { "name": "Не подкрепям никого", "code": "validNone" },
+    { "name": "4% бариера", "code": "barrier" }
+  ],
+  "legend": {
+    "hide": ["Присъединяване на България към Европейския съюз", "Протести", "COVID"],
+    "alias": {
+      "presidentialElections": "Президентски избори",
+      "localElections": "Местни избори",
+      "parliamentaryElections": "Парламентарни избори"
+    }
+  },
+  "tooltip": {
+    "parliamentaryElections": "Парламентарни избори за {name} Народно събрание"
+  },
+  "defaults": [
+    "citizen-protests",
+    "voted",
+    "registered",
+    "parliamentaryElections"
+  ],
+  "remember": ["localElections", "parliamentaryElections", "presidentialElections", "Брой на гласували"],
+  "parties": [
+    { "name": "АЛИАНС ЗА ПРАВА И СВОБОДИ – АПС", "alias": "АПС" },
+    { "name": "БСП – ОБЕДИНЕНА ЛЕВИЦА", "alias": "БСП" },
+    { "name": "ВЪЗРАЖДАНЕ", "alias": "ВЪЗРАЖДАНЕ" },
+    { "name": "ГЕРБ-СДС", "alias": "ГЕРБ" },
+    { "name": "ДПС-Ново начало", "alias": "ДПС-Ново начало" },
+    { "name": "ПП ИМА ТАКЪВ НАРОД", "alias": "ИТН" },
+    { "name": "ПП МЕЧ", "alias": "ПП МЕЧ" },
+    { "name": "ПП ВЕЛИЧИЕ", "alias": "ВЕЛИЧИЕ" },
+    { "name": "КОАЛИЦИЯ ПРОДЪЛЖАВАМЕ ПРОМЯНАТА – ДЕМОКРАТИЧНА БЪЛГАРИЯ", "alias": "ПРОДЪЛЖАВАМЕ ПРОМЯНАТА – ДЕМОКРАТИЧНА БЪЛГАРИЯ" },
+    { "name": "КОАЛИЦИЯ ПРОГРЕСИВНА БЪЛГАРИЯ", "alias": "ПРОГРЕСИВНА БЪЛГАРИЯ" }
+  ],
+  "majority": [
+    {
+      "name": "Избиране на председател на НС",
+      "value": 121
+    },
+    {
+      "name": "Мнозинство за избиране на нов Висш Съдебен Съвет",
+      "value": 160
+    },
+    {
+      "name": "Мнозинство за съдебна реформа",
+      "value": 160
+    },
+    {
+      "name": "Конституционно мнозинство",
+      "value": 160
+    }
+  ]
+}

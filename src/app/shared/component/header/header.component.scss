@@ -1,0 +1,131 @@
+// ── Masthead ─────────────────────────────────
+.header-masthead {
+  padding: 20px 0 16px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-logo {
+  flex-shrink: 0;
+  width: 60px;
+  height: 40px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// ── Title & subtitle ─────────────────────────
+.header-title {
+  font-weight: 900;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #111827;
+  margin: 0;
+}
+
+.header-prehod {
+  margin: 5px 0 0;
+  font-size: 18px;
+  font-weight: 300;
+  color: #6b7280;
+  letter-spacing: 0.01em;
+
+  a {
+    text-decoration: none;
+    font-weight: 400;
+  }
+}
+
+// ── Navigation ───────────────────────────────
+.header-nav {
+  display: flex;
+  gap: 2px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 24px;
+}
+
+.nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px 12px;
+  text-decoration: none;
+  color: #6b7280;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  border-radius: 6px 6px 0 0;
+  transition: color 0.18s, background 0.18s;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 8px;
+    right: 8px;
+    height: 2.5px;
+    background: transparent;
+    border-radius: 2px 2px 0 0;
+    transition: background 0.18s, left 0.18s, right 0.18s;
+  }
+
+  &:hover {
+    color: #374151;
+    background: rgba(59, 82, 120, 0.04);
+  }
+
+  &.active {
+    color: #111827;
+    font-weight: 600;
+
+    &::after {
+      background: #3b5278;
+      left: 4px;
+      right: 4px;
+    }
+  }
+}
+
+.nav-label {
+  position: relative;
+}
+
+// ── Responsive ───────────────────────────────
+@media (max-width: 768px) {
+  .header-brand {
+    gap: 10px;
+  }
+
+  .header-logo {
+    width: 34px;
+    height: 22px;
+  }
+
+  .header-title {
+    font-size: 22px;
+  }
+
+  .header-nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .nav-link {
+    white-space: nowrap;
+    padding: 8px 12px 10px;
+    font-size: 14px;
+  }
+}

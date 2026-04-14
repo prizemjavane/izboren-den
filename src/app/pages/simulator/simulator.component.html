@@ -1,0 +1,557 @@
+<div class="page-shell">
+  <div class="page-container">
+    <app-header title="Симулатор на изборния ден в България"></app-header>
+
+    <!-- ── Primary Stats ────────────────────────── -->
+    <div class="grid grid-cols-5 gap-3.5 mb-5">
+      <div class="stat-card">
+        <span class="flex items-center gap-1">
+          <span class="stat-label">Избиратели</span>
+          <span class="stat-tip">
+            <lucide-icon name="info" [size]="14" class="info-trigger"></lucide-icon>
+            <span class="stat-tip-text">Общ брой граждани с право на глас</span>
+          </span>
+        </span>
+        <a href="https://www.bgnes.bg/cik-6-575-151-sa-imashtite-pravo-na-glas-na-19-april" target="_blank" class="stat-value no-underline inline-flex items-center gap-1.5">{{ available|numberFormat }} <lucide-icon name="external-link" [size]="16" class="text-[#4a6a9b]"></lucide-icon></a>
+      </div>
+      <div class="stat-card">
+        <span class="flex items-center gap-1">
+          <span class="stat-label">Гласували</span>
+          <span class="stat-tip">
+            <lucide-icon name="info" [size]="14" class="info-trigger"></lucide-icon>
+            <span class="stat-tip-text">Сума от твърд електорат, ситуативен, купен и контролиран вот</span>
+          </span>
+        </span>
+        <span class="stat-value">{{ voted|numberFormat }}</span>
+      </div>
+      <div class="stat-card">
+        <span class="flex items-center gap-1">
+          <span class="stat-label">Гласове за депутатско място</span>
+          <span class="stat-tip">
+            <lucide-icon name="info" [size]="14" class="info-trigger"></lucide-icon>
+            <span class="stat-tip-text">Общ брой гласували ÷ 240 места в Народното събрание</span>
+          </span>
+        </span>
+        <span class="stat-value">{{ (voted / 240)|numberFormat }}</span>
+      </div>
+      <div class="stat-card">
+        <span class="flex items-center gap-1">
+          <span class="stat-label">4% бариера</span>
+          <span class="stat-tip">
+            <lucide-icon name="info" [size]="14" class="info-trigger"></lucide-icon>
+            <span class="stat-tip-text">Минимален брой гласове за влизане в парламента (4% от всички гласували)</span>
+          </span>
+        </span>
+        <span class="stat-value">{{ (this.voted * 0.04)|numberFormat }}</span>
+      </div>
+      <div class="stat-card stat-card--featured" [style.--intensity]="activity / 100" [class.cursor-pointer]="activityChart" (click)="showActivityChart = !showActivityChart">
+        <span class="flex items-center gap-1">
+          <span class="stat-label">Активност</span>
+          <span class="stat-tip">
+            <lucide-icon name="info" [size]="14" class="info-trigger"></lucide-icon>
+            <span class="stat-tip-text">Процент на гласувалите спрямо всички избиратели</span>
+          </span>
+        </span>
+        <span class="stat-value">{{ activity }}%</span>
+      </div>
+    </div>
+
+    <!-- ── Analysis Metrics ─────────────────────── -->
+    <div class="grid grid-cols-5 gap-3.5 mb-6">
+      <div class="stat-card">
+        <span class="flex items-center gap-1">
+          <span class="stat-label">Тежест на контролирания вот</span>
+          <span class="stat-tip">
+            <lucide-icon name="info" [size]="14" class="info-trigger"></lucide-icon>
+            <span class="stat-tip-text">Процент на купения + контролирания вот спрямо всички гласували</span>
+          </span>
+        </span>
+        <span class="stat-value">{{ weightOfTheControlledVote }}% @if (((overallControlledVote / voted) * 100) > 99) {
+          <a href="https://blog-number-seven.blogspot.com/2017/02/2.html" target="_blank" class="no-underline">✈</a>
+        }️</span>
+      </div>
+      <div class="stat-card">
+        <span class="flex items-center gap-1">
+          <span class="stat-label">Цена на купения вот</span>
+          <span class="stat-tip">
+            <lucide-icon name="info" [size]="14" class="info-trigger"></lucide-icon>
+            <span class="stat-tip-text">Общ брой купени гласове × средна цена на купен глас</span>
+          </span>
+        </span>
+        <span class="stat-value">{{ (boughtVoteTotal * avgBoughtVotePrice)|numberFormat }} {{ currencyLabel }}</span>
+<!--        @let hw = toHighwayLength(boughtVoteTotal * avgBoughtVotePrice);-->
+<!--        <span role="button" tabindex="0" class="compare-toggle" [class.active]="showCompareDetail === 'boughtVote'" (click)="showCompareDetail = showCompareDetail === 'boughtVote' ? '' : 'boughtVote'" (keydown.enter)="showCompareDetail = showCompareDetail === 'boughtVote' ? '' : 'boughtVote'">-->
+<!--≈ @if (hw.km) {{{ hw.km|numberFormat }} км } @if (hw.m) {{{ hw.m }} м } магистрала-->
+<!--        </span>-->
+      </div>
+      <div class="stat-card">
+        <span class="flex items-center gap-1">
+          <span class="stat-label">Цена на депутатско място</span>
+          <span class="stat-tip">
+            <lucide-icon name="info" [size]="14" class="info-trigger"></lucide-icon>
+            <span class="stat-tip-text">Гласове за 1 място × средна цена на купен глас</span>
+          </span>
+        </span>
+        <span class="stat-value">{{ ((voted / 240) * avgBoughtVotePrice)|numberFormat }} {{ currencyLabel }}</span>
+<!--        @let hwSeat = toHighwayLength((voted / 240) * avgBoughtVotePrice);-->
+<!--        <span role="button" tabindex="0" class="compare-toggle" [class.active]="showCompareDetail === 'seat'" (click)="showCompareDetail = showCompareDetail === 'seat' ? '' : 'seat'" (keydown.enter)="showCompareDetail = showCompareDetail === 'seat' ? '' : 'seat'">-->
+<!--≈ @if (hwSeat.km) {{{ hwSeat.km|numberFormat }} км } @if (hwSeat.m) {{{ hwSeat.m }} м } магистрала-->
+<!--        </span>-->
+      </div>
+      <div class="stat-card">
+        <span class="flex items-center gap-1">
+          <span class="stat-label">Брой купени мандати</span>
+          <span class="stat-tip">
+            <lucide-icon name="info" [size]="14" class="info-trigger"></lucide-icon>
+            <span class="stat-tip-text">Цена на купен вот / Цена на депутатско място</span>
+          </span>
+        </span>
+        <span class="stat-value">{{ ((boughtVoteTotal * avgBoughtVotePrice) / ((voted / 240) * avgBoughtVotePrice))|numberFormat }}</span>
+      </div>
+      <div class="stat-card">
+        <span class="flex items-center gap-1">
+          <span class="stat-label"><a class="text-inherit no-underline" href="https://www.facebook.com/elvesbg/videos/963114998997410/" target="_blank">Н</a>евалидни бюлетини</span>
+          <span class="stat-tip">
+            <lucide-icon name="info" [size]="14" class="info-trigger"></lucide-icon>
+            <span class="stat-tip-text">Общ брой невалидни бюлетини за всички партии</span>
+          </span>
+        </span>
+        <span class="stat-value">{{ invalidVotes|numberFormat }}</span>
+      </div>
+    </div>
+
+    <!-- ── Compare Detail ───────────────────────── -->
+<!--    @if (showCompareDetail) {-->
+<!--      @let compareAmount = showCompareDetail === 'seat' ? (voted / 240) * avgBoughtVotePrice : boughtVoteTotal * avgBoughtVotePrice;-->
+<!--      @let compareHw = showCompareDetail === 'seat' ? hwSeat : hw;-->
+<!--      <div class="compare-detail">-->
+<!--        <div class="compare-detail-accent"></div>-->
+<!--        <div class="compare-detail-body">-->
+<!--          <div class="compare-detail-content">-->
+<!--            <a [href]="compare.url" target="_blank" class="compare-detail-link">-->
+<!--              {{ compare.description }}-->
+<!--              <lucide-icon name="external-link" [size]="14" class="compare-detail-link-icon"></lucide-icon>-->
+<!--            </a>-->
+<!--            <span class="compare-detail-sep">—</span>-->
+<!--            <span class="font-semibold tabular-nums">{{ comparePriceInCurrency|numberFormat }} {{ currencyLabel }} / км</span>-->
+<!--          </div>-->
+<!--          <div class="compare-detail-result">-->
+<!--            {{ compareAmount|numberFormat }} {{ currencyLabel }}-->
+<!--            <span class="compare-detail-arrow">→</span>-->
+<!--            @if (compareHw.km) {{{ compareHw.km|numberFormat }} км } @if (compareHw.m) {{{ compareHw.m }} м } магистрала-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <button (click)="showCompareDetail = ''" class="compare-detail-close">-->
+<!--          <lucide-icon name="x" class="w-4 h-4"></lucide-icon>-->
+<!--        </button>-->
+<!--      </div>-->
+<!--    }-->
+
+    <!-- ── Controls ─────────────────────────────── -->
+    <div class="card py-4 px-6 flex items-center gap-6 flex-wrap">
+      <div class="flex items-center gap-3">
+        <span class="text-[15px] font-semibold text-gray-600 whitespace-nowrap">Средна цена на купен глас</span>
+        <div class="currency-input-group">
+          <input [(ngModel)]="avgBoughtVotePrice" (ngModelChange)="onInputChange()" type="number" min="0" step="10" max="1000"
+                 class="currency-input">
+          <div class="currency-toggle">
+            <button type="button" [class.active]="currency === 'EUR'" (click)="onCurrencyChange('EUR')">€</button>
+            <button type="button" [class.active]="currency === 'BGN'" (click)="onCurrencyChange('BGN')">лв</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="vdivider h-8"></div>
+
+      <div class="flex items-center gap-3">
+        <span class="text-[15px] font-semibold text-gray-600 whitespace-nowrap">Стъпка</span>
+        <div class="toggle-group toggle-group--lg">
+          <div class="toggle-option">
+            <input name="step" [(ngModel)]="step" (ngModelChange)="onInputChange()" [value]="1" type="radio" id="step1">
+            <label for="step1">1</label>
+          </div>
+          <div class="toggle-option">
+            <input name="step" [(ngModel)]="step" (ngModelChange)="onInputChange()" [value]="10" type="radio" id="step2">
+            <label for="step2">10</label>
+          </div>
+          <div class="toggle-option">
+            <input name="step" [(ngModel)]="step" (ngModelChange)="onInputChange()" [value]="100" type="radio" id="step3">
+            <label for="step3">100</label>
+          </div>
+          <div class="toggle-option">
+            <input name="step" [(ngModel)]="step" (ngModelChange)="onInputChange()" [value]="1000" type="radio" id="step4">
+            <label for="step4">1,000</label>
+          </div>
+          <div class="toggle-option">
+            <input name="step" [(ngModel)]="step" (ngModelChange)="onInputChange()" [value]="10000" type="radio" id="step5">
+            <label for="step5">10,000</label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="vdivider h-8"></div>
+
+      <div class="flex items-center gap-3">
+        <span class="text-[15px] font-semibold text-gray-600 whitespace-nowrap">Партии</span>
+        <select [(ngModel)]="parties" (change)="onChangePartiesNumber()"
+                class="border border-gray-200 rounded-lg py-2 pl -3 pr-8 text-base font-[inherit] bg-white outline-none cursor-pointer focus:border-[#4a6a9b]">
+          @for (n of [].constructor(maxParties - 4); track $index) {
+            <option [value]="$index + 4">{{ $index + 5 }}</option>
+          }
+        </select>
+      </div>
+
+      <div class="ml-auto flex items-center gap-3">
+        <button (click)="onReloadParties()"
+                class="flex items-center gap-1.5 border border-gray-200 rounded-lg py-2 px-4 text-[15px] font-semibold font-[inherit] text-gray-500 bg-transparent cursor-pointer transition-all duration-150 hover:bg-gray-50 hover:border-gray-300">
+          <lucide-icon name="refresh-cw" [size]="14"></lucide-icon>
+          Презареди
+        </button>
+        <button (click)="onResetAll()"
+                class="border border-red-200 rounded-lg py-2 px-5 text-[15px] font-semibold font-[inherit] text-[#b33a3a] bg-transparent cursor-pointer transition-all duration-150 hover:bg-red-50 hover:border-red-300">
+          Изчисти
+        </button>
+      </div>
+    </div>
+  </div>
+
+  @if (activityChart && showActivityChart) {
+    <div class="bg-white py-4 mt-5">
+      <div echarts [options]="activityChart" class="w-full h-[290px]"></div>
+    </div>
+  }
+
+  <!-- ── Countdown ──────────────────────────────── -->
+  @if (!electionPassed) {
+    <div class="w-full px-10 mt-8 flex justify-center">
+      <div class="cd">
+        <div class="cd-accent"></div>
+        <span class="cd-label">До изборния ден остават</span>
+        <div class="cd-digits">
+          <div class="cd-seg">
+            <span class="cd-num">{{ countdownDays }}</span>
+            <span class="cd-unit">дни</span>
+          </div>
+          <span class="cd-dot">:</span>
+          <div class="cd-seg">
+            <span class="cd-num">{{ countdownHours.toString().padStart(2, '0') }}</span>
+            <span class="cd-unit">часа</span>
+          </div>
+          <span class="cd-dot">:</span>
+          <div class="cd-seg">
+            <span class="cd-num">{{ countdownMinutes.toString().padStart(2, '0') }}</span>
+            <span class="cd-unit">мин</span>
+          </div>
+          <span class="cd-dot cd-dot--live">:</span>
+          <div class="cd-seg cd-seg--live">
+            <span class="cd-num">{{ countdownSeconds.toString().padStart(2, '0') }}</span>
+            <span class="cd-unit">сек</span>
+          </div>
+        </div>
+        <span class="cd-date">{{ electionDateStr | bgDate }}, 08:00</span>
+      </div>
+    </div>
+  }
+
+  <!-- ── Data Table & Visualizations ────────────── -->
+  <div class="w-full px-10 mt-8">
+
+    <div class="table-wrapper card overflow-hidden">
+      <table class="sim-table">
+        <thead>
+          <tr>
+            <th>Политическа партия</th>
+            <th class="col-input">Твърд електорат <a href="https://www.youtube.com/live/UCzKvvNr_2E?t=5699s" target="_blank"><lucide-icon name="external-link" [size]="14" class="info-icon"></lucide-icon></a></th>
+            <th class="col-input">Ситуативен вот <a href="https://www.youtube.com/watch?v=D2K8eTs8okQ&t=306s" target="_blank"><lucide-icon name="external-link" [size]="14" class="info-icon"></lucide-icon></a></th>
+            <th class="col-input">Купен вот <a href="https://www.youtube.com/watch?v=rinJ-8pqUeE&t=40s" target="_blank"><lucide-icon name="external-link" [size]="14" class="info-icon"></lucide-icon></a></th>
+            <th class="col-input">Феодализиран,<br>контролиран вот <a href="https://www.youtube.com/watch?v=gZE7Rqgs03E&t=2584s" target="_blank"><lucide-icon name="external-link" [size]="14" class="info-icon"></lucide-icon></a></th>
+            <th class="col-input">Приплъзване и<br>манипулации <a href="https://btvnovinite.bg/predavania/tazi-sutrin/rosica-mateva-cik-ne-broi-bjuletini-ne-popravja-protokoli-i-ne-preglezhda-videozapisi.html" target="_blank"><lucide-icon name="external-link" [size]="14" class="info-icon"></lucide-icon></a></th>
+            <th class="col-input">Невалидни<br>бюлетини <a href="https://www.youtube.com/watch?v=57yqPORkFxU" target="_blank"><lucide-icon name="external-link" [size]="14" class="info-icon"></lucide-icon></a></th>
+            <th class="col-votes">Гласове</th>
+            <th class="col-pct">Проценти</th>
+            <th class="col-mandates">Мандати *</th>
+            <th class="col-coalition"><lucide-icon name="sigma" [size]="18" class="coalition-icon"></lucide-icon></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of rows; track row; let i = $index) {
+            <tr>
+              <td class="col-party">
+                <div class="party-dropdown-wrap" [class.open]="activeDropdown === i">
+                  <div role="button" tabindex="0" class="party-combo" (click)="activeDropdown === i ? closeDropdown() : openDropdown(i)" (keydown.enter)="activeDropdown === i ? closeDropdown() : openDropdown(i)">
+                    <div class="party-display" [class.has-value]="rows[i]['party']">
+                      {{ rows[i]['party'] || 'Избери партия...' }}
+                    </div>
+                    <div class="party-toggle">
+                      <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                  </div>
+                  @if (activeDropdown === i) {
+                    <div class="party-panel">
+                      <div class="party-search-wrap">
+                        <svg class="party-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <input type="text"
+                               class="party-search-input"
+                               [(ngModel)]="partySearch"
+                               placeholder="Търси партия..."
+                               autocomplete="off">
+                      </div>
+                      @let fp = filteredParties(i);
+                      @if (partySearch) {
+                        <div class="party-panel-hint">{{ fp.length }} резултата</div>
+                      }
+                      <div class="party-panel-list">
+                        @if (rows[i]['party'] && !partySearch) {
+                          <button class="party-option party-clear" (mousedown)="selectParty(i, '')">Изчисти избора</button>
+                        }
+                        @for (p of fp; track p.name) {
+                          <button class="party-option" [class.selected]="rows[i]['party'] === p.name" (mousedown)="selectParty(i, p.name)">
+                            {{ p.name }}
+                          </button>
+                        }
+                        @if (fp.length === 0 && partySearch) {
+                          <div class="party-panel-empty">Няма съвпадения</div>
+                        }
+                        @if (fp.length === 0 && !partySearch && !rows[i]['party']) {
+                          <div class="party-panel-empty">Въведи име, за да добавиш нова партия</div>
+                        }
+                      </div>
+                      @if (partySearch && (!hasExactMatch || fp.length === 0)) {
+                        <button class="party-custom" (mousedown)="useCustomText(i)">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                          Добави „{{ partySearch }}"
+                        </button>
+                      }
+                    </div>
+                  }
+                </div>
+              </td>
+              <td class="col-input">
+                <app-input
+                  [result]="rows[i]['solidElectorate']"
+                  (callOnChange)="onInputChange($event, 'solidElectorate', i)"
+                  (callOnInc)="onInputUp('solidElectorate', i)"
+                  (callOnDec)="onInputDown('solidElectorate', i)"
+                  (callOnReset)="onInputReset('solidElectorate', i)"
+                  [max]="max[i]['solidElectorate']"
+                  [percentage]="result[i]['solidElectoratePercentage']"
+                ></app-input>
+              </td>
+              <td class="col-input">
+                <app-input
+                  [result]="rows[i]['organicVote']"
+                  (callOnChange)="onInputChange($event, 'organicVote', i)"
+                  (callOnInc)="onInputUp('organicVote', i)"
+                  (callOnDec)="onInputDown('organicVote', i)"
+                  (callOnReset)="onInputReset('organicVote', i)"
+                  [max]="max[i]['organicVote']"
+                  [percentage]="result[i]['organicVotePercentage']"
+                ></app-input>
+              </td>
+              <td class="col-input">
+                <app-input
+                  [result]="rows[i]['boughtVote']"
+                  (callOnChange)="onInputChange($event, 'boughtVote', i)"
+                  (callOnInc)="onInputUp('boughtVote', i)"
+                  (callOnDec)="onInputDown('boughtVote', i)"
+                  (callOnReset)="onInputReset('boughtVote', i)"
+                  [max]="max[i]['boughtVote']"
+                  [percentage]="result[i]['boughtVotePercentage']"
+                ></app-input>
+              </td>
+              <td class="col-input">
+                <app-input
+                  [result]="rows[i]['controlledVote']"
+                  (callOnChange)="onInputChange($event, 'controlledVote', i)"
+                  (callOnInc)="onInputUp('controlledVote', i)"
+                  (callOnDec)="onInputDown('controlledVote', i)"
+                  (callOnReset)="onInputReset('controlledVote', i)"
+                  [max]="max[i]['controlledVote']"
+                  [percentage]="result[i]['controlledVotePercentage']"
+                ></app-input>
+              </td>
+              <!--          <td class="col-input">-->
+              <!--            <app-input-->
+              <!--              [result]="rows[i]['socialMediaInfluencedVote']"-->
+              <!--              (callOnChange)="onInputChange($event, 'socialMediaInfluencedVote', i)"-->
+              <!--              (callOnInc)="onInputUp('socialMediaInfluencedVote', i)"-->
+              <!--              (callOnDec)="onInputDown('socialMediaInfluencedVote', i)"-->
+              <!--              (callOnReset)="onInputReset('socialMediaInfluencedVote', i)"-->
+              <!--              [max]="max[i]['socialMediaInfluencedVote']"-->
+              <!--              [percentage]="result[i]['socialMediaInfluencedVotePercentage']"-->
+              <!--            ></app-input>-->
+              <!--          </td>-->
+              <td class="col-input">
+                <app-input
+                  [result]="rows[i]['slideVote']"
+                  (callOnChange)="onInputChange($event, 'slideVote', i)"
+                  (callOnInc)="onInputUp('slideVote', i)"
+                  (callOnDec)="onInputDown('slideVote', i)"
+                  (callOnReset)="onInputReset('slideVote', i)"
+                  [min]="min[i]['slideVote']"
+                  [max]="max[i]['slideVote']"
+                ></app-input>
+              </td>
+              <td class="col-input">
+                <app-input
+                  [result]="rows[i]['invalidVote']"
+                  (callOnChange)="onInputChange($event, 'invalidVote', i)"
+                  (callOnInc)="onInputUp('invalidVote', i)"
+                  (callOnDec)="onInputDown('invalidVote', i)"
+                  (callOnReset)="onInputReset('invalidVote', i)"
+                  [max]="max[i]['invalidVote']"
+                ></app-input>
+              </td>
+              @let latestData = getLatestElectionData(rows[i]['party']);
+              <td class="col-votes">
+                {{ result[i]['votes']|numberFormat }}
+                @if (latestData) {
+                  <div class="latest-value">
+                    {{ latestData.votes|numberFormat }}
+                    <span class="latest-tooltip">Резултат от последни избори – {{ latestElectionDate | bgDate }}</span>
+                  </div>
+                }
+              </td>
+              <td class="col-pct">
+                <span class="{{ result[i]['percentage'] > 4 ? 'pct-above' : 'pct-below' }}">{{ result[i]['percentage']|numberFormat:3 }}%</span>
+                @if (latestData) {
+                  <div class="latest-value">
+                    {{ latestData.percentage }}%
+                    <span class="latest-tooltip">Резултат от последни избори – {{ latestElectionDate | bgDate }}</span>
+                  </div>
+                }
+              </td>
+              <td class="col-mandates">
+                {{ result[i]['mandates']|numberFormat }}
+                @if (latestData) {
+                  <div class="latest-value">
+                    {{ latestData.mandates }}
+                    <span class="latest-tooltip">Резултат от последни избори – {{ latestElectionDate | bgDate }}</span>
+                  </div>
+                }
+              </td>
+              <td class="col-coalition">
+                <input type="checkbox" [(ngModel)]="coalitionSelected[i]" class="coalition-checkbox">
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    @if (coalitionSelected.includes(true)) {
+      <div class="coal-card">
+        <div class="coal-card-accent"></div>
+        <div class="coal-card-body">
+          <div class="coal-top">
+            <div class="coal-left">
+              <span class="coal-label">Мнозинство</span>
+              <div class="coal-parties">
+                @for (row of rows; track row; let i = $index) {
+                  @if (coalitionSelected[i]) {
+                    <span class="coal-chip">
+                      <span class="coal-chip-name">{{ getPartyAlias(rows[i]['party']) || 'Партия ' + (i + 1) }}</span>
+                      <span class="coal-chip-num">{{ result[i]['mandates'] }}</span>
+                    </span>
+                  }
+                }
+              </div>
+              @if (majorityOptions.length > 0) {
+                <div class="coal-seg">
+                  @for (opt of majorityOptions; track opt.name; let i = $index) {
+                    <label class="coal-seg-opt" [class.coal-seg-opt--active]="selectedMajorityIndex === i">
+                      <input type="radio" name="majorityType" [value]="i" [(ngModel)]="selectedMajorityIndex" class="coal-seg-radio">
+                      <span class="coal-seg-text">{{ opt.name }}</span>
+                      <span class="coal-seg-val">{{ opt.value }}</span>
+                    </label>
+                  }
+                </div>
+              }
+            </div>
+            <div class="coal-readout">
+              <div class="coal-readout-num" [class.coal-readout-majority]="coalitionMandatesSum >= selectedMajorityValue">{{ coalitionMandatesSum }}</div>
+              <div class="coal-readout-label">мандата</div>
+              <div class="coal-readout-bar">
+                <div class="coal-readout-fill" [class.coal-readout-fill--ok]="coalitionMandatesSum >= selectedMajorityValue" [style.width.%]="(coalitionMandatesSum / 240) * 100"></div>
+                <div class="coal-readout-threshold" [style.left.%]="(selectedMajorityValue / 240) * 100"></div>
+              </div>
+              @if (coalitionMandatesSum >= selectedMajorityValue) {
+                <span class="coal-badge coal-badge--ok">Мнозинство</span>
+              } @else {
+                <span class="coal-badge coal-badge--no">Няма мнозинство <span class="coal-badge-needed">&middot; нужни {{ selectedMajorityValue }}</span></span>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+
+    <!-- ── Charts ──────────────────────────────── -->
+    <div class="grid grid-cols-3 gap-5 mt-10">
+      <div class="card pt-5 px-4 pb-2">
+        <div class="chart-title">Българите в изборния ден</div>
+        <div echarts [options]="peopleInTheElectionDay" class="w-full h-[360px]"></div>
+      </div>
+      <div class="card pt-5 px-4 pb-2">
+        <div class="chart-title">Тежест на купения и контролиран вот</div>
+        @if (weightOfTheControlledVote > 10) {
+          <div class="text-sm text-center mb-1">
+            <a href="https://www.youtube.com/live/50zJr-lXQlA?t=163s" target="_blank" class="text-gray-500 no-underline hover:text-[#4a6a9b]">Не е правилно, ама... тва е в България</a>
+          </div>
+        }
+        <div echarts [options]="controlledVoteChart" class="w-full h-[290px]"></div>
+      </div>
+      <div class="card pt-5 px-4 pb-2">
+        <div class="chart-title">Гласове и мандати</div>
+        <div echarts [options]="mandatesChart" class="w-full h-[320px]"></div>
+      </div>
+    </div>
+
+    <!-- ── Disclaimer ───────────────────────────── -->
+    <div class="flex items-start gap-3 text-sm text-gray-500 leading-relaxed py-4 px-5 bg-black/[.025] border-l-3 border-gray-300 rounded-md mt-5">
+      <span class="text-gray-400 text-base leading-none mt-0.5">*</span>
+      <span>Посоченият брой мандати е ориентировъчен. Разпределението е извършено по метода на <a href="https://bg.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%BD%D0%B0_%D0%BD%D0%B0%D0%B9-%D0%B3%D0%BE%D0%BB%D0%B5%D0%BC%D0%B8%D1%8F_%D0%BE%D1%81%D1%82%D0%B0%D1%82%D1%8A%D0%BA" target="_blank" class="text-[#4a6a9b] underline underline-offset-2 hover:text-[#3a5a8b]">Хеър-Ниймайер</a> (метод на най-големия остатък), изчислено на базата на общия брой гласове за всяка партия, а не по многомандатни избирателни райони (МИР), както се прилага в действителност. Представените резултати не претендират за точност и не гарантират, че даден брой гласове ще доведе до показания брой мандати. Всички изчисления имат изключително информативен характер.</span>
+    </div>
+  </div>
+
+  <!-- ── Quotes & Sources ───────────────────────── -->
+  @if (talk) {
+    <div class="w-full px-10 mt-10">
+      <div class="flex gap-6">
+        @for (group of quotesGroups; track $index) {
+          <div class="flex-1 min-w-0">
+            <app-quote [quotes]="group"></app-quote>
+          </div>
+        }
+      </div>
+
+
+
+      <div class="flex justify-end mb-2">
+        <button (click)="onClearVisited()" class="border border-gray-200 rounded-lg py-2 px-5 text-[15px] font-semibold font-[inherit] text-gray-500 bg-transparent cursor-pointer transition-all duration-150 hover:bg-gray-50 hover:border-gray-300 flex items-center gap-2">
+          <lucide-icon name="eraser" [size]="16"></lucide-icon>
+          Изчисти посетените
+        </button>
+      </div>
+      <div class="sources-grid">
+        <div class="source-col" style="--col-accent: #b87333">
+          <div class="source-col-header">Купен вот</div>
+          <app-source [data]="talk['boughtVote']"></app-source>
+        </div>
+        <div class="source-col" style="--col-accent: #7a5195">
+          <div class="source-col-header">Контролиран, феодализиран<br>и корпоративен вот</div>
+          <app-source [data]="talk['feudalVote']"></app-source>
+        </div>
+        <div class="source-col" style="--col-accent: #3b7a78">
+          <div class="source-col-header">Приплъзване<br>и манипулации</div>
+          <app-source [data]="talk['slideVote']"></app-source>
+        </div>
+        <div class="source-col" style="--col-accent: #8b3a3a">
+          <div class="source-col-header">Репресии<br>и натиск</div>
+          <app-source [data]="talk['repression']"></app-source>
+        </div>
+      </div>
+    </div>
+  }
+</div>

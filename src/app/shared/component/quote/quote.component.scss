@@ -1,0 +1,307 @@
+@use '../../../../assets/scss/variables' as *;
+
+// ── Host ───────────────────────────────────────
+:host {
+  display: block;
+  animation: q-reveal .5s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+@keyframes q-reveal {
+  from { opacity: 0; transform: translateY(12px); }
+}
+
+// ── Carousel wrapper ───────────────────────────
+.q-carousel {
+  position: relative;
+}
+
+// ── Stage: stacked slides ──────────────────────
+.q-stage {
+  position: relative;
+  overflow: hidden;
+}
+
+// ── Card shell ──────────────────────────────────
+.q-card {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  margin: 6px 0;
+  padding: 0;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgba($blue, .08);
+  box-shadow:
+    0 1px 2px rgba(16, 24, 40, .03),
+    0 3px 10px rgba(16, 24, 40, .04);
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    box-shadow .35s cubic-bezier(.4, 0, .2, 1),
+    border-color .35s;
+
+  &:hover {
+    border-color: rgba($blue, .13);
+    box-shadow:
+      0 6px 20px rgba(16, 24, 40, .08),
+      0 2px 6px rgba(16, 24, 40, .04);
+
+    .q-accent::after { opacity: 1; }
+    .q-mark { color: rgba($blue, .10); }
+    .q-rule { width: 52px; }
+  }
+}
+
+// ── Active / exit states ────────────────────────
+.q-active {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+  animation: q-slide-in .5s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.q-exit {
+  z-index: 1;
+  animation: q-slide-out .45s cubic-bezier(.4, 0, .2, 1) both;
+}
+
+// ── Direction-aware slide animations ────────────
+// Next direction: enter from right, exit to left
+.q-dir-next {
+  &.q-active {
+    animation-name: q-enter-from-right;
+  }
+  &.q-exit {
+    animation-name: q-exit-to-left;
+  }
+}
+
+// Prev direction: enter from left, exit to right
+.q-dir-prev {
+  &.q-active {
+    animation-name: q-enter-from-left;
+  }
+  &.q-exit {
+    animation-name: q-exit-to-right;
+  }
+}
+
+@keyframes q-enter-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes q-exit-to-left {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+}
+
+@keyframes q-enter-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes q-exit-to-right {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+}
+
+// ── Left accent bar ────────────────────────────
+.q-accent {
+  position: relative;
+  width: 5px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, $blue, #6e8fb5);
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #7ba1cc, $blue);
+    opacity: 0;
+    transition: opacity .6s;
+  }
+}
+
+// ── Content area ───────────────────────────────
+.q-body {
+  flex: 1;
+  padding: 16px 24px 14px;
+  position: relative;
+  min-width: 0;
+}
+
+// ── Decorative quotation mark ──────────────────
+.q-mark {
+  font-size: 48px;
+  font-family: Georgia, 'Noto Serif', serif;
+  font-weight: 700;
+  line-height: .7;
+  color: rgba($blue, .07);
+  margin-bottom: -6px;
+  user-select: none;
+  pointer-events: none;
+  transition: color .4s;
+}
+
+// ── Quote body ─────────────────────────────────
+.q-text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: #111827;
+  margin: 6px 0;
+  letter-spacing: .01em;
+}
+
+.q-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+// ── Short gradient divider ─────────────────────
+.q-rule {
+  width: 36px;
+  height: 2px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, $blue, rgba($blue, .12));
+  margin: 10px 0 8px;
+  transition: width .4s cubic-bezier(.4, 0, .2, 1);
+}
+
+// ── Attribution footer ─────────────────────────
+.q-footer {
+  display: flex;
+  align-items: center;
+}
+
+.q-author {
+  font-size: 16px;
+  font-weight: 600;
+  color: $blue;
+  letter-spacing: .015em;
+}
+
+.q-author--link {
+  text-decoration: none;
+  &:hover { text-decoration: underline; text-underline-offset: 3px; }
+}
+
+.q-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #bfc6d0;
+  margin: 0 10px;
+  flex-shrink: 0;
+}
+
+.q-date {
+  font-size: 15px;
+  font-weight: 500;
+  color: #8a95a5;
+  letter-spacing: .01em;
+}
+
+// ── Navigation bar ─────────────────────────────
+.q-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 2px 0 0;
+}
+
+// ── Arrow buttons ──────────────────────────────
+.q-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid rgba($blue, .10);
+  background: #fff;
+  color: $blue;
+  cursor: pointer;
+  transition: all .2s ease;
+  flex-shrink: 0;
+
+  &:hover {
+    background: rgba($blue, .06);
+    border-color: rgba($blue, .20);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(.95);
+  }
+}
+
+// ── Dot indicators ─────────────────────────────
+.q-dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+}
+
+.q-dot-btn {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.q-dot-fill {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba($blue, .18);
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.q-dot-active .q-dot-fill {
+  background: $blue;
+  width: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba($blue, .25);
+}

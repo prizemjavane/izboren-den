@@ -1,0 +1,142 @@
+$border: #dce0e5;
+$border-hover: #a8b0bd;
+$border-focus: #6672b0;
+$accent: #4f5d99;
+$fill: rgba(91, 179, 168, 0.15);
+$fill-hover: rgba(91, 179, 168, 0.25);
+$text: #1a1e2b;
+$text-dim: #6b7280;
+$btn-bg: #f4f5f7;
+$btn-hover: #e8eaef;
+$btn-active: #dde0e8;
+$slider-track: #dde0e8;
+$slider-thumb: #4f5d99;
+
+.vote-widget { width: 160px; }
+
+.vote-field {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  border: 1px solid $border;
+  border-radius: 3px;
+  background: #fff;
+  transition: border-color 0.12s, box-shadow 0.12s;
+
+  &:hover {
+    border-color: $border-hover;
+    .fill-bar { background-color: $fill-hover; }
+    .vote-clear { opacity: 0.7; }
+  }
+  &:focus-within { border-color: $border-focus; box-shadow: 0 0 0 2px rgba($border-focus, 0.12); }
+}
+
+// Percentage — overlay left, vertically centered
+.vote-pct {
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  color: $text-dim;
+  pointer-events: none;
+  z-index: 4;
+  user-select: none;
+}
+
+// Input area
+.input-wrap { position: relative; flex: 1; display: flex; align-items: center; min-width: 0; }
+
+input.vote-input {
+  width: 100%;
+  height: 30px;
+  padding: 0 18px 0 4px;
+  border: 0;
+  background: transparent;
+  text-align: right;
+  font-size: 14px;
+  font-family: inherit;
+  font-variant-numeric: tabular-nums;
+  color: $text;
+  position: relative;
+  z-index: 2;
+  outline: none;
+}
+
+// Clear — absolute overlay, visible on hover
+.vote-clear {
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(#c0392b, 0.12);
+  color: #c0392b;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.12s, background 0.12s;
+}
+
+.vote-field:hover .vote-clear { opacity: 0.6; }
+.vote-clear:hover { opacity: 1 !important; background: rgba(#c0392b, 0.2); }
+
+// Fill inside input
+.fill-track {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.fill-bar {
+  height: 100%;
+  background-color: $fill;
+  transition: width 0.06s linear, background-color 0.15s;
+}
+
+// Stepper buttons
+.vote-btns { display: flex; flex-direction: column; border-left: 1px solid $border; flex-shrink: 0; }
+
+button.pm {
+  display: flex; align-items: center; justify-content: center;
+  width: 16px; flex: 1; border: 0; background: $btn-bg; color: $accent;
+  cursor: pointer; padding: 0; margin: 0; user-select: none;
+  transition: background 0.08s;
+
+  svg { display: block; }
+  &:hover { background: $btn-hover; }
+  &:active { background: $btn-active; }
+}
+
+.pm-up { border-bottom: 1px solid $border; border-radius: 0 3px 0 0; }
+.pm-dn { border-radius: 0 0 3px 0; }
+
+// Range slider
+.vote-range {
+  display: block; width: 100%; height: 8px; margin: 2px 0 0; padding: 0;
+  cursor: ew-resize; -webkit-appearance: none; appearance: none; background: transparent;
+
+  &::-webkit-slider-runnable-track { height: 2px; background: $slider-track; border: 0; border-radius: 1px; }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 7px; height: 7px; border-radius: 50%;
+    background: $slider-thumb; margin-top: -2.5px; cursor: ew-resize;
+    box-shadow: 0 0 0 1.5px #fff, 0 0 2px rgba(0,0,0,0.18);
+  }
+  &::-moz-range-track { height: 2px; background: $slider-track; border: 0; border-radius: 1px; }
+  &::-moz-range-thumb {
+    width: 7px; height: 7px; border-radius: 50%; background: $slider-thumb;
+    border: 1.5px solid #fff; cursor: ew-resize; box-shadow: 0 0 2px rgba(0,0,0,0.18);
+  }
+}

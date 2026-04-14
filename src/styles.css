@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Sofia Sans', sans-serif;
+}
+
+@layer base {
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+  }
+
+  i-feather.info-icon {
+    width: 18px;
+    height: 18px;
+    color: #0d6efd;
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 0.2rem;
+    background: #dee2e6;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 0.5rem;
+    background: #0d6efd;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 0.5rem;
+    background: #0d6efd;
+    border: 0;
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .page-shell { @apply min-h-screen bg-[#f3f4f7] pb-12; }
+  .page-container { @apply container mx-auto px-6 pt-2; }
+  .page-container-sm { @apply container mx-auto px-4 pt-2; }
+  .card { @apply bg-white rounded-[10px] shadow-sm; }
+  .vdivider { @apply w-px bg-gray-200 shrink-0; }
+}

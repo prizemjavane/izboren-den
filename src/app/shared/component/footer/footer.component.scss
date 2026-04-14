@@ -1,0 +1,135 @@
+// ── Footer ──────────────────────────────────────────
+.footer {
+  margin-top: auto;
+}
+
+// ── Accent strip ───────────────────────────────────
+.footer-accent {
+  height: 3px;
+  background: linear-gradient(90deg, #3b5278 0%, #4a6a9b 40%, #5a7fb5 60%, #4a6a9b 80%, #3b5278 100%);
+  opacity: 0.65;
+}
+
+// ── Body + inner container ──────────────────────────
+.footer-body {
+  background: #1e2a3a;
+}
+
+.footer-inner {
+  padding-top: 2.5rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+// ── Navigation ──────────────────────────────────────
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 1.75rem;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 16px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.62);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: color 0.18s, background 0.18s;
+
+  &:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+// ── GitHub button ───────────────────────────────────
+.footer-github-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.footer-github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  transition: background 0.2s;
+
+  img {
+    filter: invert(1);
+    opacity: 0.72;
+    transition: opacity 0.2s;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.12);
+
+    img {
+      opacity: 0.95;
+    }
+  }
+}
+
+// ── Divider ─────────────────────────────────────────
+.footer-rule {
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+  margin: 0 auto 1.75rem;
+  max-width: 520px;
+}
+
+// ── Disclaimer ──────────────────────────────────────
+.footer-disclaimer {
+  max-width: 680px;
+  margin: 0 auto;
+
+  p {
+    font-size: 13.5px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.36);
+    line-height: 1.75;
+    margin: 0;
+
+    & + p {
+      margin-top: 0.75rem;
+    }
+  }
+}
+
+// ── Responsive ──────────────────────────────────────
+@media (max-width: 768px) {
+  .footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .footer-link {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .footer-inner {
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .footer-github {
+    width: 48px;
+    height: 48px;
+
+    img {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}

@@ -1,0 +1,119 @@
+<!-- Chart -->
+<div class="w-full px-10 mt-2 mb-6">
+  <div
+    echarts
+    [options]="options"
+    [style.height]="height"
+    (chartClick)="onChartClick($event)"
+    (chartLegendSelectChanged)="onChartLegendSelectChanged($event)"
+    (chartInit)="onChartInit($event)"></div>
+</div>
+
+<!-- Detail panel (right side) -->
+<div class="detail-panel" [class.open]="content && (content.seriesColor || content.sources)">
+  @if (content && (content.seriesColor || content.sources)) {
+    <div class="detail-panel-header">
+      <div class="min-w-0">
+        @if (content.seriesColor) {
+          <div class="detail-panel-series">
+            <span class="detail-panel-dot" [style.background]="content.seriesColor"></span>
+            <h3 class="text-lg font-bold text-slate-800 leading-tight">{{ content.seriesName }}</h3>
+          </div>
+        } @else {
+          <h3 class="text-lg font-bold text-slate-800 leading-tight">{{ content.name }}</h3>
+        }
+        @if (content.from) {
+          <div class="detail-panel-dates">
+            <span class="detail-panel-date-range">{{ content.from|bgDate }} — {{ content.to ? (content.to|bgDate) : 'днес' }}</span>
+            <span class="detail-panel-duration">{{ humanDateDiff(content.from, content.to) }}</span>
+          </div>
+        } @else if (content.date) {
+          <div class="detail-panel-dates">
+            <span class="detail-panel-date-range">{{ content.date|bgDate }}</span>
+          </div>
+        }
+      </div>
+      <button class="detail-panel-close" (click)="closeDetailPanel()" aria-label="Затвори">
+        <lucide-icon name="x" [size]="18"></lucide-icon>
+      </button>
+    </div>
+    <div class="detail-panel-body">
+      @if (content.description) {
+        <p class="text-[0.9375rem] text-slate-600 leading-relaxed mb-4">{{ content.description }}</p>
+      }
+
+      @if (content.seriesColor && content.displayValue != null) {
+        <div class="data-card">
+          <div class="data-card-main">
+            <span class="data-card-value">{{ formatDisplayValue(content.displayValue) }}</span>
+            @if (content.mandates !== undefined) {
+              <span class="data-card-suffix">гласа</span>
+            }
+            @if (content.assembly) {
+              <span class="data-card-suffix">%</span>
+            }
+            @if (diffInfo; as d) {
+              <span class="data-card-diff" [style.color]="d.color">{{ d.text }}</span>
+            }
+          </div>
+          @if (content.percent != null) {
+            <div class="data-card-percent">{{ content.percent }}%</div>
+          }
+          @if (content.mandates > 0) {
+            <div class="data-card-mandates">
+              <div class="data-card-mandates-row">
+                <span class="data-card-mandates-num">{{ content.mandates }}</span>
+                <span class="data-card-mandates-label">мандата</span>
+                @if (content.mandatesDiff != null && content.mandatesDiff !== 0 && content.mandatesDiff !== content.mandates) {
+                  <span class="data-card-mandates-diff" [style.color]="content.mandatesDiff > 0 ? '#16a34a' : '#dc2626'">
+                    {{ content.mandatesDiff > 0 ? '+' : '' }}{{ content.mandatesDiff }}
+                  </span>
+                }
+                <span class="data-card-mandates-total">от 240</span>
+              </div>
+              <div class="data-card-bar">
+                <div class="data-card-bar-fill" [style.width.%]="(content.mandates / 240) * 100" [style.background]="content.seriesColor"></div>
+              </div>
+            </div>
+          }
+          @if (content.assembly) {
+            <div class="data-card-footer">{{ content.assembly }}-то НС</div>
+          }
+        </div>
+      }
+
+      @if (content.sources) {
+        @if (visitedUrls.size) {
+          <div class="source-header">
+            <button class="clear-visited-btn" (click)="clearVisited()" [appTooltip]="'Изчисти посетените'" tooltipPosition="bottom">
+              <lucide-icon name="eraser" [size]="16"></lucide-icon>
+            </button>
+          </div>
+        }
+        <ol class="source-list">
+          @for (item of content.sources; track item; let i = $index) {
+            <li class="source-item" [class.visited]="isVisited(item.url[0])">
+              <a href="{{ item.url[0] }}" target="_blank" rel="noopener" class="source-link" (click)="markVisited(item.url[0])">{{ item.name }}</a>
+              @if (item.url.length > 1) {
+                <span class="source-mirrors">
+                  @for (url of item.url; track url; let j = $index) {
+                    <a href="{{ url }}" target="_blank" rel="noopener" class="mirror-pill">{{ j + 1 }}</a>
+                  }
+                </span>
+              }
+              @if (item.date) {<span class="source-date">{{ item.date|bgDate }}</span>}
+            </li>
+          }
+        </ol>
+      }
+      @if (content.file) {
+        <div class="card-footer">
+          <a [href]="editUrl" target="_blank" rel="noopener" class="card-improve-btn">
+            <lucide-icon name="pencil" [size]="14"></lucide-icon>
+            Подобри данните
+          </a>
+        </div>
+      }
+    </div>
+  }
+</div>

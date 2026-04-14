@@ -1,0 +1,38 @@
+<div class="vote-widget">
+  <div class="vote-field">
+    @if (percentage > 0) {
+      <span class="vote-pct">{{ percentage|numberFormat: 1 }}%</span>
+    }
+    <div class="input-wrap">
+      <input
+        class="vote-input"
+        [(ngModel)]="valueFormatted"
+        (input)="onChange($event)"
+      >
+      @if (valueRaw !== 0) {
+        <button class="vote-clear" (click)="reset()">
+          <svg width="8" height="8" viewBox="0 0 8 8"><path d="M1 1l6 6M7 1L1 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      }
+      <div class="fill-track">
+        <div class="fill-bar" [style]="'width:' + percentage + '%;'"></div>
+      </div>
+    </div>
+    <div class="vote-btns">
+      <button class="pm pm-up" (mousedown)="inc()" (mouseleave)="stopIncrement()" (mouseup)="stopIncrement()">
+        <svg width="8" height="5" viewBox="0 0 8 5"><path d="M4 0L8 5H0z" fill="currentColor"/></svg>
+      </button>
+      <button class="pm pm-dn" (mousedown)="dec()" (mouseleave)="stopIncrement()" (mouseup)="stopIncrement()">
+        <svg width="8" height="5" viewBox="0 0 8 5"><path d="M4 5L0 0h8z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </div>
+  <input
+    type="range"
+    class="vote-range"
+    [(ngModel)]="valueRaw"
+    (input)="onChange($event)"
+    [min]="min"
+    [max]="max"
+  >
+</div>

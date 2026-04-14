@@ -1,0 +1,949 @@
+[
+  {
+    "date": "2005-06-25",
+    "metrics": {
+      "registered": {
+        "value": 6720941,
+        "quote": "Брой избиратели в основния избирателен списък\t6 720 941"
+      },
+      "validTotal": {
+        "value": 3648177,
+        "quote": "Брой на действителните гласове\t3 648 177 (54.28%)"
+      },
+      "voted": {
+        "value": 3747793,
+        "quote": "Брой на гласувалите избиратели\t3 747 793 (55.76%)"
+      },
+      "parties": [
+        {
+          "name": "\"КОАЛИЦИЯ ЗА БЪЛГАРИЯ - БСП, ПБС, ПД - СОЦИАЛДЕМОКРАТИ, ДСХ, П. \"РОМА\", КПБ, БЗНС - АЛ. СТАМБОЛИЙСКИ, ЗПБ\"",
+          "votes": 1129196,
+          "percent": 33.98,
+          "mandates": 82
+        },
+        {
+          "name": "НАЦИОНАЛНО ДВИЖЕНИЕ СИМЕОН ВТОРИ (НДСВ)",
+          "votes": 725314,
+          "percent": 21.83,
+          "mandates": 53
+        },
+        {
+          "name": "\"ДЕМОКРАТИ ЗА СИЛНА БЪЛГАРИЯ\" (ДСБ)",
+          "votes": 234788,
+          "percent": 7.07,
+          "mandates": 17
+        },
+        {
+          "name": "СЪЮЗ НА СВОБОДНИТЕ ДЕМОКРАТИ, БЗНС - НАРОДЕН СЪЮЗ, ВМРО - БЪЛГАРСКО НАЦИОНАЛНО ДВИЖЕНИЕ - КОАЛИЦИЯ \"БЪЛГАРСКИ НАРОДЕН СЪЮЗ\"",
+          "votes": 189268,
+          "percent": 5.7,
+          "mandates": 13
+        },
+        {
+          "name": "КОАЛИЦИЯ \"АТАКА\"",
+          "votes": 296848,
+          "percent": 8.93,
+          "mandates": 21
+        },
+        {
+          "name": "ДПС \"ДВИЖЕНИЕ ЗА ПРАВА И СВОБОДИ\"",
+          "votes": 467400,
+          "percent": 14.07,
+          "mandates": 34
+        },
+        {
+          "name": "ОДС - СДС, ДЕМОКРАТИЧЕСКА ПАРТИЯ, ДВИЖЕНИЕ \"ГЕРГЬОВДЕН\", БЗНС НС - БЗНС, ДРОМ",
+          "votes": 280323,
+          "percent": 8.44,
+          "mandates": 20
+        }
+      ]
+    },
+    "description": "Избори за 40-то Народно събрание",
+    "sources": {
+      "text_activity": "data/2005-06-25-pi2005-activity.txt",
+      "screenshot_activity": "data/2005-06-25-pi2005-activity.png",
+      "url_activity": "https://pi2005.cik.bg/activity/",
+      "text_result": "data/2005-06-25-pi2005-result.txt",
+      "screenshot_result": "data/2005-06-25-pi2005-result.png",
+      "url_result": "https://pi2005.cik.bg/results/"
+    },
+    "activity": 55.76,
+    "id": "pi2005",
+    "assembly": 40
+  },
+  {
+    "date": "2009-07-05",
+    "metrics": {
+      "invalid": {
+        "value": 97387,
+        "quote": "Брой на недействителните гласове\t97 387"
+      },
+      "validTotal": {
+        "value": 4226194,
+        "quote": "Брой на действителните гласове\t4 226 194"
+      },
+      "registered": {
+        "value": 7129965,
+        "quote": "Брой на избирателите\t7 129 965"
+      },
+      "voted": {
+        "value": 4345450,
+        "quote": "Брой на гласувалите\t4 345 450"
+      },
+      "parties": [
+        {
+          "name": "ГЕРБ",
+          "votes": 1678641,
+          "percent": 39.72,
+          "mandates": 116
+        },
+        {
+          "name": "ДПС \"Движение за права и свободи\"",
+          "votes": 610521,
+          "percent": 14.45,
+          "mandates": 38
+        },
+        {
+          "name": "КОАЛИЦИЯ ЗА БЪЛГАРИЯ",
+          "votes": 748147,
+          "percent": 17.7,
+          "mandates": 40
+        },
+        {
+          "name": "Партия АТАКА",
+          "votes": 395733,
+          "percent": 9.36,
+          "mandates": 21
+        },
+        {
+          "name": "\"Синята коалиция\"",
+          "votes": 285662,
+          "percent": 6.76,
+          "mandates": 15
+        },
+        {
+          "name": "\"Ред, законност и справедливост\"",
+          "votes": 174582,
+          "percent": 4.13,
+          "mandates": 10
+        }
+      ]
+    },
+    "description": "Избори за 41-то Народно събрание",
+    "sources": {
+      "text_activity": "data/2009-07-05-pi2009-activity.txt",
+      "screenshot_activity": "data/2009-07-05-pi2009-activity.png",
+      "url_activity": "https://pi2009.cik.bg/activity/",
+      "text_result": "data/2009-07-05-pi2009-result.txt",
+      "screenshot_result": "data/2009-07-05-pi2009-result.png",
+      "url_result": "https://pi2009.cik.bg/results/proportional/index.html"
+    },
+    "activity": 60.2,
+    "id": "pi2009",
+    "assembly": 41
+  },
+  {
+    "date": "2013-05-12",
+    "metrics": {
+      "invalid": {
+        "value": 90047,
+        "quote": "12. Недействителни гласове\t90 047"
+      },
+      "validTotal": {
+        "value": 3541745,
+        "quote": "13. Брой на действителните гласове\t3 541 745"
+      },
+      "registered": {
+        "value": 6919260,
+        "quote": "1. Брой на избирателите\t6 919 260"
+      },
+      "voted": {
+        "value": 3632953,
+        "quote": "4. Брой на гласувалите избиратели\t3 632 953"
+      },
+      "parties": [
+        {
+          "name": "ПП \"ГЕРБ\"",
+          "votes": 1081605,
+          "percent": 30.535,
+          "mandates": 97
+        },
+        {
+          "name": "КП \"Коалиция за България\"",
+          "votes": 942541,
+          "percent": 26.609,
+          "mandates": 84
+        },
+        {
+          "name": "ПП \"Атака\"",
+          "votes": 258481,
+          "percent": 7.297,
+          "mandates": 23
+        },
+        {
+          "name": "ПП \"Движение за Права и Свободи\"",
+          "votes": 400466,
+          "percent": 11.306,
+          "mandates": 36
+        }
+      ]
+    },
+    "description": "Избори за 42-то Народно събрание",
+    "sources": {
+      "text_activity": "data/2013-05-12-pi2013-activity.txt",
+      "screenshot_activity": "data/2013-05-12-pi2013-activity.png",
+      "url_activity": "https://results.cik.bg/pi2013/aktivnost/",
+      "text_result": "data/2013-05-12-pi2013-result.txt",
+      "screenshot_result": "data/2013-05-12-pi2013-result.png",
+      "url_result": "https://results.cik.bg/pi2013/rezultati/"
+    },
+    "activity": 51.33,
+    "id": "pi2013",
+    "assembly": 42
+  },
+  {
+    "date": "2014-10-05",
+    "metrics": {
+      "invalid": {
+        "value": 218125,
+        "quote": "Брой на недействителни гласове\t218 125"
+      },
+      "validTotal": {
+        "value": 3283192,
+        "quote": "Брой на действителните гласове\t3 283 192"
+      },
+      "registered": {
+        "value": 6858304,
+        "quote": "Брой на избирателите според избирателните списъци при предаването им на СИК\t6 858 304"
+      },
+      "voted": {
+        "value": 3500585,
+        "quote": "Брой на гласувалите избиратели\t3 500 585"
+      },
+      "parties": [
+        {
+          "name": "ПП ГЕРБ",
+          "votes": 1072491,
+          "percent": 32.67,
+          "mandates": 84
+        },
+        {
+          "name": "ДПС - Движение за права и свободи",
+          "votes": 487134,
+          "percent": 14.84,
+          "mandates": 38
+        },
+        {
+          "name": "БСП лява България",
+          "votes": 505527,
+          "percent": 15.4,
+          "mandates": 39
+        },
+        {
+          "name": "РЕФОРМАТОРСКИ БЛОК - БЗНС, ДБГ, ДСБ, НПСД, СДС",
+          "votes": 291806,
+          "percent": 8.89,
+          "mandates": 23
+        },
+        {
+          "name": "АТАКА",
+          "votes": 148262,
+          "percent": 4.52,
+          "mandates": 11
+        },
+        {
+          "name": "КП БЪЛГАРИЯ БЕЗ ЦЕНЗУРА",
+          "votes": 186938,
+          "percent": 5.69,
+          "mandates": 15
+        },
+        {
+          "name": "Коалиция АБВ - (Алтернатива за българско възраждане)",
+          "votes": 136223,
+          "percent": 4.15,
+          "mandates": 11
+        },
+        {
+          "name": "ПАТРИОТИЧЕН ФРОНТ - НФСБ И ВМРО",
+          "votes": 239101,
+          "percent": 7.28,
+          "mandates": 19
+        }
+      ]
+    },
+    "description": "Избори за 43-то Народно събрание",
+    "sources": {
+      "text_activity": "data/2014-10-05-pi2014-activity.txt",
+      "screenshot_activity": "data/2014-10-05-pi2014-activity.png",
+      "url_activity": "https://results.cik.bg/pi2014/aktivnost/",
+      "text_result": "data/2014-10-05-pi2014-result.txt",
+      "screenshot_result": "data/2014-10-05-pi2014-result.png",
+      "url_result": "https://results.cik.bg/pi2014/rezultati/"
+    },
+    "activity": 48.66,
+    "id": "pi2014",
+    "assembly": 43
+  },
+  {
+    "date": "2017-03-26",
+    "metrics": {
+      "invalid": {
+        "value": 169009,
+        "quote": "6. Брой на недействителни гласове\t169 009"
+      },
+      "validTotal": {
+        "value": 3513419,
+        "quote": "7. Общият брой на действителните гласове\t3 513 419"
+      },
+      "validForParties": {
+        "value": 3425632,
+        "quote": "7.1. Действителни гласове за партии, коалиции и ИК\t3 425 632"
+      },
+      "validNone": {
+        "value": 87850,
+        "quote": "7.2. Действителни гласове „Не подкрепям никого”\t87 850"
+      },
+      "registered": {
+        "value": 6838235,
+        "quote": "1. Брой на избирателите според избирателните списъци при предаването им на СИК\t6 838 235"
+      },
+      "voted": {
+        "value": 3682151,
+        "quote": "3. Брой на гласувалите избиратели\t3 682 151"
+      },
+      "parties": [
+        {
+          "name": "ПП ГЕРБ",
+          "votes": 1147292,
+          "percent": 33.54,
+          "mandates": 95
+        },
+        {
+          "name": "БСП за БЪЛГАРИЯ",
+          "votes": 955490,
+          "percent": 27.93,
+          "mandates": 80
+        },
+        {
+          "name": "Движение за права и свободи – ДПС",
+          "votes": 315976,
+          "percent": 9.24,
+          "mandates": 26
+        },
+        {
+          "name": "ОБЕДИНЕНИ ПАТРИОТИ – НФСБ, АТАКА и ВМРО",
+          "votes": 318513,
+          "percent": 9.31,
+          "mandates": 27
+        },
+        {
+          "name": "ВОЛЯ",
+          "votes": 145637,
+          "percent": 4.26,
+          "mandates": 12
+        }
+      ]
+    },
+    "description": "Избори за 44-то Народно събрание",
+    "sources": {
+      "text_activity": "data/2017-03-26-pi2017-activity.txt",
+      "screenshot_activity": "data/2017-03-26-pi2017-activity.png",
+      "url_activity": "https://results.cik.bg/pi2017/aktivnost/index.html",
+      "text_result": "data/2017-03-26-pi2017-result.txt",
+      "screenshot_result": "data/2017-03-26-pi2017-result.png",
+      "url_result": "https://results.cik.bg/pi2017/rezultati/index.html"
+    },
+    "activity": 54.07,
+    "id": "pi2017",
+    "assembly": 44
+  },
+  {
+    "date": "2021-04-04",
+    "metrics": {
+      "invalid": {
+        "value": 86527,
+        "quote": "5. Брой на недействителните гласове (бюлетини)\t86 527"
+      },
+      "validTotal": {
+        "value": 3247754,
+        "quote": "6. Общ брой на действителните гласове\t3 247 754"
+      },
+      "validForParties": {
+        "value": 3200098,
+        "quote": "6.1 Действителни гласове за партии, коалиции и ИК\t3 200 098"
+      },
+      "validNone": {
+        "value": 47749,
+        "quote": "6.2 Действителни гласове „Не подкрепям никого”\t47 749"
+      },
+      "registered": {
+        "value": 6789605,
+        "quote": "1. Брой на избирателите в избирателните списъци при предаването им на СИК\t6 789 605"
+      },
+      "voted": {
+        "value": 3334283,
+        "quote": "2. Брой на гласувалите избиратели\t3 334 283"
+      },
+      "parties": [
+        {
+          "name": "ГЕРБ-СДС",
+          "votes": 837707,
+          "percent": 26.18,
+          "mandates": 75
+        },
+        {
+          "name": "ПП ИМА ТАКЪВ НАРОД",
+          "votes": 565014,
+          "percent": 17.66,
+          "mandates": 51
+        },
+        {
+          "name": "БСП за БЪЛГАРИЯ",
+          "votes": 480146,
+          "percent": 15.01,
+          "mandates": 43
+        },
+        {
+          "name": "Движение за права и свободи - ДПС",
+          "votes": 336306,
+          "percent": 10.51,
+          "mandates": 30
+        },
+        {
+          "name": "ДЕМОКРАТИЧНА БЪЛГАРИЯ – ОБЕДИНЕНИЕ (ДА България, ДСБ, Зелено движение)",
+          "votes": 302280,
+          "percent": 9.45,
+          "mandates": 27
+        },
+        {
+          "name": "ИЗПРАВИ СЕ! МУТРИ ВЪН!",
+          "votes": 150940,
+          "percent": 4.72,
+          "mandates": 14
+        }
+      ]
+    },
+    "description": "Избори за 45-то Народно събрание",
+    "sources": {
+      "text_activity": "data/2021-04-04-pi2021-activity.txt",
+      "screenshot_activity": "data/2021-04-04-pi2021-activity.png",
+      "url_activity": "https://results.cik.bg/pi2021/aktivnost/index.html",
+      "text_result": "data/2021-04-04-pi2021-result.txt",
+      "screenshot_result": "data/2021-04-04-pi2021-result.png",
+      "url_result": "https://results.cik.bg/pi2021/rezultati/index.html"
+    },
+    "activity": 50.61,
+    "id": "pi2021",
+    "assembly": 45
+  },
+  {
+    "date": "2021-07-11",
+    "metrics": {
+      "invalid": {
+        "value": 9342,
+        "quote": "6. Брой на намерените в избирателните кутии недействителни гласове (бюлетини)\t9 342"
+      },
+      "validTotal": {
+        "value": 2766426,
+        "quote": "7. Общ брой на действителните гласове\t2 766 426"
+      },
+      "validForParties": {
+        "value": 2731225,
+        "quote": "7.1 Брой на действителните гласове, подадени за кандидатските листи на партии, коалиции и инициативни комитети\t2 731 225"
+      },
+      "validNone": {
+        "value": 35201,
+        "quote": "7.2 Брой на действителните гласове с отбелязан вот в квадратчето „Не подкрепям никого“\t35 201"
+      },
+      "registered": {
+        "value": 6668540,
+        "quote": "1. Брой на избирателите в избирателните списъци при предаването им на СИК\t6 668 540"
+      },
+      "voted": {
+        "value": 2775754,
+        "quote": "3. Брой на гласувалите избиратели според положените подписи в избирателните списъци, включително и подписите в допълнителните страници (под чертата)\t2 775 754"
+      },
+      "parties": [
+        {
+          "name": "ПП ИМА ТАКЪВ НАРОД",
+          "votes": 657829,
+          "percent": 24.08,
+          "mandates": 65
+        },
+        {
+          "name": "ГЕРБ-СДС",
+          "votes": 642165,
+          "percent": 23.51,
+          "mandates": 63
+        },
+        {
+          "name": "БСП ЗА БЪЛГАРИЯ",
+          "votes": 365695,
+          "percent": 13.39,
+          "mandates": 36
+        },
+        {
+          "name": "ДЕМОКРАТИЧНА БЪЛГАРИЯ – ОБЕДИНЕНИЕ (ДА България, ДСБ, Зелено движение)",
+          "votes": 345331,
+          "percent": 12.64,
+          "mandates": 34
+        },
+        {
+          "name": "Движение за права и свободи - ДПС",
+          "votes": 292514,
+          "percent": 10.71,
+          "mandates": 29
+        },
+        {
+          "name": "ИЗПРАВИ СЕ! МУТРИ ВЪН!",
+          "votes": 136885,
+          "percent": 5.01,
+          "mandates": 13
+        }
+      ]
+    },
+    "description": "Избори за 46-то Народно събрание",
+    "sources": {
+      "text_activity": "data/2021-07-11-pi2021_07-activity.txt",
+      "screenshot_activity": "data/2021-07-11-pi2021_07-activity.png",
+      "url_activity": "https://results.cik.bg/pi2021_07/aktivnost/index.html",
+      "text_result": "data/2021-07-11-pi2021_07-result.txt",
+      "screenshot_result": "data/2021-07-11-pi2021_07-result.png",
+      "url_result": "https://results.cik.bg/pi2021_07/rezultati/index.html"
+    },
+    "activity": 42.19,
+    "id": "pi2021_07",
+    "assembly": 46
+  },
+  {
+    "date": "2021-11-14",
+    "metrics": {
+      "invalid": {
+        "value": 11315,
+        "quote": "6. Брой на намерените в избирателните кутии недействителни гласове (бюлетини)\t11 315"
+      },
+      "validTotal": {
+        "value": 2658503,
+        "quote": "7. Общ брой на действителните гласове\t2 658 503"
+      },
+      "validForParties": {
+        "value": 2622796,
+        "quote": "7.1 Брой на действителните гласове, подадени за кандидатските листи на партии, коалиции и инициативни комитети\t2 622 796"
+      },
+      "validNone": {
+        "value": 35745,
+        "quote": "7.2 Брой на действителните гласове с отбелязан вот в квадратчето „Не подкрепям никого“\t35 745"
+      },
+      "registered": {
+        "value": 6665534,
+        "quote": "1. Брой на избирателите в избирателните списъци при предаването им на СИК\t6 665 534"
+      },
+      "voted": {
+        "value": 2669260,
+        "quote": "3. Брой на гласувалите избиратели според положените подписи в избирателните списъци, включително и подписите в допълнителните страници (под чертата)\t2 669 260"
+      },
+      "parties": [
+        {
+          "name": "Продължаваме Промяната",
+          "votes": 673170,
+          "percent": 25.67,
+          "mandates": 67
+        },
+        {
+          "name": "ГЕРБ-СДС",
+          "votes": 596456,
+          "percent": 22.74,
+          "mandates": 59
+        },
+        {
+          "name": "Движение за права и свободи – ДПС",
+          "votes": 341000,
+          "percent": 13,
+          "mandates": 34
+        },
+        {
+          "name": "БСП ЗА БЪЛГАРИЯ",
+          "votes": 267817,
+          "percent": 10.21,
+          "mandates": 26
+        },
+        {
+          "name": "ПП ИМА ТАКЪВ НАРОД",
+          "votes": 249743,
+          "percent": 9.52,
+          "mandates": 25
+        },
+        {
+          "name": "ДЕМОКРАТИЧНА БЪЛГАРИЯ – ОБЕДИНЕНИЕ (ДА България, ДСБ, Зелено движение)",
+          "votes": 166968,
+          "percent": 6.37,
+          "mandates": 16
+        },
+        {
+          "name": "ВЪЗРАЖДАНЕ",
+          "votes": 127568,
+          "percent": 4.86,
+          "mandates": 13
+        }
+      ]
+    },
+    "description": "Избори за 47-то Народно събрание",
+    "sources": {
+      "text_activity": "data/2021-11-14-pvrns2021-tur1-ns-activity.txt",
+      "screenshot_activity": "data/2021-11-14-pvrns2021-tur1-ns-activity.png",
+      "url_activity": "https://results.cik.bg/pvrns2021/tur1/aktivnost/index.html",
+      "text_result": "data/2021-11-14-pvrns2021-tur1-ns-result.txt",
+      "screenshot_result": "data/2021-11-14-pvrns2021-tur1-ns-result.png",
+      "url_result": "https://results.cik.bg/pvrns2021/tur1/rezultati/index.html"
+    },
+    "activity": 40.23,
+    "id": "pvrns2021",
+    "assembly": 47
+  },
+  {
+    "date": "2022-10-02",
+    "metrics": {
+      "invalid": {
+        "value": 9042,
+        "quote": "6. Брой на намерените в избирателните кутии недействителни гласове (бюлетини)\t9 042"
+      },
+      "validTotal": {
+        "value": 2592907,
+        "quote": "7. Общ брой на действителните гласове\t2 592 907"
+      },
+      "validForParties": {
+        "value": 2505272,
+        "quote": "7.1 Брой на действителните гласове, подадени за кандидатските листи на партии, коалиции и инициативни комитети\t2 505 272"
+      },
+      "validNone": {
+        "value": 87635,
+        "quote": "7.2 Брой на действителните гласове с отбелязан вот в квадратчето „Не подкрепям никого“\t87 635"
+      },
+      "registered": {
+        "value": 6620820,
+        "quote": "1. Брой на избирателите в избирателните списъци при предаването им на СИК\t6 620 820"
+      },
+      "voted": {
+        "value": 2601900,
+        "quote": "3. Брой на гласувалите избиратели според положените подписи в избирателните списъци, включително и подписите в допълнителните страници (под чертата)\t2 601 900"
+      },
+      "parties": [
+        {
+          "name": "ГЕРБ-СДС",
+          "votes": 634627,
+          "percent": 25.33,
+          "mandates": 67
+        },
+        {
+          "name": "Продължаваме Промяната",
+          "votes": 506099,
+          "percent": 20.2,
+          "mandates": 53
+        },
+        {
+          "name": "Движение за права и свободи – ДПС",
+          "votes": 344512,
+          "percent": 13.75,
+          "mandates": 36
+        },
+        {
+          "name": "ВЪЗРАЖДАНЕ",
+          "votes": 254952,
+          "percent": 10.18,
+          "mandates": 27
+        },
+        {
+          "name": "БСП ЗА БЪЛГАРИЯ",
+          "votes": 232958,
+          "percent": 9.3,
+          "mandates": 25
+        },
+        {
+          "name": "ДЕМОКРАТИЧНА БЪЛГАРИЯ – ОБЕДИНЕНИЕ (ДА България, ДСБ, Зелено движение)",
+          "votes": 186528,
+          "percent": 7.45,
+          "mandates": 20
+        },
+        {
+          "name": "БЪЛГАРСКИ ВЪЗХОД",
+          "votes": 115872,
+          "percent": 4.63,
+          "mandates": 12
+        }
+      ]
+    },
+    "description": "Избори за 48-то Народно събрание",
+    "sources": {
+      "text_activity": "data/2022-10-02-ns2022-activity.txt",
+      "screenshot_activity": "data/2022-10-02-ns2022-activity.png",
+      "url_activity": "https://results.cik.bg/ns2022/aktivnost/index.html",
+      "text_result": "data/2022-10-02-ns2022-result.txt",
+      "screenshot_result": "data/2022-10-02-ns2022-result.png",
+      "url_result": "https://results.cik.bg/ns2022/rezultati/index.html"
+    },
+    "activity": 39.41,
+    "id": "ns2022",
+    "assembly": 48
+  },
+  {
+    "date": "2023-04-02",
+    "metrics": {
+      "invalid": {
+        "value": 44617,
+        "quote": "6. Брой на недействителните гласове от хартиени бюлетини\t44 617"
+      },
+      "validTotal": {
+        "value": 2638024,
+        "quote": "7.(о) Общо (о)\t2 638 024"
+      },
+      "validForParties": {
+        "value": 2529233,
+        "quote": "7.1.(о) Общо (о)\t2 529 233"
+      },
+      "validNone": {
+        "value": 109095,
+        "quote": "7.2.(о) Общо (о)\t109 095"
+      },
+      "registered": {
+        "value": 6622013,
+        "quote": "1. Брой на избирателите в избирателните списъци при предаването им на СИК\t6 622 013"
+      },
+      "voted": {
+        "value": 2682338,
+        "quote": "3. Брой на гласувалите избиратели според положените подписи в избирателните списъци, включително и подписите в допълнителните страници (под чертата)\t2 682 338"
+      },
+      "parties": [
+        {
+          "name": "ГЕРБ-СДС",
+          "votes": 669924,
+          "percent": 26.49,
+          "mandates": 69
+        },
+        {
+          "name": "КОАЛИЦИЯ ПРОДЪЛЖАВАМЕ ПРОМЯНАТА – ДЕМОКРАТИЧНА БЪЛГАРИЯ",
+          "votes": 621069,
+          "percent": 24.56,
+          "mandates": 64
+        },
+        {
+          "name": "ВЪЗРАЖДАНЕ",
+          "votes": 358174,
+          "percent": 14.16,
+          "mandates": 37
+        },
+        {
+          "name": "Движение за права и свободи – ДПС",
+          "votes": 347700,
+          "percent": 13.75,
+          "mandates": 36
+        },
+        {
+          "name": "БСП ЗА БЪЛГАРИЯ",
+          "votes": 225914,
+          "percent": 8.93,
+          "mandates": 23
+        },
+        {
+          "name": "ПП ИМА ТАКЪВ НАРОД",
+          "votes": 103971,
+          "percent": 4.11,
+          "mandates": 11
+        }
+      ]
+    },
+    "description": "Избори за 49-то Народно събрание",
+    "sources": {
+      "text_activity": "data/2023-04-02-ns2023-activity.txt",
+      "screenshot_activity": "data/2023-04-02-ns2023-activity.png",
+      "url_activity": "https://results.cik.bg/ns2023/aktivnost/index.html",
+      "text_result": "data/2023-04-02-ns2023-result.txt",
+      "screenshot_result": "data/2023-04-02-ns2023-result.png",
+      "url_result": "https://results.cik.bg/ns2023/rezultati/index.html"
+    },
+    "activity": 40.69,
+    "id": "ns2023",
+    "assembly": 49
+  },
+  {
+    "date": "2024-06-09",
+    "metrics": {
+      "invalid": {
+        "value": 58496,
+        "quote": "17. Брой на намерените в избирателните кутии недействителни гласове (бюлетини) 58 496"
+      },
+      "validForParties": {
+        "value": 2147735,
+        "quote": "20. Сума на действителните гласове, подадени за кандидатските листи на партии и коалиции\t2 147 735"
+      },
+      "validNone": {
+        "value": 63913,
+        "quote": "18. Брой на действителните гласове с отбелязан вот „Не подкрепям никого“\t63 913"
+      },
+      "registered": {
+        "value": 6594076,
+        "quote": "1. Брой на избирателите в избирателните списъци при предаването им на СИК\t6 594 076"
+      },
+      "voted": {
+        "value": 2268849,
+        "quote": "3. Брой на гласувалите избиратели според положените подписи в избирателните списъци, включително и подписите в допълнителните страници (под чертата)\t2 268 849"
+      },
+      "parties": [
+        {
+          "name": "ГЕРБ-СДС",
+          "votes": 530658,
+          "percent": 24.71,
+          "mandates": 68
+        },
+        {
+          "name": "Движение за права и свободи – ДПС",
+          "votes": 366310,
+          "percent": 17.06,
+          "mandates": 47
+        },
+        {
+          "name": "КОАЛИЦИЯ ПРОДЪЛЖАВАМЕ ПРОМЯНАТА – ДЕМОКРАТИЧНА БЪЛГАРИЯ",
+          "votes": 307849,
+          "percent": 14.33,
+          "mandates": 39
+        },
+        {
+          "name": "ВЪЗРАЖДАНЕ",
+          "votes": 295915,
+          "percent": 13.78,
+          "mandates": 38
+        },
+        {
+          "name": "БСП за БЪЛГАРИЯ",
+          "votes": 151560,
+          "percent": 7.06,
+          "mandates": 19
+        },
+        {
+          "name": "ПП ИМА ТАКЪВ НАРОД",
+          "votes": 128007,
+          "percent": 5.96,
+          "mandates": 16
+        },
+        {
+          "name": "ПП ВЕЛИЧИЕ",
+          "votes": 99862,
+          "percent": 4.65,
+          "mandates": 13
+        }
+      ]
+    },
+    "description": "Избори за 50-то Народно събрание",
+    "sources": {
+      "text_activity": "data/2024-06-09-europe2024-ns-activity.txt",
+      "screenshot_activity": "data/2024-06-09-europe2024-ns-activity.png",
+      "url_activity": "https://results.cik.bg/europe2024/aktivnost/index.html",
+      "text_result": "data/2024-06-09-europe2024-ns-result.txt",
+      "screenshot_result": "data/2024-06-09-europe2024-ns-result.png",
+      "url_result": "https://results.cik.bg/europe2024/rezultati/index.html"
+    },
+    "activity": 34.41,
+    "id": "europe2024",
+    "assembly": 50
+  },
+  {
+    "date": "2024-10-27",
+    "metrics": {
+      "invalid": {
+        "value": 51791,
+        "quote": "17. Брой на намерените в избирателните кутии недействителни гласове (бюлетини)\t51 791"
+      },
+      "validForParties": {
+        "value": 2434761,
+        "quote": "20. Сума на действителните гласове, подадени за кандидатските листи на партии, коалиции и независими кандидати\t2 434 761"
+      },
+      "validNone": {
+        "value": 82414,
+        "quote": "18. Брой на действителните гласове с отбелязан вот „Не подкрепям никого“\t82 414"
+      },
+      "registered": {
+        "value": 6619877,
+        "quote": "1. Брой на избирателите в избирателните списъци при предаването им на СИК\t6 619 877"
+      },
+      "voted": {
+        "value": 2570629,
+        "quote": "3. Брой на гласувалите избиратели според положените подписи в избирателните списъци, включително и подписите в допълнителните страници (под чертата)\t2 570 629"
+      },
+      "parties": [
+        {
+          "name": "ГЕРБ-СДС",
+          "votes": 642521,
+          "percent": 26.389,
+          "mandates": 66
+        },
+        {
+          "name": "КОАЛИЦИЯ ПРОДЪЛЖАВАМЕ ПРОМЯНАТА – ДЕМОКРАТИЧНА БЪЛГАРИЯ",
+          "votes": 346074,
+          "percent": 14.214,
+          "mandates": 36
+        },
+        {
+          "name": "ВЪЗРАЖДАНЕ",
+          "votes": 325358,
+          "percent": 13.363,
+          "mandates": 33
+        },
+        {
+          "name": "ДПС-Ново начало",
+          "votes": 280246,
+          "percent": 11.51,
+          "mandates": 29
+        },
+        {
+          "name": "БСП – ОБЕДИНЕНА ЛЕВИЦА",
+          "votes": 184361,
+          "percent": 7.572,
+          "mandates": 19
+        },
+        {
+          "name": "АЛИАНС ЗА ПРАВА И СВОБОДИ – АПС",
+          "votes": 182254,
+          "percent": 7.485,
+          "mandates": 19
+        },
+        {
+          "name": "ПП ИМА ТАКЪВ НАРОД",
+          "votes": 165191,
+          "percent": 6.785,
+          "mandates": 17
+        },
+        {
+          "name": "ПП МЕЧ",
+          "votes": 111993,
+          "percent": 4.6,
+          "mandates": 11
+        },
+        {
+          "name": "ПП ВЕЛИЧИЕ",
+          "votes": 97497,
+          "percent": 4.004,
+          "mandates": 10
+        }
+      ]
+    },
+    "description": "Избори за 51-во Народно събрание",
+    "sources": {
+      "text_activity": "data/2024-10-27-pe202410-activity.txt",
+      "screenshot_activity": "data/2024-10-27-pe202410-activity.png",
+      "url_activity": "https://results.cik.bg/pe202410/aktivnost/index.html",
+      "text_result": "data/2024-10-27-pe202410_ks-result.txt",
+      "screenshot_result": "data/2024-10-27-pe202410_ks-result.png",
+      "url_result": "https://results.cik.bg/pe202410_ks/rezultati/index.html"
+    },
+    "activity": 38.94,
+    "id": "pe202410_ks",
+    "assembly": 51
+  },
+  {
+    "date": "2026-04-19",
+    "metrics": null,
+    "description": "Избори за 52-во Народно събрание",
+    "id": null,
+    "assembly": 52
+  }
+]

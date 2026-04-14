@@ -1,0 +1,27 @@
+<div class="bg-[#f3f4f7] overflow-hidden">
+  <div class="page-container-sm">
+    <app-header title="Контрастът на изборния ден в България"></app-header>
+  </div>
+</div>
+
+<section class="contrast-split">
+  @for (item of lists$ | async; track idx; let idx = $index) {
+    <div class="split-pair" [style.--delay]="idx">
+      <div class="col col-dark">
+        <a [href]="item[0]['ref']" target="_blank" rel="noopener" class="quote-card"
+           (mousemove)="onMouseMove($event)" (mouseleave)="onMouseLeave($event)">
+          <span class="q-glyph" aria-hidden="true">„</span>
+          <span class="q-body" [innerHTML]="item[0]['text']"></span>
+        </a>
+      </div>
+      <div class="col-divider"></div>
+      <div class="col col-light">
+        <a [href]="item[1]['ref']" target="_blank" rel="noopener" class="quote-card"
+           (mousemove)="onMouseMove($event)" (mouseleave)="onMouseLeave($event)">
+          <span class="q-glyph" aria-hidden="true">„</span>
+          <span class="q-body" [innerHTML]="item[1]['text']"></span>
+        </a>
+      </div>
+    </div>
+  }
+</section>

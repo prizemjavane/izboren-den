@@ -1,0 +1,40 @@
+@forward 'variables';
+@use 'variables' as *;
+
+// Segmented toggle control (radio + checkbox)
+.toggle-group {
+  display: flex;
+  background: $bdr-l;
+  border-radius: 6px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.toggle-option {
+  input[type='radio'],
+  input[type='checkbox'] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  label {
+    display: block;
+    padding: 4px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #9ca3af;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.12s;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  input:checked + label {
+    background: #fff;
+    color: #111827;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    font-weight: 600;
+  }
+}

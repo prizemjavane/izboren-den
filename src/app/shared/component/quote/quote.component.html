@@ -1,0 +1,59 @@
+<div class="q-carousel">
+  <!-- Slides -->
+  <div class="q-stage">
+    @for (q of quotes; track q.url; let i = $index) {
+      <blockquote
+        class="q-card"
+        [ngClass]="{
+          'q-active': i === activeIndex,
+          'q-exit': i !== activeIndex,
+          'q-dir-next': direction === 'next',
+          'q-dir-prev': direction === 'prev'
+        }"
+        [attr.aria-hidden]="i !== activeIndex">
+        <div class="q-accent" aria-hidden="true"></div>
+        <div class="q-body">
+          <div class="q-mark" aria-hidden="true">&ldquo;</div>
+          <p class="q-text">
+            <a [href]="q.url" target="_blank" class="q-link glow-1">&bdquo;{{ q.text }}&ldquo;</a>
+          </p>
+          <div class="q-rule" aria-hidden="true"></div>
+          <footer class="q-footer">
+            @if (q.authorLink) {
+              <a [href]="q.authorLink" target="_blank" class="q-author q-author--link glow-1">{{ q.author }}</a>
+            } @else {
+              <span class="q-author">{{ q.author }}</span>
+            }
+            <span class="q-dot" aria-hidden="true"></span>
+            <time class="q-date">{{ q.date | bgDate }}</time>
+          </footer>
+        </div>
+      </blockquote>
+    }
+  </div>
+
+  <!-- Navigation -->
+  @if (hasMultiple) {
+    <div class="q-nav">
+      <button class="q-arrow q-arrow--prev" (click)="prev()" aria-label="Предишен цитат">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+
+      <div class="q-dots">
+        @for (q of quotes; track q.url; let i = $index) {
+          <button
+            class="q-dot-btn"
+            [ngClass]="{ 'q-dot-active': i === activeIndex }"
+            (click)="goTo(i)"
+            [attr.aria-label]="'Цитат ' + (i + 1)">
+            <span class="q-dot-fill"></span>
+          </button>
+        }
+      </div>
+
+      <button class="q-arrow q-arrow--next" (click)="next()" aria-label="Следващ цитат">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  }
+</div>

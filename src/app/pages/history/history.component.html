@@ -1,0 +1,67 @@
+<div class="page-shell">
+  <div class="page-container">
+    <app-header title="История на изборния ден"></app-header>
+  </div>
+
+  @if (bigChart?.chartInstance) {
+    <div class="container mx-auto px-6">
+      <div class="card py-3 px-5 mb-5">
+        <!-- Row 1: Actions + Presets + Labels + Magnitude -->
+        <div class="flex items-center gap-5 flex-wrap">
+          <div class="flex items-center gap-1">
+            <button (click)="restoreDefaults()" class="action-btn"><lucide-icon name="refresh-cw"></lucide-icon><span class="action-tooltip">Презареди</span></button>
+            <button (click)="bigChart!.saveImage()" class="action-btn"><lucide-icon name="download"></lucide-icon><span class="action-tooltip">Запази като снимка</span></button>
+            <button (click)="bigChart!.unselectAll()" class="action-btn"><lucide-icon name="x-circle"></lucide-icon><span class="action-tooltip">Премахни селекция</span></button>
+          </div>
+
+          <div class="vdivider h-6"></div>
+
+          <div class="toggle-group">
+            <div class="toggle-option">
+              <input [(ngModel)]="switches['covid']" (change)="onChangePreset()" type="checkbox" id="sw-covid">
+              <label for="sw-covid">COVID</label>
+            </div>
+<div class="toggle-option">
+              <input [(ngModel)]="switches['protests']" (change)="onChangePreset()" type="checkbox" id="sw-protests">
+              <label for="sw-protests">Протести</label>
+            </div>
+            <div class="toggle-option">
+              <input [(ngModel)]="switches['parliament-elections']" (change)="onChangePreset()" type="checkbox" id="sw-parliament-elections">
+              <label for="sw-parliament-elections">Парламентарни избори</label>
+            </div>
+          </div>
+
+          <div class="vdivider h-6"></div>
+
+          <label for="sw-labels" class="toggle-switch">
+            <span class="toggle-label">Покажи числа</span>
+            <input type="checkbox" [(ngModel)]="switches['labels']" (change)="toggleLabels()" id="sw-labels">
+            <span class="toggle-track"></span>
+          </label>
+        </div>
+
+      </div>
+    </div>
+  }
+
+  <!-- Chart -->
+  <div class="bg-white py-4">
+    <app-big-chart
+      [options]="chart"
+      height="85vh"
+      (chartReady)="onChartReady($event)"
+      (dataClick)="onDataClick($event)"
+      (legendSelectChanged)="onChartLegendSelectChanged($event)">
+    </app-big-chart>
+  </div>
+
+  <div class="container mx-auto px-6 mt-5 mb-8">
+    <div class="card py-3 px-5 text-sm text-gray-500">
+      Всички данни са базирани на официалните данни от ЦИК:
+      <a href="https://results.cik.bg/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">results.cik.bg</a>.
+      Данни:
+      <a href="data/election-day" target="_blank" class="text-blue-600 hover:underline">election-day</a>,
+      <a href="data/parliament_normalized.json" target="_blank" class="text-blue-600 hover:underline">parliament_normalized.json</a>.
+    </div>
+  </div>
+</div>

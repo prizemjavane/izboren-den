@@ -1,0 +1,38 @@
+@use 'typography';
+@use 'tooltip';
+
+@mixin glow($duration) {
+  background: linear-gradient(90deg, #111827 0%, #111827 20%, #8b5cf6 45%, #ec4899 55%, #111827 80%, #111827 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-sweep $duration linear infinite;
+  animation-delay: var(--glow-offset, 0s);
+  text-decoration: none;
+  transition: -webkit-text-fill-color 0.3s;
+
+  &:hover {
+    -webkit-text-fill-color: #8b5cf6;
+  }
+}
+
+.glow-1 {
+  @include glow(5s);
+}
+
+.glow-2 {
+  @include glow(5.4s);
+}
+
+.glow-3 {
+  @include glow(5.8s);
+}
+.glow-4 {
+  @include glow(6.2s);
+}
+
+@keyframes gradient-sweep {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: -200% 50%; }
+}

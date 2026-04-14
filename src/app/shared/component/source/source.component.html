@@ -1,0 +1,16 @@
+@for (item of data; track item) {
+  @let links = getLinks(item);
+  <div class="source-card" [class.visited]="allVisited(item)" (click)="openAllLinks(links)">
+    <span class="source-card-title">{{ item.title }}</span>
+    <div class="source-card-footer">
+      <span class="source-card-meta" [attr.data-date]="item.date | bgDate" [attr.data-url]="(links[0] || '') | shortUrl">{{ item.media }}</span>
+      @if (links.length > 1) {
+        <span class="source-link-pills">
+          @for (url of links.slice(1); track url; let j = $index) {
+            <a [href]="url" class="source-link-pill" [class.source-link-pill--visited]="isVisited(url)" (click)="openLink(url, $event)" target="_blank" [attr.data-url]="url | shortUrl">{{ j + 1 }}</a>
+          }
+        </span>
+      }
+    </div>
+  </div>
+}

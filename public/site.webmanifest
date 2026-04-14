@@ -1,0 +1,9 @@
+{
+  "name": "Симулатор на изборния ден",
+  "short_name": "vote",
+  "icons": [],
+  "start_url": "/#/",
+  "theme_color": "#1e2a3a",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

@@ -1,0 +1,25 @@
+<div class="header-masthead">
+  <div class="header-brand">
+    <div class="header-logo" aria-hidden="true">
+      <img src="images/logo.svg" alt="" width="60" height="40" />
+    </div>
+    <div class="header-titles">
+      <h1 class="header-title">{{ title }}</h1>
+      <p class="header-prehod">
+        <a href="https://www.youtube.com/watch?v=IXerlCoWasg" target="_blank" class="glow-1">{{ thePrehod }}</a> от <a href="https://www.youtube.com/watch?v=jePGMadCx0w" target="_blank" class="glow-2">началото</a> на <a href="https://www.youtube.com/watch?v=cEoDQ8iZwQc&t=35s" target="_blank" class="glow-4">прехода</a> към <a href="https://www.coe.int/bg/web/compass/democracy" target="_blank" class="glow-3">демокрация</a><a href="https://www.youtube.com/watch?v=19jBGiTBUlI&t=212s" class="glow-3" target="_blank">.</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<nav class="header-nav" aria-label="Основна навигация">
+  <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{paths: 'exact', queryParams: 'ignored', fragment: 'ignored', matrixParams: 'ignored'}">
+    <span class="nav-label">Симулатор на изборния ден</span>
+  </a>
+  <a class="nav-link" routerLink="/history" routerLinkActive="active">
+    <span class="nav-label">История на изборния ден</span>
+  </a>
+  <a class="nav-link" routerLink="/contrast" routerLinkActive="active">
+    <span class="nav-label">Контрастът на изборния ден</span>
+  </a>
+</nav>

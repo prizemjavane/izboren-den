@@ -1,0 +1,1701 @@
+[
+  {
+    "name": "Президент",
+    "items": [
+      {
+        "name": "Желю Желев",
+        "value": ["1990-08-01", "1992-01-22"],
+        "sources": [
+          {
+            "name": "ПРЕЗИДЕНТИТЕ НА БЪЛГАРИЯ",
+            "url": ["https://m.president.bg/bg/cat73/Prezidentite-na-Bulgaria"]
+          }
+        ]
+      },
+      {
+        "name": "Желю Желев",
+        "value": ["1992-01-22", "1997-01-22"],
+        "sources": [
+          {
+            "name": "ПРЕЗИДЕНТИТЕ НА БЪЛГАРИЯ",
+            "url": ["https://m.president.bg/bg/cat73/Prezidentite-na-Bulgaria"]
+          }
+        ]
+      },
+      {
+        "name": "Петър Стоянов",
+        "value": ["1997-01-22", "2002-01-22"],
+        "sources": [
+          {
+            "name": "ПРЕЗИДЕНТИТЕ НА БЪЛГАРИЯ",
+            "url": ["https://m.president.bg/bg/cat73/Prezidentite-na-Bulgaria"]
+          }
+        ]
+      },
+      {
+        "name": "Георги Първанов",
+        "value": ["2002-01-22", "2007-01-22"],
+        "sources": [
+          {
+            "name": "ПРЕЗИДЕНТИТЕ НА БЪЛГАРИЯ",
+            "url": ["https://m.president.bg/bg/cat73/Prezidentite-na-Bulgaria"]
+          }
+        ]
+      },
+      {
+        "name": "Георги Първанов",
+        "value": ["2007-01-22", "2012-01-22"],
+        "sources": [
+          {
+            "name": "ПРЕЗИДЕНТИТЕ НА БЪЛГАРИЯ",
+            "url": ["https://m.president.bg/bg/cat73/Prezidentite-na-Bulgaria"]
+          }
+        ]
+      },
+      {
+        "name": "Росен Плевнелиев",
+        "value": ["2012-01-22", "2017-01-22"],
+        "sources": [
+          {
+            "name": "ПРЕЗИДЕНТИТЕ НА БЪЛГАРИЯ",
+            "url": ["https://m.president.bg/bg/cat73/Prezidentite-na-Bulgaria"]
+          }
+        ]
+      },
+      {
+        "name": "Румен Радев",
+        "value": ["2017-01-22", "2022-01-22"],
+        "sources": [
+          {
+            "name": "ПРЕЗИДЕНТИТЕ НА БЪЛГАРИЯ",
+            "url": ["https://m.president.bg/bg/cat73/Prezidentite-na-Bulgaria"]
+          },
+          {
+            "name": "Румен Радев",
+            "url": ["https://bg.wikipedia.org/wiki/%D0%A0%D1%83%D0%BC%D0%B5%D0%BD_%D0%A0%D0%B0%D0%B4%D0%B5%D0%B2"]
+          }
+        ]
+      },
+      {
+        "name": "Румен Радев",
+        "value": ["2022-01-22", "2026-01-23"],
+        "sources": [
+          {
+            "name": "ПРЕЗИДЕНТИТЕ НА БЪЛГАРИЯ",
+            "url": ["https://m.president.bg/bg/cat73/Prezidentite-na-Bulgaria"]
+          },
+          {
+            "name": "Румен Радев",
+            "url": ["https://bg.wikipedia.org/wiki/%D0%A0%D1%83%D0%BC%D0%B5%D0%BD_%D0%A0%D0%B0%D0%B4%D0%B5%D0%B2"]
+          },
+          {
+            "name": "Оставката на президента Радев е факт, на ход е Конституционният съд",
+            "url": ["https://www.dnevnik.bg/bulgaria/2026/01/19/4874202_prezidentut_rumen_radev_shte_napravi_obrushtenie_kum"],
+            "date": "2026-01-19"
+          }
+        ]
+      },
+      {
+        "name": "Илияна Йотова",
+        "value": ["2026-01-23", null],
+        "sources": [
+          {
+            "name": "ПРЕЗИДЕНТИТЕ НА БЪЛГАРИЯ",
+            "url": ["https://m.president.bg/bg/cat73/Prezidentite-na-Bulgaria"]
+          },
+          {
+            "name": "България има нов президент - Илияна Йотова",
+            "url": ["https://www.bta.bg/bg/news/bulgaria/1049855-balgariya-ima-nov-prezident-iliyana-yotova-konstitutsionniyat-sad-prekrati-pr"],
+            "date": "2026-01-23"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Народно събрание",
+    "meta": {
+      "info": "Ключови моменти свързани с народното събрание",
+      "tags": [
+        "първо заседание",
+        "последно заседание",
+        "преговори за кабинет",
+        "консултации с президента",
+        "получаване на мандат от президента",
+        "връщане на мандат на президента",
+        "вот на доверие",
+        "вот на недоверие",
+        "избиране на председател",
+        "сваляне на председател"
+      ]
+    },
+    "items": [
+      {
+        "name": "38 Н С",
+        "label": "38",
+        "value": ["1997-05-07", "2001-04-19"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          }
+        ]
+      },
+      {
+        "name": "39 Н С",
+        "label": "39",
+        "value": ["2001-07-05", "2005-06-17"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          }
+        ]
+      },
+      {
+        "name": "40 Н С",
+        "label": "40",
+        "value": ["2005-07-11", "2009-06-25"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          }
+        ]
+      },
+      {
+        "name": "41 Н С",
+        "label": "41",
+        "value": ["2009-07-14", "2013-03-14"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          },
+          {
+            "name": "Бойко Борисов връчи списъка на министрите 23 - 07 - 2009",
+            "url": ["https://www.youtube.com/watch?v=6yA0HeaGFas"],
+            "date": "2009-07-23"
+          }
+        ]
+      },
+      {
+        "name": "42 Н С",
+        "label": "42",
+        "value": ["2013-05-21", "2014-08-05"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          },
+          {
+            "name": "Бойко Борисов взе мандата и после го върна",
+            "url": ["https://www.youtube.com/watch?v=9biZdUlcNBU"],
+            "date": "2014-07-25"
+          }
+        ]
+      },
+      {
+        "name": "43 Н С",
+        "label": "43",
+        "value": ["2014-10-27", "2017-01-26"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          },
+          {
+            "name": "Плевнелиев връчи мандат за съставяне на правителство на Бойко Борисов",
+            "url": ["https://www.youtube.com/watch?v=CULypAgdP7U"],
+            "date": "2016-12-02"
+          },
+          {
+            "name": "Патриотите готови да приемат мандат за съставяне на правителство",
+            "url": ["https://www.youtube.com/watch?v=Frbguf34eds"],
+            "date": "2016-11-23"
+          }
+        ]
+      },
+      {
+        "name": "44 Н С",
+        "label": "44",
+        "value": ["2017-04-19", "2021-03-26"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          },
+          {
+            "name": "Бойко Борисов връчи на президента Румен Радев мандат за състав и структура на правителство",
+            "url": ["https://www.youtube.com/watch?v=-y0qnIR_htg"],
+            "date": "2017-04-04"
+          }
+        ]
+      },
+      {
+        "name": "45 Н С",
+        "label": "45",
+        "value": ["2021-04-15", "2021-05-11"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          },
+          {
+            "name": "\nПърво изявление на Слави Трифонов по темата - Какво ще прави \"Има такъв народ\"? 12.07.2021",
+            "url": ["https://www.youtube.com/watch?v=BkHjnHlbtKo"]
+          },
+          {
+            "name": "Първото заседание на новия състав на Народното събрание",
+            "url": ["https://www.youtube.com/watch?v=X3Qyju1iAc0"],
+            "date": "2021-04-15"
+          },
+          {
+            "name": "Избиране на Ива Митева за прецедател на Народното събрание",
+            "url": ["https://www.youtube.com/live/X3Qyju1iAc0?t=1650s"],
+            "date": "2021-04-15"
+          }
+        ]
+      },
+      {
+        "name": "46 Н С",
+        "label": "46",
+        "value": ["2021-07-21", "2021-09-15"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          },
+          {
+            "name": "Слави Трифонов предложи бившия министър Николай Василев за премиер и кабинет от експерти",
+            "url": ["https://www.youtube.com/watch?v=LIVCZZ08CNE", "https://www.youtube.com/watch?v=-VoRIIw1YNo"],
+            "date": "2021-07-12"
+          },
+          {
+            "name": "Лице в лице: Кирил Петков за предложението за кабинет на Слави Трифонов",
+            "url": ["https://www.youtube.com/watch?v=eM4zKpfhOTI"],
+            "date": "2021-07-14"
+          },
+          {
+            "name": "Номинираният за премиер Пламен Николов и неговите пет приоритета",
+            "url": ["https://www.youtube.com/watch?v=uaF8-r-J3SI"],
+            "date": "2021-07-20"
+          },
+          {
+            "name": "Президентът връчи мандата - Пламен Николов е кандидатът за премиер на „Има такъв народ”",
+            "url": ["https://www.youtube.com/watch?v=I8pnHFVuDMA", "https://www.youtube.com/watch?v=QRApAYMk2aU"],
+            "date": "2021-07-30"
+          },
+          {
+            "name": "Пламен Николов в \"Панорама\": Страната не е имала премиер като мен досега",
+            "url": ["https://www.youtube.com/watch?v=E5L82ZOy0kw"],
+            "date": "2021-07-30"
+          },
+          {
+            "name": "Пламен Николов на кастинга на Слави за политици (видео)",
+            "url": [
+              "https://www.youtube.com/watch?v=BxWwTGAxfhc",
+              "https://darik.bg/plamen-nikolov-na-kastinga-na-slavi-za-politici-video",
+              "https://www.dnes.bg/a/57-politika/498937-plamen-nikolov-na-kasting-za-polititsi-kakvo-kaza",
+              "https://www.plovdiv24.bg/novini/Bylgaria/Eto-kak-Plamen-Nikolov-se-predstavi-prez-2018-g-pri-Slavi-Trifonov-na-kastinga-za-politici-1111295"
+            ],
+            "date": "2021-07-30"
+          },
+          {
+            "name": "Пламен Николов:При тези условия не искам да приема този мандат вече - Здравей, България (12.08.2021)",
+            "url": ["https://www.youtube.com/watch?v=0ac4Ke9adww"],
+            "date": "2021-08-12"
+          },
+          {
+            "name": "\"Има такъв народ\" отказа и на президента да разговаря за кабинет",
+            "url": ["https://www.youtube.com/watch?v=0FMJZWp0wqM"],
+            "date": "2021-08-17"
+          },
+          {
+            "name": "Как реагираха политическите партии на кандидатурата на Пламен Николов?",
+            "url": ["https://www.youtube.com/watch?v=4daMtbvj1Cw"],
+            "date": "2021-08-02"
+          },
+          {
+            "name": "Пламен Николов: Продължаваме преговорите",
+            "url": ["https://www.youtube.com/watch?v=D6j01OH_bpI"],
+            "date": "2021-08-05"
+          },
+          {
+            "name": "Петър Илиев: Знам пътя си и продължавам напред - Здравей, България (09.08.2021)",
+            "url": ["https://www.youtube.com/watch?v=vpzs49FGxtE"],
+            "date": "2021-08-09"
+          },
+          {
+            "name": "\"Няма да предложим състав на правителство\": Новите консултации на Румен Радев с ГЕРБ",
+            "url": ["https://www.youtube.com/watch?v=uX7Jhpv98TE"],
+            "date": "2021-08-17"
+          },
+          {
+            "name": "Румен Радев към БСП: Разчитам и занапред да търсите допирни точки с другите партии",
+            "url": ["https://www.youtube.com/watch?v=K8_5SRSS4X0"],
+            "date": "2021-08-17"
+          },
+          {
+            "name": "Президентът Румен Радев проведе консултации с \"Демократична България\"",
+            "url": ["https://www.youtube.com/watch?v=MLHULKuwzeQ"],
+            "date": "2021-08-18"
+          },
+          {
+            "name": "ГЕРБ върнаха втория мандат за съставяне на правителство",
+            "url": ["https://www.youtube.com/watch?v=HDv90z32BWI"],
+            "date": "2021-08-20"
+          },
+          {
+            "name": "Слави Трифонов специално за БНТ: Правителство с мандат на БСП е невъзможно - 27.08.2021",
+            "url": ["https://www.youtube.com/watch?v=UWc3DVitkwQ"],
+            "date": "2021-08-27"
+          },
+          {
+            "name": "Пресконференция на \"Има Такъв Народ\" 16.07.2021",
+            "url": ["https://www.youtube.com/watch?v=A4HYF-u3aSA"],
+            "date": "2021-07-16"
+          },
+          {
+            "name": "Гласуването в парламента на отказа на Пламен Николов да е премиер",
+            "url": ["https://www.youtube.com/watch?v=6WocbzmUIjE"],
+            "date": "2021-08-12"
+          }
+        ]
+      },
+      {
+        "name": "47 Н С",
+        "label": "47",
+        "value": ["2021-12-03", "2022-08-01"],
+        "sources": [
+          {
+            "name": "Сектор \"Енергетика\" - преговорит между ПП, ДБ, ИТН и БСП за постигане на коалиционно споразумение",
+            "url": ["https://www.youtube.com/watch?v=UEdaD2dinoA"],
+            "date": "2021-11-23"
+          },
+          {
+            "name": "Сектор \"Правосъдие\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=ZM-mFa9I4gg"],
+            "date": "2021-11-23"
+          },
+          {
+            "name": "Сектор \"Транспорт\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=HeXLhF43Fxc"],
+            "date": "2021-11-23"
+          },
+          {
+            "name": "Сектор \"Земеделие\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=k8llaQ8ov_A"],
+            "date": "2021-11-24"
+          },
+          {
+            "name": "Сектор \"Здравеопазване\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=SUZ6bqPTFKw"],
+            "date": "2021-11-24"
+          },
+          {
+            "name": "Сектор \"Образование\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=FDZ8p8Xe0GQ"],
+            "date": "2021-11-24"
+          },
+          {
+            "name": "Сектор \"Електронно правителство\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=y3jAWSavlXU"],
+            "date": "2021-11-24"
+          },
+          {
+            "name": "Сектор \"Вътрешна сигурност\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=W6lcFY3brIA"],
+            "date": "2021-11-25"
+          },
+          {
+            "name": "Сектор \"Екология\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=Fw4b2rY76Q4"],
+            "date": "2021-11-25"
+          },
+          {
+            "name": "Сектор \"Регионално развитие\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=ZW05G8eElD8"],
+            "date": "2021-11-25"
+          },
+          {
+            "name": "Сектор \"Култура\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=jmpL7tmw6ic"],
+            "date": "2021-11-25"
+          },
+          {
+            "name": "Сектор \"Труд и социална политика\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=LuO-fmmtE7Q"],
+            "date": "2021-11-26"
+          },
+          {
+            "name": "Сектор \"Туризъм\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=nonWga08YFY"],
+            "date": "2021-11-26"
+          },
+          {
+            "name": "Сектор \"Национална сигурност\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=sHHnCfe3HJ0"],
+            "date": "2021-11-26"
+          },
+          {
+            "name": "Сектор \"Спорт и младежки политики\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=2tiqStEj3U8"],
+            "date": "2021-11-26"
+          },
+          {
+            "name": "Сектор \"Финанси\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=asVtHfzYXO8"],
+            "date": "2021-11-27"
+          },
+          {
+            "name": "Сектор “Международни отношения” - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=W8MMg776k-g"],
+            "date": "2021-11-27"
+          },
+          {
+            "name": "\"Слагам край на тази коалиция\": Изявлението на Слави Трифонов",
+            "url": ["https://www.youtube.com/watch?v=53FfBPIugfA"],
+            "date": "2022-06-08"
+          },
+          {
+            "name": "Извънредно издание на \"Седмицата\" - Слави Трифонов пред Константин Вълков",
+            "url": ["https://www.youtube.com/watch?v=Rpdz_TFD1mI"],
+            "date": "2022-06-12"
+          },
+          {
+            "name": "Кой как гласува на вота на недоверие, с който беше свалено правителството \"Петков\"",
+            "url": ["https://www.youtube.com/watch?v=cVJvR5e0FYs"],
+            "date": "2022-06-22"
+          },
+          {
+            "name": "Гласуване на вот на недоверие - цялото заседание",
+            "url": ["https://www.parliament.bg/bg/video/ID/1536"],
+            "date": "2022-06-22"
+          },
+          {
+            "name": "Кирил Симеонов от \"Има такъв народ\": Срам ме е как гласувахме вчера в парламента",
+            "url": ["https://www.youtube.com/watch?v=QJFOSBAQi2s"],
+            "date": "2022-06-17"
+          },
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          }
+        ]
+      },
+      {
+        "name": "48 Н С",
+        "label": "48",
+        "value": ["2022-10-19", "2023-02-02"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          }
+        ]
+      },
+      {
+        "name": "49 Н С",
+        "label": "49",
+        "value": ["2023-04-12", "2024-06-19"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          },
+          {
+            "name": "За първи път от години - Румен Радев и Бойко Борисов заедно на една маса в разговор за властта",
+            "url": ["https://www.youtube.com/watch?v=GG_Z873Sw88"],
+            "date": "2023-04-20"
+          }
+        ]
+      },
+      {
+        "name": "50 Н С",
+        "label": "50",
+        "value": ["2024-06-19", "2024-11-11"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          }
+        ]
+      },
+      {
+        "name": "51 Н С",
+        "label": "51",
+        "value": ["2024-11-11", null],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          },
+          {
+            "name": "ГЕРБ-СДС изпраща писма за преговори за правителство",
+            "url": ["https://www.bta.bg/bg/news/bulgaria/799201-gerb-sds-izprashta-dnes-pisma-za-pregovori-za-pravitelstvo-borisov-se-nadyava-d"],
+            "date": "2024-12-13"
+          },
+          {
+            "name": "ГЕРБ: Преговори на ГЕРБ - СДС и БСП - Обединена левица",
+            "url": [
+              "https://www.bta.bg/bg/news/bulgaria/oficial-messages/801698-gerb-pregovori-na-gerb-sds-i-bsp-obedinena-levitsa",
+              "https://www.24chasa.bg/bulgaria/article/19543050"
+            ],
+            "date": "2024-12-17"
+          },
+          {
+            "name": "Как премина първото заседание на 51-ото Народно събрание",
+            "url": ["https://www.youtube.com/watch?v=qILmbnP0JLI"],
+            "date": "2024-11-11"
+          },
+          {
+            "name": "ГЕРБ-СДС прекратява преговорите за съставяне на правителство",
+            "url": [
+              "https://www.bta.bg/bg/news/bulgaria/809505-gerb-sds-prekratyava-pregovorite-za-sastavyane-na-pravitelstvo",
+              "https://dnes.dir.bg/politika/gerb-sds-prekrati-pregovorite-za-pravitelstvo-db-ne-podkrepi-i-rosen-zhelyazkov-za-premier"
+            ],
+            "date": "2025-01-05"
+          },
+          {
+            "name": "ГЕРБ предлага преговорите за кабинет да се възобновят, а премиер да е Желязков",
+            "url": [
+              "https://www.bta.bg/bg/news/bulgaria/810934",
+              "https://offnews.bg/politika/gerb-predlaga-pregovorite-za-kabinet-da-se-vazobnoviat-a-premier-da-e-837056.html",
+              "https://www.mediapool.bg/gerb-targuva-svalyaneto-na-sarafov-sreshtu-podkrepa-za-rosen-zhelyazkov-db-otkaza-news366794.html"
+            ],
+            "date": "2025-01-08"
+          },
+          {
+            "name": "ДПС-Доган ще подкрепи правителство на ГЕРБ, БСП и ИТН",
+            "url": [
+              "https://www.bta.bg/bg/news/bulgaria/814728-parlamentarnata-grupa-demokratsiya-prava-i-svobodi-dps-shte-podkrepi-kabinet-#%D0%B4%D0%BE%D0%B3%D0%B0%D0%BD",
+              "https://bnr.bg/horizont/post/102101573/pg-na-demokracia-prava-i-svobodi-dps-shte-podkrepi-pravitelstvo-na-gerb-sds-bsp-obedinena-levica-i-ima-takav-narod",
+              "https://offnews.bg/politika/sabraha-se-dps-dogan-shte-podkrepi-pravitelstvo-na-gerb-bsp-i-itn-837431.html",
+              "https://dnes.dir.bg/politika/dps-na-dogan-shte-podkrepi-badeshtiya-kabinet-na-gerb-bsp-obedinena-levitsa-i-itn",
+              "https://www.segabg.com/hot/category-bulgaria/dps-na-dogan-kaza-da-na-novoto-pravitelstvo"
+            ],
+            "date": "2025-01-14"
+          },
+          {
+            "name": "Структурата и съставът на кабинета \"Желязков\"",
+            "url": [
+              "https://www.segabg.com/hot/category-bulgaria/yasni-sa-strukturata-i-sustavut-na-kabineta-zhelyazkov",
+              "https://offnews.bg/politika/predposledno-mitov-vzima-mvr-temenuzhka-petkova-finansite-a-mvnr-837329.html"
+            ],
+            "date": "2025-01-14"
+          },
+          {
+            "name": "Румен Радев връчва мандат на ГЕРБ за съставяне на правителство",
+            "url": [
+              "https://www.youtube.com/watch?v=eLKDjc0JiNc",
+              "https://www.youtube.com/watch?v=cmJPoOqgINA",
+              "https://www.youtube.com/watch?v=bTzNJEqTuFE"
+            ],
+            "date": "2025-01-15"
+          },
+          {
+            "name": "Споразумението на ГЕРБ, БСП и ИТН. ДПС-Доган е в съвета за управление на коалицията",
+            "url": [
+              "https://www.bta.bg/bg/news/bulgaria/oficial-messages/815086-gerb-sds-bsp-obedinena-levitsa-ima-takav-narod-i-demokratsiya-prava-",
+              "https://dnes.dir.bg/na-fokus/gerb-sds-razkri-podpisanite-dokumenti-za-pravitelstvo-s-bsp-itn-i-dps-na-dogan",
+              "https://offnews.bg/politika/eto-go-sporazumenieto-na-gerb-bsp-i-itn-dps-dogan-e-v-saveta-za-upra-837477.html"
+            ],
+            "date": "2025-01-15"
+          },
+          {
+            "name": "Парламентът избира правителството \"Желязков\"",
+            "url": ["https://www.youtube.com/live/b3ZsDfsC2aI?t=8058s", "https://www.segabg.com/category-observer/noviyat-kabinet-gurmyan-zaek-dyalan-kamuk"],
+            "date": "2025-01-16"
+          },
+          {
+            "name": "Церемонията по предаване на властта в Министерския съвет",
+            "url": ["https://www.youtube.com/watch?v=XKi1WEGNo5E"],
+            "date": "2025-01-16"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Председател на НС",
+    "items": [
+      {
+        "name": "Георги Пирински",
+        "value": ["2005-07-11", "2009-06-25"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          }
+        ]
+      },
+      {
+        "name": "Цецка Цачева",
+        "value": ["2009-07-14", "2013-03-14"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          }
+        ]
+      },
+      {
+        "name": "Михаил Миков",
+        "value": ["2013-05-21", "2014-08-05"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          }
+        ]
+      },
+      {
+        "name": "Цецка Цачева",
+        "value": ["2014-10-27", "2017-01-26"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          }
+        ]
+      },
+      {
+        "name": "Димитър Главчев",
+        "value": ["2017-04-19", "2017-11-17"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          }
+        ]
+      },
+      {
+        "name": "Цвета Караянчева",
+        "value": ["2017-11-17", "2021-03-26"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          }
+        ]
+      },
+      {
+        "name": "Ива Митева",
+        "value": ["2021-04-15", "2021-05-11"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          }
+        ]
+      },
+      {
+        "name": "Ива Митева",
+        "value": ["2021-07-21", "2021-09-15"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          }
+        ]
+      },
+      {
+        "name": "Никола Минчев",
+        "value": ["2021-12-03", "2022-06-16"],
+        "sources": [
+          {
+            "name": "Дебати преди гласуването на оставката на Никола Минчев",
+            "url": ["https://www.youtube.com/watch?v=OnFGM3ph3Xo"],
+            "date": "2022-06-16"
+          },
+          {
+            "name": "Последното изказване на Никола Минчев като председател на парламента",
+            "url": ["https://www.youtube.com/watch?v=gDYzlE5l1R0"],
+            "date": "2022-06-16"
+          },
+          {
+            "name": "Гласуване на оставката на Никола Минчев (част 2, 1:37:00) - цялото предаване",
+            "url": ["https://www.parliament.bg/bg/video/ID/1533"],
+            "date": "2022-06-16"
+          },
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          }
+        ]
+      },
+      {
+        "name": "Вежди Рашидов",
+        "value": ["2022-10-19", "2023-02-02"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          }
+        ]
+      },
+      {
+        "name": "Росен Желязков",
+        "value": ["2023-04-19", "2024-04-25"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          }
+        ]
+      },
+      {
+        "name": "Рая Назарян",
+        "value": ["2024-06-20", "2024-11-11"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          },
+          {
+            "name": "Избраха Рая Назарян за председател на 50-ото Народно събрание",
+            "url": ["https://www.youtube.com/watch?v=GLDrVmH7rfc"],
+            "date": "2024-06-20"
+          },
+          {
+            "name": "Рая Назарян е избрана за председател на 50-ото Народно събрание",
+            "url": ["https://bntnews.bg/news/raya-nazaryan-e-izbrana-za-predsedatel-na-50-oto-narodno-sabranie-1282723news.html"],
+            "date": "2024-06-20"
+          }
+        ]
+      },
+      {
+        "name": "Наталия Киселова",
+        "value": ["2024-12-06", "2025-10-29"],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          },
+          {
+            "name": "Депутатите избраха доц. Наталия Киселова за председател на НС",
+            "url": ["https://www.youtube.com/watch?v=UDfbN1SuGRk"],
+            "date": "2024-12-06"
+          },
+          {
+            "name": "Реакции след избора на Наталия Киселова за председател на 51-вия парламент",
+            "url": ["https://bntnews.bg/news/reakcii-sled-izbora-na-nataliya-kiselova-za-predsedatel-na-51-viya-parlament-1317303news.html"],
+            "date": "2024-12-06"
+          },
+          {
+            "name": "Бял дим: Избраха доц. Наталия Киселова за председател на парламента (СНИМКИ/ВИДЕО)",
+            "url": ["https://dariknews.bg/novini/bylgariia/bial-dim-izbraha-doc.-nataliia-kiselova-za-predsedatel-na-parlamenta-snimkivideo-2402917"],
+            "date": "2024-12-06"
+          },
+          {
+            "name": "Наталия Киселова подаде оставка като председател на НС",
+            "url": ["https://bnt.bg/news/nataliya-kiselova-podade-ostavka-kato-predsedatel-na-ns-v400945-343267news.html"],
+            "date": "2025-10-29"
+          }
+        ]
+      },
+      {
+        "name": "Рая Назарян",
+        "value": ["2025-10-29", null],
+        "sources": [
+          {
+            "name": "Хронология на Народното събрание",
+            "url": ["https://www.parliament.bg/bg/16"]
+          },
+          {
+            "name": "Наталия Киселова е ротационно сменена от Рая Назарян",
+            "url": ["https://bg.wikipedia.org/wiki/%D0%9D%D0%B0%D1%82%D0%B0%D0%BB%D0%B8%D1%8F_%D0%9A%D0%B8%D1%81%D0%B5%D0%BB%D0%BE%D0%B2%D0%B0"],
+            "date": "2025-10-29"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Правителство",
+    "items": [
+      {
+        "name": "Сергей Станишев",
+        "comment": "редовно",
+        "value": ["2005-08-17", "2009-07-27"],
+        "sources": [
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Бойко Борисов",
+        "comment": "редовно",
+        "value": ["2009-07-27", "2013-03-13"],
+        "sources": [
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Марин Райков",
+        "comment": "служебно",
+        "value": ["2013-03-13", "2013-05-29"],
+        "sources": [
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Пламен Орешарски",
+        "comment": "редовно",
+        "value": ["2013-05-29", "2014-08-06"],
+        "sources": [
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Георги Близнашки",
+        "comment": "служебно",
+        "value": ["2014-08-06", "2014-11-07"],
+        "sources": [
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Бойко Борисов",
+        "comment": "редовно",
+        "value": ["2014-11-07", "2017-01-27"],
+        "sources": [
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Огнян Герджиков",
+        "comment": "служебно",
+        "value": ["2017-01-27", "2017-05-04"],
+        "sources": [
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Бойко Борисов",
+        "comment": "редовно",
+        "value": ["2017-05-04", "2021-05-12"],
+        "sources": [
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Стефан Янев",
+        "comment": "служебно",
+        "value": ["2021-05-12", "2021-09-16"],
+        "sources": [
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          },
+          {
+            "name": "Уволняват двама от членовете на ББР",
+            "url": ["https://www.youtube.com/watch?v=VlPnL43CZmY"],
+            "date": "2021-05-27"
+          },
+          {
+            "name": "Кирил Петков завежда иск срещу двама от шефовете на ББР",
+            "url": ["https://www.youtube.com/watch?v=OOpaep4cl5s"],
+            "date": "2021-06-30"
+          }
+        ]
+      },
+      {
+        "name": "Стефан Янев",
+        "comment": "служебно",
+        "value": ["2021-09-16", "2021-12-13"],
+        "sources": [
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Кирил Петков",
+        "comment": "редовно",
+        "value": ["2021-12-13", "2022-08-02"],
+        "sources": [
+          {
+            "name": "Сектор \"Енергетика\" - преговорит между ПП, ДБ, ИТН и БСП за постигане на коалиционно споразумение",
+            "url": ["https://www.youtube.com/watch?v=UEdaD2dinoA"],
+            "date": "2021-11-23"
+          },
+          {
+            "name": "Сектор \"Правосъдие\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=ZM-mFa9I4gg"],
+            "date": "2021-11-23"
+          },
+          {
+            "name": "Сектор \"Транспорт\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=HeXLhF43Fxc"],
+            "date": "2021-11-23"
+          },
+          {
+            "name": "Сектор \"Земеделие\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=k8llaQ8ov_A"],
+            "date": "2021-11-24"
+          },
+          {
+            "name": "Сектор \"Здравеопазване\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=SUZ6bqPTFKw"],
+            "date": "2021-11-24"
+          },
+          {
+            "name": "Сектор \"Образование\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=FDZ8p8Xe0GQ"],
+            "date": "2021-11-24"
+          },
+          {
+            "name": "Сектор \"Електронно правителство\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=y3jAWSavlXU"],
+            "date": "2021-11-24"
+          },
+          {
+            "name": "Сектор \"Вътрешна сигурност\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=W6lcFY3brIA"],
+            "date": "2021-11-25"
+          },
+          {
+            "name": "Сектор \"Екология\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=Fw4b2rY76Q4"],
+            "date": "2021-11-25"
+          },
+          {
+            "name": "Сектор \"Регионално развитие\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=ZW05G8eElD8"],
+            "date": "2021-11-25"
+          },
+          {
+            "name": "Сектор \"Култура\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=jmpL7tmw6ic"],
+            "date": "2021-11-25"
+          },
+          {
+            "name": "Сектор \"Труд и социална политика\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=LuO-fmmtE7Q"],
+            "date": "2021-11-26"
+          },
+          {
+            "name": "Сектор \"Туризъм\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=nonWga08YFY"],
+            "date": "2021-11-26"
+          },
+          {
+            "name": "Сектор \"Национална сигурност\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=sHHnCfe3HJ0"],
+            "date": "2021-11-26"
+          },
+          {
+            "name": "Сектор \"Спорт и младежки политики\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=2tiqStEj3U8"],
+            "date": "2021-11-26"
+          },
+          {
+            "name": "Сектор \"Финанси\" - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=asVtHfzYXO8"],
+            "date": "2021-11-27"
+          },
+          {
+            "name": "Сектор “Международни отношения” - преговори за коалиционно споразумение между ПП, ДБ, ИТН и БСП",
+            "url": ["https://www.youtube.com/watch?v=W8MMg776k-g"],
+            "date": "2021-11-27"
+          },
+          {
+            "name": "\"Слагам край на тази коалиция\": Изявлението на Слави Трифонов",
+            "url": ["https://www.youtube.com/watch?v=53FfBPIugfA"],
+            "date": "2022-06-08"
+          },
+          {
+            "name": "Извънредно издание на \"Седмицата\" - Слави Трифонов пред Константин Вълков",
+            "url": ["https://www.youtube.com/watch?v=Rpdz_TFD1mI"],
+            "date": "2022-06-12"
+          },
+          {
+            "name": "Кой как гласува на вота на недоверие, с който беше свалено правителството \"Петков\"",
+            "url": ["https://www.youtube.com/watch?v=cVJvR5e0FYs"],
+            "date": "2022-06-22"
+          },
+          {
+            "name": "Гласуване на вот на недоверие - цялото заседание",
+            "url": ["https://www.parliament.bg/bg/video/ID/1536"],
+            "date": "2022-06-22"
+          },
+          {
+            "name": "Кирил Симеонов от \"Има такъв народ\": Срам ме е как гласувахме вчера в парламента",
+            "url": ["https://www.youtube.com/watch?v=QJFOSBAQi2s"],
+            "date": "2022-06-17"
+          },
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Гълъб Донев",
+        "comment": "служебно",
+        "value": ["2022-08-02", "2023-02-03"],
+        "sources": [
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Гълъб Донев",
+        "comment": "служебно",
+        "value": ["2023-02-03", "2023-06-06"],
+        "sources": [
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Николай Денков - Мария Габриел",
+        "comment": "редовно",
+        "value": ["2023-06-06", "2024-04-09"],
+        "sources": [
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Димитър Главчев",
+        "comment": "служебно",
+        "value": ["2024-04-09", "2024-08-27"],
+        "sources": [
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Димитър Главчев",
+        "comment": "служебно",
+        "value": ["2024-08-27", "2025-01-16"],
+        "sources": [
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Росен Желязков",
+        "comment": "редовно",
+        "value": ["2025-01-16", "2026-02-19"],
+        "sources": [
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          },
+          {
+            "name": "Правителството на Росен Желязков е избрано",
+            "url": [
+              "https://bnr.bg/post/102102319/deputatite-odobriha-kabineta-jelazkov",
+              "https://www.bta.bg/bg/news/bulgaria/815689-parlamentat-izbra-kabineta-zhelyazkov-",
+              "https://bntnews.bg/news/deputatite-izbraha-rosen-zhelyazkov-za-premier-i-odobriha-sastava-na-ms-1322541news.html",
+              "https://www.dnevnik.bg/politika/2025/01/15/4729965_kabinetut_jeliazkov_chaka_odobrenie_ot_parlamenta_za/?to=4730252",
+              "https://www.segabg.com/hot/category-bulgaria/rosen-zhelyazkov-e-noviyat-premier-na-bulgariya",
+              "https://dnes.dir.bg/politika/kabinetat-zhelyazkov-be-izbran-s-mnozinstvo-ot-125-deputati"
+            ]
+          },
+          {
+            "name": "Росен Желязков подаде оставката на правителството",
+            "url": [
+              "https://fakti.bg/bulgaria/1020727-rosen-jelazkov-pravitelstvoto-podade-ostavka"
+            ],
+            "date": "2025-12-11"
+          }
+        ]
+      },
+      {
+        "name": "Андрей Гюров",
+        "comment": "служебно",
+        "value": ["2026-02-19", null],
+        "sources": [
+          {
+            "name": "Правителства на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          },
+          {
+            "name": "Правителството \"Гюров\" встъпи в длъжност",
+            "url": [
+              "https://www.svobodnaevropa.bg/a/yotova-naznachi-pravitelstvo-gyurov-kletva-izbori/33682210.html",
+              "https://bg.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%BE_%D0%BD%D0%B0_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%93%D1%8E%D1%80%D0%BE%D0%B2"
+            ],
+            "date": "2026-02-19"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Главен прокурор",
+    "items": [
+      {
+        "name": "Никола Филчев",
+        "value": ["1999-02-16", "2006-02-22"],
+        "sources": [
+          {
+            "name": "Главен прокурор на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%93%D0%BB%D0%B0%D0%B2%D0%B5%D0%BD_%D0%BF%D1%80%D0%BE%D0%BA%D1%83%D1%80%D0%BE%D1%80_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Борис Велчев",
+        "value": ["2006-02-23", "2012-11-02"],
+        "sources": [
+          {
+            "name": "Главен прокурор на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%93%D0%BB%D0%B0%D0%B2%D0%B5%D0%BD_%D0%BF%D1%80%D0%BE%D0%BA%D1%83%D1%80%D0%BE%D1%80_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Бойко Найденов",
+        "value": ["2012-11-06", "2013-01-10"],
+        "note": "изпълняващ длъжността",
+        "sources": [
+          {
+            "name": "Главен прокурор на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%93%D0%BB%D0%B0%D0%B2%D0%B5%D0%BD_%D0%BF%D1%80%D0%BE%D0%BA%D1%83%D1%80%D0%BE%D1%80_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Сотир Цацаров",
+        "value": ["2013-01-10", "2019-12-18"],
+        "sources": [
+          {
+            "name": "Главен прокурор на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%93%D0%BB%D0%B0%D0%B2%D0%B5%D0%BD_%D0%BF%D1%80%D0%BE%D0%BA%D1%83%D1%80%D0%BE%D1%80_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Иван Гешев",
+        "value": ["2019-12-18", "2023-06-15"],
+        "sources": [
+          {
+            "name": "Главен прокурор на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%93%D0%BB%D0%B0%D0%B2%D0%B5%D0%BD_%D0%BF%D1%80%D0%BE%D0%BA%D1%83%D1%80%D0%BE%D1%80_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          },
+          {
+            "name": "\"Бойко?\" - \"Банкята. Да.\": Гешев пусна запис с член на ВСС и обвини Борисов в натиск за оставката му",
+            "url": ["https://www.youtube.com/watch?v=tHAX3dBu-1I"],
+            "date": "2023-04-23"
+          },
+          {
+            "name": "Главният прокурор Иван Гешев отказа да подаде оставка",
+            "url": ["https://www.youtube.com/watch?v=gaGcXVHQx0Y"],
+            "date": "2023-04-15"
+          },
+          {
+            "name": "\"Сбъркаха човека\": Иван Гешев пуска записи на разговори в своя защита",
+            "url": ["https://www.youtube.com/watch?v=S2v1VCd0AVU"],
+            "date": "2023-04-22"
+          },
+          {
+            "name": "Дебатът в Съдебния съвет за освобождаването на Иван Гешев (пълен запис)",
+            "url": ["https://www.youtube.com/watch?v=Pi6kz7g0tQU"],
+            "date": "2023-06-08"
+          },
+          {
+            "name": "Иван Гешев: Трябваха ми още две седмици, за да арестувам Бойко Борисов",
+            "url": ["https://www.youtube.com/watch?v=cT8bwdmGceo"],
+            "date": "2023-04-16"
+          },
+          {
+            "name": "Главният прокурор официално поиска депутатския имунитет на Бойко Борисов",
+            "url": ["https://www.youtube.com/watch?v=j4e_T8slHus"],
+            "date": "2023-06-02"
+          }
+        ]
+      },
+      {
+        "name": "Борислав Сарафов",
+        "value": ["2023-06-16", null],
+        "comment": "временно изпълняващ длъжността",
+        "sources": [
+          {
+            "name": "Главен прокурор на България",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%93%D0%BB%D0%B0%D0%B2%D0%B5%D0%BD_%D0%BF%D1%80%D0%BE%D0%BA%D1%83%D1%80%D0%BE%D1%80_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          },
+          {
+            "name": "ВСС отложи избора на Сарафов",
+            "url": ["https://www.segabg.com/hot/category-bulgaria/vss-otlozhi-izbora-na-sarafov"],
+            "date": "2025-01-15"
+          },
+          {
+            "name": "Борислав Сарафов е единственият кандидат за главен прокурор",
+            "url": [
+              "https://zaistinata.com/%D0%B5%D0%B4%D0%B8%D0%BD%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%B8%D1%8F%D1%82-%D0%BA%D0%BE%D0%B9-%D0%B8%D1%81%D0%BA%D0%B0-%D1%81%D0%B0%D1%80%D0%B0%D1%84%D0%BE%D0%B2-%D0%B4%D0%B0-%D0%B5-%D0%B3%D0%BB%D0%B0/",
+              "https://www.dw.com/bg/borislav-sarafov-e-edinstveniat-kandidat-za-glaven-prokuror/a-70452820",
+              "https://www.svobodnaevropa.bg/a/sarafov-edinstven-kandidat-glaven-prokuror/33153360.html",
+              "https://bntnews.bg/news/borislav-sarafov-e-edinstvenoto-predlozhenie-za-nov-glaven-prokuror-1296254news.html",
+              "https://btvnovinite.bg/predavania/tazi-sabota-i-nedelia/borislav-sarafov-edinstven-kandidat-za-glaven-prokuror-ima-li-nuzhnite-moralni-kachestva.html",
+              "https://bnt.bg/news/zashto-borislav-sarafov-se-okaza-edinstvena-kandidatura-332908news.html",
+              "https://www.bta.bg/bg/news/bulgaria/758603-borislav-sarafov-e-edinstveniyat-kandidat-izdignat-za-glaven-prokuror"
+            ],
+            "date": "2024-10-10"
+          },
+          {
+            "name": "Сарафов иска информационно затъмнение по знакови дела",
+            "url": [
+              "https://www.segabg.com/hot/category-bulgaria/sarafov-iska-informacionno-zatumnenie-po-znakovi-dela",
+              "https://www.dnevnik.bg/analizi/2025/01/14/4729071_nedosegaemite_sarafov_iska_da_se_zasekretiat_napulno/"
+            ],
+            "date": "2025-01-14"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Министър на вътрешните работи",
+    "items": [
+      {
+        "name": "Георги Петканов",
+        "value": ["2001-07-24", "2005-08-16"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Румен Петков",
+        "value": ["2005-08-16", "2008-04-24"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Михаил Миков",
+        "value": ["2008-04-24", "2009-06-27"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Цветан Цветанов",
+        "value": ["2009-07-27", "2013-03-13"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Петя Първанова",
+        "value": ["2013-03-13", "2013-05-29"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Цветлин Йовчев",
+        "value": ["2013-05-29", "2014-08-06"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Йордан Бакалов",
+        "value": ["2014-08-06", "2014-11-07"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Веселин Вучков",
+        "value": ["2014-11-07", "2015-03-11"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          },
+          {
+            "name": "Веселин Вучков имаше цялостна програма за реформа в МВР",
+            "url": ["https://www.youtube.com/watch?v=Qw7bPqtG4zY&t=878s"],
+            "date": "2025-01-15"
+          },
+          {
+            "name": "Веселин Вучков: Оставката ми бе провокирана от недоверието на Борисов към мен",
+            "url": ["https://trud.bg/a/articles/article-4642393"],
+            "date": "2015-03-08"
+          },
+          {
+            "name": "Проф. Веселин Вучков: Голямата тема е какво ще се случва в съдебната система",
+            "url": ["https://bnr.bg/horizont/post/102102751/prof-veselin-vuchkov"],
+            "date": "2025-01-17"
+          }
+        ]
+      },
+      {
+        "name": "Румяна Бъчварова",
+        "value": ["2015-03-11", "2017-01-27"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Пламен Узунов",
+        "value": ["2017-01-27", "2017-05-04"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Валентин Радев",
+        "value": ["2017-05-04", "2018-09-20"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Младен Маринов",
+        "value": ["2018-09-20", "2020-07-24"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Христо Терзийски",
+        "value": ["2020-07-24", "2021-05-12"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Бойко Рашков",
+        "value": ["2021-05-12", "2021-09-16"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Бойко Рашков",
+        "value": ["2021-09-16", "2021-12-13"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Бойко Рашков",
+        "value": ["2021-12-13", "2022-08-02"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Иван Демерджиев",
+        "value": ["2022-08-02", "2023-02-03"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Иван Демерджиев",
+        "value": ["2023-02-03", "2023-06-06"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Калин Стоянов",
+        "value": ["2023-06-06", "2024-04-09"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Калин Стоянов",
+        "value": ["2024-04-09", "2024-08-27"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Атанас Илков",
+        "value": ["2024-08-27", "2025-01-16"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Даниел Митов",
+        "value": ["2025-01-16", "2026-02-19"],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Емил Дечев",
+        "value": ["2026-02-19", null],
+        "sources": [
+          {
+            "name": "Министър на вътрешните работи",
+            "url": [
+              "https://bg.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%8A%D1%80_%D0%BD%D0%B0_%D0%B2%D1%8A%D1%82%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%82%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B8_%D0%BD%D0%B0_%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F"
+            ]
+          },
+          {
+            "name": "Кой кой е в служебния кабинет на Андрей Гюров",
+            "url": [
+              "https://www.capital.bg/politika_i_ikonomika/bulgaria/2026/02/18/4884089_koi_koi_e_v_slujebniia_kabinet_na_andrei_gjurov/"
+            ],
+            "date": "2026-02-18"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ремонт на сградата на НС",
+    "items": [
+      {
+        "name": "Ремонт на сградата на Народното събрание",
+        "value": ["2023-09-01", null],
+        "sources": [
+          {
+            "name": "Депутатите пак се местят в бившия партиен дом ",
+            "url": ["https://www.youtube.com/watch?v=fjlkRGJlnKE"],
+            "date": "2023-08-02"
+          },
+          {
+            "name": "Историческата сграда на НС ще e в ремонт поне 3 години, депутатите се връщат в бившия Партиен дом",
+            "url": [
+              "https://bntnews.bg/news/istoricheskata-sgrada-na-ns-shte-e-v-remont-pone-3-godini-deputatite-se-vrashtat-v-bivshiya-partien-dom-1243065news.html"
+            ],
+            "date": "2023-08-02"
+          },
+          {
+            "name": "6 месеца по-късно: Ремонтът на старото Народно събрание е доникъде (снимки)",
+            "url": ["https://offnews.bg/kultura/6-mesetca-po-kasno-remontat-na-staroto-narodno-sabranie-e-donikade-s-816725.html"],
+            "date": "2024-01-25"
+          },
+          {
+            "name": "След фреона, в старото НС ще борят и радона! Докъде стигна т.нар. ''наложителен'' ремонт на парламента",
+            "url": ["https://offnews.bg/politika/sled-freona-v-staroto-ns-shte-boriat-i-radona-dokade-stigna-t-nar-826117.html"],
+            "date": "2024-07-09"
+          },
+          {
+            "name": "Народното събрание пак се мести в сградата на бившия Партиен дом",
+            "url": ["https://bnr.bg/horizont/post/101859585/narodnoto-sabranie-pak-se-mesti-v-sgradata-na-bivshia-partien-dom"],
+            "date": "2023-08-02"
+          },
+          {
+            "name": "Символите на новата сграда: Ще имат ли журналистите пряк достъп до депутатите?",
+            "url": ["https://www.youtube.com/watch?v=hI9KJPsjLMw"],
+            "date": "2023-09-01"
+          },
+          {
+            "name": "Николай Стайков: Борисов и Пеевски преместиха парламента от страх от журналистите",
+            "url": ["https://www.youtube.com/watch?v=_DwDTO5vzp8&t=1158s"],
+            "date": "2024-11-18"
+          },
+          {
+            "name": "Ще се върне ли отново Народното събрание в бившия Партиен дом на БКП",
+            "url": ["https://www.svobodnaevropa.bg/a/32414088.html"],
+            "date": "2023-05-17"
+          },
+          {
+            "name": "Трудно ли е за журналисти да работят в сградата на бившия Партиен дом",
+            "url": ["https://www.youtube.com/watch?v=zCPtXgfdboI&t=320s"],
+            "date": "2024-12-20"
+          },
+          {
+            "name": "Защо политиците се държат нагло и това остава безнаказано?",
+            "url": ["https://www.youtube.com/live/n7QjT1WhBxs?t=921s"],
+            "date": "2025-02-03"
+          }
+        ]
+      }
+    ]
+  }
+]
