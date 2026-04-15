@@ -18,16 +18,16 @@
 
           <div class="toggle-group">
             <div class="toggle-option">
-              <input [(ngModel)]="switches['covid']" (change)="onChangePreset()" type="checkbox" id="sw-covid">
-              <label for="sw-covid">COVID</label>
+              <input [(ngModel)]="switches['parliament-elections']" (change)="onChangePreset()" type="checkbox" id="sw-parliament-elections">
+              <label for="sw-parliament-elections">Парламентарни избори</label>
             </div>
-<div class="toggle-option">
+            <div class="toggle-option">
               <input [(ngModel)]="switches['protests']" (change)="onChangePreset()" type="checkbox" id="sw-protests">
               <label for="sw-protests">Протести</label>
             </div>
             <div class="toggle-option">
-              <input [(ngModel)]="switches['parliament-elections']" (change)="onChangePreset()" type="checkbox" id="sw-parliament-elections">
-              <label for="sw-parliament-elections">Парламентарни избори</label>
+              <input [(ngModel)]="switches['covid']" (change)="onChangePreset()" type="checkbox" id="sw-covid">
+              <label for="sw-covid">COVID</label>
             </div>
           </div>
 

@@ -58,7 +58,7 @@ export function buildTooltipCard(opts: TooltipCardOptions): string {
   const descHtml = opts.description ? `<div style="font-size:15px;font-weight:600;color:${TT_TEXT};margin-top:6px;">${opts.description}</div>` : '';
   const commentHtml = opts.comment ? `<div style="font-size:14px;font-style:italic;color:${TT_MUTED};margin-top:4px;">${opts.comment}</div>` : '';
   const diffHtml = opts.diff ? `<span style="font-size:15px;font-weight:600;color:${opts.diffColor ?? TT_MUTED};margin-left:8px;">${opts.diff}</span>` : '';
-  const suffixHtml = opts.valueSuffix ? `<span style="font-size:14px;color:${TT_MUTED};">${opts.valueSuffix}</span>` : '';
+  const suffixHtml = opts.valueSuffix ? `<span style="font-size:17px;color:${TT_MUTED};">${opts.valueSuffix}</span>` : '';
   const percentHtml = opts.percent ? `<div style="margin-top:6px;"><span style="font-size:16px;font-weight:600;color:${TT_TEXT};">${opts.percent}</span></div>` : '';
 
   let mandatesHtml = '';
@@ -74,8 +74,8 @@ export function buildTooltipCard(opts: TooltipCardOptions): string {
     mandatesHtml = `
       <div style="background:linear-gradient(135deg,#f8fafc,#f1f5f9);border-radius:8px;padding:12px 14px;margin:8px 0 10px;">
         <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:8px;">
-          <span style="font-size:30px;font-weight:800;color:${TT_TEXT};letter-spacing:-0.5px;">${m}</span>
-          <span style="font-size:14px;color:${TT_MUTED};">мандата</span>
+          <span style="font-size:34px;font-weight:800;color:${TT_TEXT};letter-spacing:-0.5px;">${m}</span>
+          <span style="font-size:17px;color:${TT_MUTED};">мандата</span>
           ${mDiffHtml}
           <span style="font-size:13px;color:#94a3b8;margin-left:auto;">от 240</span>
         </div>

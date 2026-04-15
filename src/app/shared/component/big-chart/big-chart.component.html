@@ -46,17 +46,16 @@
         <div class="data-card">
           <div class="data-card-main">
             <span class="data-card-value">{{ formatDisplayValue(content.displayValue) }}</span>
-            @if (content.mandates !== undefined) {
-              <span class="data-card-suffix">гласа</span>
-            }
             @if (content.assembly) {
               <span class="data-card-suffix">%</span>
+            } @else {
+              <span class="data-card-suffix">гласа</span>
             }
             @if (diffInfo; as d) {
               <span class="data-card-diff" [style.color]="d.color">{{ d.text }}</span>
             }
           </div>
-          @if (content.percent !== null) {
+          @if (content.percent != null) {
             <div class="data-card-percent">{{ content.percent }}%</div>
           }
           @if (content.mandates > 0) {
@@ -110,7 +109,7 @@
         <div class="card-footer">
           <a [href]="editUrl" target="_blank" rel="noopener" class="card-improve-btn">
             <lucide-icon name="pencil" [size]="14"></lucide-icon>
-            Подобри данните
+            Данни
           </a>
         </div>
       }

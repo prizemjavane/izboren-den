@@ -135,7 +135,10 @@ export class HistoryComponent implements OnInit {
     data.area.forEach((area: any) => {
       series.push(buildMarkArea(area, true, 0, area.meta?.style));
       series.push(buildMarkArea(area, false, 1, area.meta?.style));
+      legend.selected[area.id] = this.switches[area.id] ?? true;
     });
+
+    legend.selected['parliament-elections'] = this.switches['parliament-elections'] ?? true;
 
     series.push(buildGanttChart(gantt, 1));
     series.push(buildPeriodHighlightSeries(0, 0));
@@ -291,6 +294,8 @@ export class HistoryComponent implements OnInit {
     chart.dispatchAction({
       type: 'legendInverseSelect',
     });
+
+    this.onChangePreset();
   }
 
   switchNs(nsNumber: string, threshold: number, chartInstance: ECharts, election: any): void {

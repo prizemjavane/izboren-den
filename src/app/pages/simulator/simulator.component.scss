@@ -85,7 +85,7 @@
 // Countdown
 .cd { display: flex; align-items: center; gap: 16px; background: #fff; border-radius: 10px; padding: 0 24px 0 0; box-shadow: 0 1px 3px rgba(16,24,40,.05); border: 1px solid rgba($blue, .08); overflow: hidden; }
 .cd-accent { width: 4px; align-self: stretch; flex-shrink: 0; background: linear-gradient(180deg, $blue, color.adjust($blue, $lightness: 16%)); }
-.cd-label { font-size: 15px; font-weight: 700; color: #4b5563; white-space: nowrap; padding: 14px 0 14px 16px; }
+.cd-label { font-size: 17px; font-weight: 700; color: #4b5563; white-space: nowrap; padding: 14px 0 14px 16px; }
 .cd-digits { display: flex; align-items: center; gap: 2px; padding: 8px 0; }
 .cd-seg { display: flex; align-items: baseline; gap: 3px; padding: 4px 10px; background: #f4f6f9; border-radius: 6px; }
 .cd-num { font-size: 24px; font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums; color: #1a2332; }
@@ -94,7 +94,7 @@
 .cd-dot--live { animation: cd-blink 1s steps(2, start) infinite; }
 @keyframes cd-blink { 50% { opacity: 0; } }
 .cd-seg--live { background: rgba($blue, .07); .cd-num { color: $blue; } .cd-unit { color: $blue; } }
-.cd-date { font-size: 13px; font-weight: 600; color: #4b5563; white-space: nowrap; margin-left: auto; letter-spacing: .01em; }
+.cd-date { font-size: 17px; font-weight: 600; color: #4b5563; white-space: nowrap; margin-left: auto; letter-spacing: .01em; }
 
 // Table
 .table-wrapper { overflow: visible; }

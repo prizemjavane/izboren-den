@@ -65,7 +65,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   public rows: any = [];
   public talk: any = {};
   public parties = 4;
-  public avgBoughtVotePrice = 100;
+  public avgBoughtVotePrice = 50;
   public step = 10000;
   public peopleInTheElectionDay!: any;
   public controlledVoteChart!: any;
@@ -75,7 +75,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   private parliamentaryElections: any[] = [];
   public partiesList: any = [];
   public maxParties = 10;
-  public currency: 'BGN' | 'EUR' = 'BGN';
+  public currency: 'BGN' | 'EUR' = 'EUR';
   private readonly BGN_PER_EUR = 1.95583;
   public showCompareDetail: '' | 'boughtVote' | 'seat' = '';
   public activeDropdown = -1;
@@ -822,9 +822,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.result = [];
     this.rows = [];
     this.coalitionSelected = [];
-    this.avgBoughtVotePrice = 100;
+    this.avgBoughtVotePrice = 50;
     this.step = 10000;
-    this.currency = 'BGN';
+    this.currency = 'EUR';
 
     reset();
 
