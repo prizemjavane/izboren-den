@@ -95,7 +95,7 @@ export class BigChartComponent {
       event.data.content.sources.sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime());
     }
 
-    if (event.seriesType === 'line') {
+    if (event.seriesType === 'line' && event.data.content?.type !== 'gantt') {
       if (this.clickedPoint?.seriesIndex === event.seriesIndex && this.clickedPoint?.dataIndex === event.dataIndex) {
         this.closeDetailPanel();
         return;
@@ -129,7 +129,7 @@ export class BigChartComponent {
       this.clearGanttHighlight();
     }
 
-    if (event.data.content?.from) {
+    if (event.data.content?.from && event.seriesType !== 'custom') {
       this.showPeriodLines(event.data.content.from, event.data.content.to, event.data.itemStyle?.color ?? event.color);
     } else {
       this.clearPeriodLines();
