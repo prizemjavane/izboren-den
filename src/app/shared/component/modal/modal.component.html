@@ -1,9 +1,0 @@
-<dialog #dialogRef class="backdrop:bg-black/50 rounded-lg p-0 max-w-lg w-full max-h-[80vh] overflow-y-auto">
-  <div class="p-6">
-    @for (item of this.partiesList; track item; let  i = $index) {
-      <div>
-        <div role="button" tabindex="0" class="block w-full text-left px-4 py-2 text-gray-900 hover:bg-gray-100 rounded cursor-pointer" (click)="onConfirm(item.name, row); close()" (keydown.enter)="onConfirm(item.name, row); close()">{{ item.name }}</div>
-      </div>
-    }
-  </div>
-</dialog>

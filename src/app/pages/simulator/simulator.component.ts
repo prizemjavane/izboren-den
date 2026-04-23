@@ -514,18 +514,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
     // Pass 1: reset results and accumulate global totals
     this.rows.forEach((row: any, i: number) => {
-      // if (row['boughtVote'] >= this.max[i]['boughtVote']) {
-      //   row['boughtVote'] = toInt(this.max[i]['boughtVote']);
-      // }
-      //
-      // if (row['feudalVote'] >= this.max[i]['feudalVote']) {
-      //   row['feudalVote'] = toInt(this.max[i]['feudalVote']);
-      // }
-      //
-      // if (row['controlledVote'] >= this.max[i]['controlledVote']) {
-      //   row['controlledVote'] = toInt(this.max[i]['controlledVote']);
-      // }
-
       this.result[i] = {
         voted: 0,
         votes: 0,
@@ -598,7 +586,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     const votesForMandates: number[] = [];
 
     this.rows.forEach((party: any, i: number) => {
-      // console.log(this.max[i]);
       const votedLeft = this.available - this.voted;
       const votesLeft = this.available - this.votes;
 
@@ -611,10 +598,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           party['organicVote'] -
           party['invalidVote']) *
         -1;
-
-      // if ((votedLeft + party['solidElectorate']) > ((votedLeft + party['solidElectorate']) * (this.asd / 100))) {
-      //   this.result[i]['solidElectorate'] = (votedLeft + party['solidElectorate']) * (this.asd / 100);
-      // }
 
       this.max[i]['solidElectorate'] = votedLeft + party['solidElectorate'];
       this.max[i]['boughtVote'] = votedLeft + party['boughtVote'];

@@ -24,11 +24,6 @@ export class DataService {
     return this.http.get<any>('data/election-day/data_normalized.json');
   }
 
-
-  getWho(): Observable<any> {
-    return this.http.get<any>('data/election-day/data_normalized.json');
-  }
-
   getQuotes(): Observable<any> {
     return this.http.get<any>('data/quotes.json');
   }

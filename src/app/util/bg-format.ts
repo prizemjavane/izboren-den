@@ -41,37 +41,3 @@ export function humanDateDiff(from: string | number, to: string | number, inDays
 
   return parts.join(', ');
 }
-
-export function humanValue(value: number, unit?: string, magnitude?: number, onlySuffix = false): string {
-  const magnitudes: any = {
-    1000000000: 'млрд.',
-    1000000: 'млн.',
-    1000: 'хил.',
-  };
-
-  const units: any = {
-    BGN: 'лева',
-    EUR: 'евро',
-    percent: '%',
-  };
-
-  let suffix = '';
-
-  if (unit === 'percent') {
-    suffix = '%';
-  } else {
-    if (magnitude && magnitudes[magnitude]) {
-      suffix += ' ' + magnitudes[magnitude];
-    }
-
-    if (unit && units[unit]) {
-      suffix += ' ' + units[unit];
-    }
-  }
-
-  if (onlySuffix) {
-    return suffix;
-  }
-
-  return value.toLocaleString('en-US') + suffix;
-}

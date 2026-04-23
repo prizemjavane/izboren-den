@@ -275,7 +275,7 @@
           </tr>
         </thead>
         <tbody>
-          @for (row of rows; track row; let i = $index) {
+          @for (row of rows; track $index; let i = $index) {
             <tr>
               <td class="col-party">
                 <div class="party-dropdown-wrap" [class.open]="activeDropdown === i">
@@ -448,7 +448,7 @@
             <div class="coal-left">
               <span class="coal-label">Мнозинство</span>
               <div class="coal-parties">
-                @for (row of rows; track row; let i = $index) {
+                @for (row of rows; track $index; let i = $index) {
                   @if (coalitionSelected[i]) {
                     <span class="coal-chip">
                       <span class="coal-chip-name">{{ getPartyAlias(rows[i]['party']) || 'Партия ' + (i + 1) }}</span>

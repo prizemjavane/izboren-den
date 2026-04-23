@@ -82,33 +82,6 @@ export function historyTimeline(series: any, yAxisGantt: any, legend: { data: st
       selected: legend.selected,
     },
     dataZoom: [
-      // {
-      //   type: 'slider',
-      //   yAxisIndex: 1,
-      //   zoomLock: false,
-      //   width: 10,
-      //   start: 0,
-      //   end: 100,
-      //   handleSize: 10,
-      //   showDetail: false
-      // },
-      // {
-      //   type: 'slider',
-      //   yAxisIndex: 0,
-      //   zoomLock: false,
-      //   width: 10,
-      //   start: 0,
-      //   end: 100,
-      //   handleSize: 10,
-      //   showDetail: false
-      // },
-      // {
-      //   type: 'slider',
-      //   xAxisIndex: [1, 0],
-      //   zoomLock: false,
-      //   showDetail: false,
-      //   filterMode: 'weakFilter',
-      // },
       {
         type: 'inside',
         xAxisIndex: showMandates ? [0, 1, 2] : [0, 1],
