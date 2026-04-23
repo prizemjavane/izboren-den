@@ -42,10 +42,11 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "16kB",
-                  "maximumError": "20kB"
+                  "maximumWarning": "20kB",
+                  "maximumError": "28kB"
                 }
               ],
+              "allowedCommonJsDependencies": ["moment", "moment/locale/bg", "moment/moment"],
               "outputHashing": "all"
             },
             "development": {

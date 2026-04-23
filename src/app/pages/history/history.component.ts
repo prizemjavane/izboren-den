@@ -703,6 +703,7 @@ export class HistoryComponent implements OnInit {
   onChangePreset() {
     if (!this.chartInstance) return;
     const options: any = this.chartInstance.getOption();
+    if (!options) return;
     const current = options.legend?.[0]?.selected ?? {};
     const next = { ...current };
     next['covid'] = !!this.switches['covid'];

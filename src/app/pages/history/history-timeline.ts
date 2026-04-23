@@ -56,12 +56,12 @@ export function historyTimeline(series: any, yAxisGantt: any, legend: { data: st
     grid: showMandates
       ? [
           { containLabel: false, right: 443, left: '14%', top: '47%', bottom: '3%' },
-          { top: '4%', bottom: '79%', right: 443, left: '14%' },
+          { top: '1%', bottom: '79%', right: 443, left: '14%' },
           { top: '24%', bottom: '56%', right: 443, left: '14%' },
         ]
       : [
           { containLabel: false, right: 443, left: '14%', top: '31%', bottom: '3%' },
-          { top: '5%', bottom: '71%', right: 443, left: '14%' },
+          { top: '1%', bottom: '71%', right: 443, left: '14%' },
         ],
     legend: {
       inactiveColor: '#999',
