@@ -132,8 +132,8 @@
           @if (selectedStats.sources.length) {
             <div class="stats-compact__sources">
               <span class="stats-compact__sources-label">Източник:</span>
-              @for (src of selectedStats.sources; track src.url[0]) {
-                <a [href]="src.url[0]" target="_blank" rel="noopener" class="stats-compact__source-link">{{ src.name }}</a>
+              @for (src of selectedStats.sources; track src.url) {
+                <a [href]="src.url" target="_blank" rel="noopener" class="stats-compact__source-link">{{ src.name }}</a>
               }
             </div>
           }

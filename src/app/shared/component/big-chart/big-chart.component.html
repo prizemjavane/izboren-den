@@ -91,11 +91,11 @@
         }
         <ol class="source-list">
           @for (item of content.sources; track item; let i = $index) {
-            <li class="source-item" [class.visited]="isVisited(item.url[0])">
-              <a href="{{ item.url[0] }}" target="_blank" rel="noopener" class="source-link" (click)="markVisited(item.url[0])">{{ item.name }}</a>
-              @if (item.url.length > 1) {
+            <li class="source-item" [class.visited]="isVisited(sourceUrl(item))">
+              <a href="{{ sourceUrl(item) }}" target="_blank" rel="noopener" class="source-link" (click)="markVisited(sourceUrl(item))">{{ item.name }}</a>
+              @if (sourceUrls(item).length > 1) {
                 <span class="source-mirrors">
-                  @for (url of item.url; track url; let j = $index) {
+                  @for (url of sourceUrls(item); track url; let j = $index) {
                     <a href="{{ url }}" target="_blank" rel="noopener" class="mirror-pill">{{ j + 1 }}</a>
                   }
                 </span>

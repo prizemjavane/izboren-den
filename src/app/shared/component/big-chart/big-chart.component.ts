@@ -78,6 +78,14 @@ export class BigChartComponent {
     localStorage.setItem(BigChartComponent.STORAGE_KEY, JSON.stringify([...this.visitedUrls]));
   }
 
+  sourceUrl(item: any): string {
+    return Array.isArray(item.url) ? item.url[0] : item.url;
+  }
+
+  sourceUrls(item: any): string[] {
+    return Array.isArray(item.url) ? item.url : [item.url];
+  }
+
   clearVisited(): void {
     this.visitedUrls.clear();
     localStorage.removeItem(BigChartComponent.STORAGE_KEY);

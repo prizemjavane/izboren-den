@@ -42,7 +42,7 @@ interface AssemblyStats {
   validTotal: number | null;
   dialArc: string;
   partiesOverBarrier: number;
-  sources: { name: string; url: string[] }[];
+  sources: { name: string; url: string }[];
   parties: {
     alias: string;
     fullName: string;
@@ -714,14 +714,11 @@ export class HistoryComponent implements OnInit {
   }
 
   private transformElectionSources(sources: any): any[] | null {
-    if (!sources || typeof sources !== 'object') return null;
-    const result: any[] = [];
-    if (sources.url_activity) {
-      result.push({ name: 'Активност (ЦИК)', url: [sources.url_activity] });
-    }
-    if (sources.url_result) {
-      result.push({ name: 'Резултати (ЦИК)', url: [sources.url_result] });
-    }
-    return result.length ? result : null;
+    if (!Array.isArray(sources) || !sources.length) return null;
+    return [...sources].sort((a, b) => {
+      const aExt = typeof a.url === 'string' && a.url.startsWith('http');
+      const bExt = typeof b.url === 'string' && b.url.startsWith('http');
+      return aExt === bExt ? 0 : aExt ? -1 : 1;
+    });
   }
 }
