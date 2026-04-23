@@ -1,21 +1,359 @@
 [
     {
+        "date": "1991-10-13",
+        "metrics": {
+            "registered": {
+                "value": 6790188,
+                "quote": "Брой избиратели\t6 790 188",
+                "diff": 6790188
+            },
+            "validTotal": {
+                "value": 5540907,
+                "quote": "Брой на действителните гласове\t5 540 907",
+                "diff": 5540907
+            },
+            "voted": {
+                "value": 5694828,
+                "quote": "Брой на гласувалите\t5 694 828 (83.87%)",
+                "diff": 5694828
+            },
+            "invalid": {
+                "value": 153921,
+                "quote": "Брой на недействителните гласове (изчислено като гласували - действителни)\t153 921",
+                "diff": 153921
+            },
+            "parties": [
+                {
+                    "name": "Съюз на демократичните сили",
+                    "votes": 1903569,
+                    "percent": 34.35,
+                    "mandates": 110,
+                    "alias": "СДС",
+                    "votesDiff": 1903569,
+                    "votesDiffPercent": 100,
+                    "mandatesDiff": 110
+                },
+                {
+                    "name": "Предизборен съюз на БСП, БЛП, ОПТ, ПХЖД, ХРП, НЛП \"Ст. Стамболов\", СМС, ФБСМ, СДПД \"Ера-3\"",
+                    "votes": 1836050,
+                    "percent": 33.14,
+                    "mandates": 106,
+                    "alias": "БСП",
+                    "votesDiff": 1836050,
+                    "votesDiffPercent": 100,
+                    "mandatesDiff": 106
+                },
+                {
+                    "name": "Движение за права и свободи",
+                    "votes": 418341,
+                    "percent": 7.55,
+                    "mandates": 24,
+                    "alias": "ДПС",
+                    "votesDiff": 418341,
+                    "votesDiffPercent": 100,
+                    "mandatesDiff": 24
+                }
+            ],
+            "barrier": {
+                "value": 221636,
+                "meta_source": "calculated",
+                "diff": 221636
+            }
+        },
+        "description": "Избори за 36-то Народно събрание",
+        "sources": {
+            "text_activity": "data/1991-10-13-pi1991-activity.txt",
+            "text_result": "data/1991-10-13-pi1991-result.txt",
+            "url_result": "data/1991_1999.zip"
+        },
+        "activity": 83.87,
+        "id": "pi1991",
+        "assembly": 36,
+        "activityDiff": 83.87
+    },
+    {
+        "date": "1994-12-18",
+        "metrics": {
+            "registered": {
+                "value": 6987645,
+                "quote": "Брой избиратели\t6 987 645",
+                "diff": 197457
+            },
+            "validTotal": {
+                "value": 5202094,
+                "quote": "Брой на действителните гласове\t5 202 094",
+                "diff": -338813
+            },
+            "voted": {
+                "value": 5264448,
+                "quote": "Брой на гласувалите\t5 264 448 (75.34%)",
+                "diff": -430380
+            },
+            "invalid": {
+                "value": 62354,
+                "quote": "Брой на недействителните гласове (изчислено като гласували - действителни)\t62 354",
+                "diff": -91567
+            },
+            "parties": [
+                {
+                    "name": "Съюз на демократичните сили",
+                    "votes": 1260374,
+                    "percent": 24.23,
+                    "mandates": 69,
+                    "alias": "СДС",
+                    "votesDiff": -643195,
+                    "votesDiffPercent": -51.03,
+                    "mandatesDiff": -41
+                },
+                {
+                    "name": "Народен съюз - БЗНС, ДП",
+                    "votes": 338478,
+                    "percent": 6.51,
+                    "mandates": 18,
+                    "alias": "Народен съюз",
+                    "votesDiff": 338478,
+                    "votesDiffPercent": 100,
+                    "mandatesDiff": 18
+                },
+                {
+                    "name": "Движение за права и свободи",
+                    "votes": 283094,
+                    "percent": 5.44,
+                    "mandates": 15,
+                    "alias": "ДПС",
+                    "votesDiff": -135247,
+                    "votesDiffPercent": -47.77,
+                    "mandatesDiff": -9
+                },
+                {
+                    "name": "Български Бизнес Блок",
+                    "votes": 245849,
+                    "percent": 4.73,
+                    "mandates": 13,
+                    "alias": "БББ",
+                    "votesDiff": 245849,
+                    "votesDiffPercent": 100,
+                    "mandatesDiff": 13
+                },
+                {
+                    "name": "Коалиция - БСП, БЗНС \"Ал. Стамболийски\" и ПК \"Екогласност\"",
+                    "votes": 2262943,
+                    "percent": 43.5,
+                    "mandates": 125,
+                    "alias": "БСП",
+                    "votesDiff": 426893,
+                    "votesDiffPercent": 18.86,
+                    "mandatesDiff": 19
+                }
+            ],
+            "barrier": {
+                "value": 208084,
+                "meta_source": "calculated",
+                "diff": -13552
+            }
+        },
+        "description": "Избори за 37-то Народно събрание",
+        "sources": {
+            "text_activity": "data/1994-12-18-pi1994-activity.txt",
+            "text_result": "data/1994-12-18-pi1994-result.txt",
+            "url_result": "data/1991_1999.zip"
+        },
+        "activity": 75.34,
+        "id": "pi1994",
+        "assembly": 37,
+        "activityDiff": -8.53
+    },
+    {
+        "date": "1997-04-19",
+        "metrics": {
+            "registered": {
+                "value": 6819511,
+                "quote": "Брой избиратели\t6 819 511",
+                "diff": -168134
+            },
+            "validTotal": {
+                "value": 4255301,
+                "quote": "Брой на действителните гласове\t4 255 301",
+                "diff": -946793
+            },
+            "voted": {
+                "value": 4291257,
+                "quote": "Брой на гласувалите\t4 291 257 (62.93%)",
+                "diff": -973191
+            },
+            "invalid": {
+                "value": 35956,
+                "quote": "Брой на недействителните гласове (изчислено като гласували - действителни)\t35 956",
+                "diff": -26398
+            },
+            "parties": [
+                {
+                    "name": "Български Бизнес Блок - БББ",
+                    "votes": 209796,
+                    "percent": 4.93,
+                    "mandates": 12,
+                    "alias": "БББ",
+                    "votesDiff": -36053,
+                    "votesDiffPercent": -17.18,
+                    "mandatesDiff": -1
+                },
+                {
+                    "name": "Обединени демократични сили - СДС, ДП, БЗНС, БСДП",
+                    "votes": 2223714,
+                    "percent": 52.26,
+                    "mandates": 137,
+                    "alias": "СДС",
+                    "votesDiff": 963340,
+                    "votesDiffPercent": 43.32,
+                    "mandatesDiff": 68
+                },
+                {
+                    "name": "Евролевица",
+                    "votes": 234058,
+                    "percent": 5.5,
+                    "mandates": 14,
+                    "alias": "Евролевица",
+                    "votesDiff": 234058,
+                    "votesDiffPercent": 100,
+                    "mandatesDiff": 14
+                },
+                {
+                    "name": "Демократична левица - БСП, ПК \"Екогласност\"",
+                    "votes": 939308,
+                    "percent": 22.07,
+                    "mandates": 58,
+                    "alias": "БСП",
+                    "votesDiff": -1323635,
+                    "votesDiffPercent": -140.92,
+                    "mandatesDiff": -67
+                },
+                {
+                    "name": "Обединение за национално спасение - БЗНС-Никола Петков, ДПС, Зелена партия, Партия на демократичния център, Нов избор, Федерация Царство България",
+                    "votes": 323429,
+                    "percent": 7.6,
+                    "mandates": 19,
+                    "alias": "ОНС",
+                    "votesDiff": 323429,
+                    "votesDiffPercent": 100,
+                    "mandatesDiff": 19
+                }
+            ],
+            "barrier": {
+                "value": 170212,
+                "meta_source": "calculated",
+                "diff": -37872
+            }
+        },
+        "description": "Избори за 38-то Народно събрание",
+        "sources": {
+            "text_activity": "data/1997-04-19-pi1997-activity.txt",
+            "text_result": "data/1997-04-19-pi1997-result.txt",
+            "url_result": "data/1991_1999.zip"
+        },
+        "activity": 62.93,
+        "id": "pi1997",
+        "assembly": 38,
+        "activityDiff": -12.41
+    },
+    {
+        "date": "2001-06-17",
+        "metrics": {
+            "registered": {
+                "value": 6874668,
+                "quote": "Брой избиратели\t6 874 668",
+                "diff": 55157
+            },
+            "validTotal": {
+                "value": 4568193,
+                "quote": "Брой на действителните гласове\t4 568 193",
+                "diff": 312892
+            },
+            "voted": {
+                "value": 4608135,
+                "quote": "Брой на гласувалите\t4 608 135 (67.03%)",
+                "diff": 316878
+            },
+            "invalid": {
+                "value": 39942,
+                "quote": "Брой на недействителните гласове (изчислено като гласували - действителни)\t39 942",
+                "diff": 3986
+            },
+            "parties": [
+                {
+                    "name": "Обединени Демократични Сили - СДС, Народен съюз: БЗНС - НС и ДП, БСДП, Национално ДПС",
+                    "votes": 830338,
+                    "percent": 18.18,
+                    "mandates": 51,
+                    "alias": "СДС",
+                    "votesDiff": -1393376,
+                    "votesDiffPercent": -167.81,
+                    "mandatesDiff": -86
+                },
+                {
+                    "name": "Коалиция за България",
+                    "votes": 783372,
+                    "percent": 17.15,
+                    "mandates": 48,
+                    "alias": "БСП",
+                    "votesDiff": -155936,
+                    "votesDiffPercent": -19.91,
+                    "mandatesDiff": -10
+                },
+                {
+                    "name": "Национално движение Симеон Втори",
+                    "votes": 1952513,
+                    "percent": 42.74,
+                    "mandates": 120,
+                    "alias": "НДСВ",
+                    "votesDiff": 1952513,
+                    "votesDiffPercent": 100,
+                    "mandatesDiff": 120
+                },
+                {
+                    "name": "ДПС (ДПС - Либерален съюз - Евророма)",
+                    "votes": 340395,
+                    "percent": 7.45,
+                    "mandates": 21,
+                    "alias": "ДПС",
+                    "votesDiff": 57301,
+                    "votesDiffPercent": 16.83,
+                    "mandatesDiff": 6
+                }
+            ],
+            "barrier": {
+                "value": 182728,
+                "meta_source": "calculated",
+                "diff": 12516
+            }
+        },
+        "description": "Избори за 39-то Народно събрание",
+        "sources": {
+            "text_activity": "data/2001-06-17-pi2001-activity.txt",
+            "text_result": "data/2001-06-17-pi2001-result.txt",
+            "url_result": "data/2001_parlament.zip"
+        },
+        "activity": 67.03,
+        "id": "pi2001",
+        "assembly": 39,
+        "activityDiff": 4.1
+    },
+    {
         "date": "2005-06-25",
         "metrics": {
             "registered": {
                 "value": 6720941,
                 "quote": "Брой избиратели в основния избирателен списък\t6 720 941",
-                "diff": 6720941
+                "diff": -153727
             },
             "validTotal": {
                 "value": 3648177,
                 "quote": "Брой на действителните гласове\t3 648 177 (54.28%)",
-                "diff": 3648177
+                "diff": -920016
             },
             "voted": {
                 "value": 3747793,
                 "quote": "Брой на гласувалите избиратели\t3 747 793 (55.76%)",
-                "diff": 3747793
+                "diff": -860342
             },
             "parties": [
                 {
@@ -24,9 +362,9 @@
                     "percent": 33.98,
                     "mandates": 82,
                     "alias": "БСП",
-                    "votesDiff": 1129196,
-                    "votesDiffPercent": 100,
-                    "mandatesDiff": 82
+                    "votesDiff": 345824,
+                    "votesDiffPercent": 30.63,
+                    "mandatesDiff": 34
                 },
                 {
                     "name": "НАЦИОНАЛНО ДВИЖЕНИЕ СИМЕОН ВТОРИ (НДСВ)",
@@ -34,9 +372,9 @@
                     "percent": 21.83,
                     "mandates": 53,
                     "alias": "НДСВ",
-                    "votesDiff": 725314,
-                    "votesDiffPercent": 100,
-                    "mandatesDiff": 53
+                    "votesDiff": -1227199,
+                    "votesDiffPercent": -169.2,
+                    "mandatesDiff": -67
                 },
                 {
                     "name": "\"ДЕМОКРАТИ ЗА СИЛНА БЪЛГАРИЯ\" (ДСБ)",
@@ -74,9 +412,9 @@
                     "percent": 14.07,
                     "mandates": 34,
                     "alias": "ДПС",
-                    "votesDiff": 467400,
-                    "votesDiffPercent": 100,
-                    "mandatesDiff": 34
+                    "votesDiff": 127005,
+                    "votesDiffPercent": 27.17,
+                    "mandatesDiff": 13
                 },
                 {
                     "name": "ОДС - СДС, ДЕМОКРАТИЧЕСКА ПАРТИЯ, ДВИЖЕНИЕ \"ГЕРГЬОВДЕН\", БЗНС НС - БЗНС, ДРОМ",
@@ -87,23 +425,12 @@
                     "votesDiff": 280323,
                     "votesDiffPercent": 100,
                     "mandatesDiff": 20
-                },
-                {
-                    "name": "ДПС (АПС + ДПС-Ново начало)",
-                    "alias": "ДПС (АПС + ДПС-Ново начало)",
-                    "votes": 467400,
-                    "percent": 14.07,
-                    "mandates": 34,
-                    "diff": 0,
-                    "votesDiff": 467400,
-                    "votesDiffPercent": 100,
-                    "mandatesDiff": 34
                 }
             ],
             "barrier": {
                 "value": 145927,
                 "meta_source": "calculated",
-                "diff": 145927
+                "diff": -36801
             }
         },
         "description": "Избори за 40-то Народно събрание",
@@ -118,7 +445,7 @@
         "activity": 55.76,
         "id": "pi2005",
         "assembly": 40,
-        "activityDiff": 55.76
+        "activityDiff": -11.27
     },
     {
         "date": "2009-07-05",
@@ -126,7 +453,7 @@
             "invalid": {
                 "value": 97387,
                 "quote": "Брой на недействителните гласове\t97 387",
-                "diff": 97387
+                "diff": 57445
             },
             "validTotal": {
                 "value": 4226194,
@@ -203,17 +530,6 @@
                     "votesDiff": 174582,
                     "votesDiffPercent": 100,
                     "mandatesDiff": 10
-                },
-                {
-                    "name": "ДПС (АПС + ДПС-Ново начало)",
-                    "alias": "ДПС (АПС + ДПС-Ново начало)",
-                    "votes": 610521,
-                    "percent": 14.45,
-                    "mandates": 38,
-                    "diff": 0,
-                    "votesDiff": 143121,
-                    "votesDiffPercent": 23.44,
-                    "mandatesDiff": 4
                 }
             ],
             "barrier": {
@@ -296,17 +612,6 @@
                     "percent": 11.306,
                     "mandates": 36,
                     "alias": "ДПС",
-                    "votesDiff": -210055,
-                    "votesDiffPercent": -52.45,
-                    "mandatesDiff": -2
-                },
-                {
-                    "name": "ДПС (АПС + ДПС-Ново начало)",
-                    "alias": "ДПС (АПС + ДПС-Ново начало)",
-                    "votes": 400466,
-                    "percent": 11.306,
-                    "mandates": 36,
-                    "diff": 0,
                     "votesDiff": -210055,
                     "votesDiffPercent": -52.45,
                     "mandatesDiff": -2
@@ -435,17 +740,6 @@
                     "votesDiff": 239101,
                     "votesDiffPercent": 100,
                     "mandatesDiff": 19
-                },
-                {
-                    "name": "ДПС (АПС + ДПС-Ново начало)",
-                    "alias": "ДПС (АПС + ДПС-Ново начало)",
-                    "votes": 487134,
-                    "percent": 14.84,
-                    "mandates": 38,
-                    "diff": 0,
-                    "votesDiff": 86668,
-                    "votesDiffPercent": 17.79,
-                    "mandatesDiff": 2
                 }
             ],
             "barrier": {
@@ -551,17 +845,6 @@
                     "votesDiff": 145637,
                     "votesDiffPercent": 100,
                     "mandatesDiff": 12
-                },
-                {
-                    "name": "ДПС (АПС + ДПС-Ново начало)",
-                    "alias": "ДПС (АПС + ДПС-Ново начало)",
-                    "votes": 315976,
-                    "percent": 9.24,
-                    "mandates": 26,
-                    "diff": 0,
-                    "votesDiff": -171158,
-                    "votesDiffPercent": -54.17,
-                    "mandatesDiff": -12
                 }
             ],
             "barrier": {
@@ -677,17 +960,6 @@
                     "votesDiff": 150940,
                     "votesDiffPercent": 100,
                     "mandatesDiff": 14
-                },
-                {
-                    "name": "ДПС (АПС + ДПС-Ново начало)",
-                    "alias": "ДПС (АПС + ДПС-Ново начало)",
-                    "votes": 336306,
-                    "percent": 10.51,
-                    "mandates": 30,
-                    "diff": 0,
-                    "votesDiff": 20330,
-                    "votesDiffPercent": 6.05,
-                    "mandatesDiff": 4
                 }
             ],
             "barrier": {
@@ -803,17 +1075,6 @@
                     "alias": "ИЗПРАВИ СЕ! МУТРИ ВЪН!",
                     "votesDiff": -14055,
                     "votesDiffPercent": -10.27,
-                    "mandatesDiff": -1
-                },
-                {
-                    "name": "ДПС (АПС + ДПС-Ново начало)",
-                    "alias": "ДПС (АПС + ДПС-Ново начало)",
-                    "votes": 292514,
-                    "percent": 10.71,
-                    "mandates": 29,
-                    "diff": 0,
-                    "votesDiff": -43792,
-                    "votesDiffPercent": -14.97,
                     "mandatesDiff": -1
                 }
             ],
@@ -941,17 +1202,6 @@
                     "votesDiff": 127568,
                     "votesDiffPercent": 100,
                     "mandatesDiff": 13
-                },
-                {
-                    "name": "ДПС (АПС + ДПС-Ново начало)",
-                    "alias": "ДПС (АПС + ДПС-Ново начало)",
-                    "votes": 341000,
-                    "percent": 13,
-                    "mandates": 34,
-                    "diff": 0,
-                    "votesDiff": 48486,
-                    "votesDiffPercent": 14.22,
-                    "mandatesDiff": 5
                 }
             ],
             "barrier": {
@@ -1078,17 +1328,6 @@
                     "votesDiff": 115872,
                     "votesDiffPercent": 100,
                     "mandatesDiff": 12
-                },
-                {
-                    "name": "ДПС (АПС + ДПС-Ново начало)",
-                    "alias": "ДПС (АПС + ДПС-Ново начало)",
-                    "votes": 344512,
-                    "percent": 13.75,
-                    "mandates": 36,
-                    "diff": 0,
-                    "votesDiff": 3512,
-                    "votesDiffPercent": 1.02,
-                    "mandatesDiff": 2
                 }
             ],
             "barrier": {
@@ -1205,17 +1444,6 @@
                     "votesDiff": -145772,
                     "votesDiffPercent": -140.2,
                     "mandatesDiff": -14
-                },
-                {
-                    "name": "ДПС (АПС + ДПС-Ново начало)",
-                    "alias": "ДПС (АПС + ДПС-Ново начало)",
-                    "votes": 347700,
-                    "percent": 13.75,
-                    "mandates": 36,
-                    "diff": 0,
-                    "votesDiff": 3188,
-                    "votesDiffPercent": 0.92,
-                    "mandatesDiff": 0
                 }
             ],
             "barrier": {
@@ -1337,17 +1565,6 @@
                     "votesDiff": 99862,
                     "votesDiffPercent": 100,
                     "mandatesDiff": 13
-                },
-                {
-                    "name": "ДПС (АПС + ДПС-Ново начало)",
-                    "alias": "ДПС (АПС + ДПС-Ново начало)",
-                    "votes": 366310,
-                    "percent": 17.06,
-                    "mandates": 47,
-                    "diff": 0,
-                    "votesDiff": 18610,
-                    "votesDiffPercent": 5.08,
-                    "mandatesDiff": 11
                 }
             ],
             "validTotal": {
@@ -1495,17 +1712,6 @@
                     "votesDiff": -2365,
                     "votesDiffPercent": -2.43,
                     "mandatesDiff": -3
-                },
-                {
-                    "name": "ДПС (АПС + ДПС-Ново начало)",
-                    "alias": "ДПС (АПС + ДПС-Ново начало)",
-                    "votes": 462500,
-                    "percent": 18.995,
-                    "mandates": 48,
-                    "diff": 0,
-                    "votesDiff": 96190,
-                    "votesDiffPercent": 20.8,
-                    "mandatesDiff": 1
                 }
             ],
             "validTotal": {
@@ -1537,9 +1743,108 @@
     },
     {
         "date": "2026-04-19",
-        "metrics": null,
-        "description": "Избори за 52-во Народно събрание",
-        "id": null,
-        "assembly": 52
+        "metrics": {
+            "registered": {
+                "value": 6575151,
+                "quote": "Избиратели\t6 575 151",
+                "diff": -44726
+            },
+            "voted": {
+                "value": 3360330,
+                "quote": "2. Брой на гласувалите избиратели според положените подписи в избирателните списъци, включително и подписите в допълнителните страници (под чертата)\t3 360 330",
+                "diff": 789701
+            },
+            "invalid": {
+                "value": 69222,
+                "quote": "17. Брой на намерените в избирателните кутии недействителни гласове (бюлетини)\t69 222",
+                "diff": 17431
+            },
+            "validForParties": {
+                "value": 3240156,
+                "quote": "20. Сума на действителните гласове, подадени за кандидатските листи на партии, коалиции и независими кандидати\t3 240 156",
+                "diff": 805395
+            },
+            "validNone": {
+                "value": 50733,
+                "quote": "-\tНе подкрепям никого\t50 733",
+                "diff": -31681
+            },
+            "parties": [
+                {
+                    "name": "ПРОГРЕСИВНА БЪЛГАРИЯ",
+                    "votes": 1444920,
+                    "percent": 44.594,
+                    "mandates": 131,
+                    "alias": "ПРОГРЕСИВНА БЪЛГАРИЯ",
+                    "votesDiff": 1444920,
+                    "votesDiffPercent": 100,
+                    "mandatesDiff": 131
+                },
+                {
+                    "name": "ГЕРБ-СДС",
+                    "votes": 433755,
+                    "percent": 13.387,
+                    "mandates": 39,
+                    "alias": "ГЕРБ",
+                    "votesDiff": -208766,
+                    "votesDiffPercent": -48.13,
+                    "mandatesDiff": -27
+                },
+                {
+                    "name": "КОАЛИЦИЯ ПРОДЪЛЖАВАМЕ ПРОМЯНАТА – ДЕМОКРАТИЧНА БЪЛГАРИЯ",
+                    "votes": 408846,
+                    "percent": 12.618,
+                    "mandates": 37,
+                    "alias": "ПРОДЪЛЖАВАМЕ ПРОМЯНАТА – ДЕМОКРАТИЧНА БЪЛГАРИЯ",
+                    "votesDiff": 62772,
+                    "votesDiffPercent": 15.35,
+                    "mandatesDiff": 1
+                },
+                {
+                    "name": "Движение за права и свободи - ДПС",
+                    "votes": 230693,
+                    "percent": 7.12,
+                    "mandates": 21,
+                    "alias": "ДПС",
+                    "votesDiff": -135617,
+                    "votesDiffPercent": -58.79,
+                    "mandatesDiff": -26
+                },
+                {
+                    "name": "ВЪЗРАЖДАНЕ",
+                    "votes": 137940,
+                    "percent": 4.257,
+                    "mandates": 12,
+                    "alias": "ВЪЗРАЖДАНЕ",
+                    "votesDiff": -187418,
+                    "votesDiffPercent": -135.87,
+                    "mandatesDiff": -21
+                }
+            ],
+            "validTotal": {
+                "value": 3290889,
+                "meta_source": "calculated",
+                "meta_destination": "validForParties + validNone",
+                "diff": 773714
+            },
+            "barrier": {
+                "value": 129606,
+                "meta_source": "calculated",
+                "diff": 32216
+            }
+        },
+        "description": "Избори за 52-то Народно събрание",
+        "sources": {
+            "text_activity": "data/2026-04-19-pe202604-activity.txt",
+            "screenshot_activity": "data/2026-04-19-pe202604-activity.png",
+            "url_activity": "https://results.cik.bg/pe202604/aktivnost/index.html",
+            "text_result": "data/2026-04-19-pe202604-result.txt",
+            "screenshot_result": "data/2026-04-19-pe202604-result.png",
+            "url_result": "https://results.cik.bg/pe202604/rezultati/index.html"
+        },
+        "activity": 51.11,
+        "id": "pe202604",
+        "assembly": 52,
+        "activityDiff": 12.17
     }
 ]

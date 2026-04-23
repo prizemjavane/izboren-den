@@ -8,6 +8,7 @@ import { BrushComponent, DataZoomComponent, MarkAreaComponent, MarkLineComponent
 import { HeaderComponent } from '@shared/component/header/header.component';
 
 import { humanDate } from '@util/bg-format';
+import { format } from '@util/utils';
 import { transformData } from './history-chart-utils';
 import { ECharts } from 'echarts';
 import { FormsModule } from '@angular/forms';
@@ -17,14 +18,49 @@ import { IconsModule } from '@shared/icons.module';
 import moment from 'moment';
 import { historyTimeline } from './history-timeline';
 import { buildCurrentDateLine, buildGanttChart, buildLineChart, buildMarkArea, buildMandatesStackedArea, buildMandatesTooltipOverlay, buildPeriodHighlightSeries, buildTooltipCard } from '@util/chart/series';
-import { showHideLabels, switchLegends } from '@util/chart/utils';
+import { showHideLabels } from '@util/chart/utils';
 import { parliamentaryElections } from './history-series';
 import { BigChartComponent } from '@shared/component/big-chart/big-chart.component';
+import { TooltipDirective } from '@shared/directive/tooltip/tooltip.directive';
 echarts.use([LineChart, MarkLineComponent, BrushComponent, ToolboxComponent, DataZoomComponent, CustomChart, MarkAreaComponent]);
+
+interface AssemblyStats {
+  assembly: number;
+  ordinal: string;
+  date: string;
+  dateLabel: string;
+  description: string;
+  activity: number | null;
+  activityInt: string;
+  activityDec: string;
+  activityDiff: number | null;
+  activityDiffLabel: string;
+  activityDiffSign: 'up' | 'down' | 'none';
+  voted: number | null;
+  registered: number | null;
+  invalid: number | null;
+  validTotal: number | null;
+  dialArc: string;
+  partiesOverBarrier: number;
+  sources: { name: string; url: string[] }[];
+  parties: {
+    alias: string;
+    fullName: string;
+    color: string;
+    percent: number;
+    percentLabel: string;
+    votes: number;
+    mandates: number;
+    votesDiff: number;
+    mandatesDiff: number;
+    belowThreshold: boolean;
+    barWidth: number;
+  }[];
+}
 
 @Component({
   selector: 'app-history',
-  imports: [HeaderComponent, FormsModule, LucideAngularModule, IconsModule, BigChartComponent],
+  imports: [HeaderComponent, FormsModule, LucideAngularModule, IconsModule, BigChartComponent, TooltipDirective],
   templateUrl: './history.component.html',
   styleUrl: './history.component.scss',
   providers: [provideEchartsCore({ echarts })],
@@ -38,14 +74,19 @@ export class HistoryComponent implements OnInit {
   public switches: Record<string, boolean> = {
     covid: false,
     protests: true,
-    'parliament-elections': true,
+    'parliament-elections': false,
   };
+  public assemblies: { assembly: number; date: string; year: number; yearLabel: string; ordinal: string; monthLabel: string; election: any }[] = [];
+  public activeAssembly: number | null = null;
+  public selectedStats: AssemblyStats | null = null;
+  public statsExpanded = false;
   public settings!: {
     style: any;
     cikCharts: any;
     legend: any;
     tooltip: any;
     defaults: any;
+    historyDefaults: any;
     remember: any;
   };
 
@@ -59,6 +100,7 @@ export class HistoryComponent implements OnInit {
 
   private dataService = inject(DataService);
   private cdr = inject(ChangeDetectorRef);
+  private allPartyIds: string[] = [];
 
   ngOnInit(): void {
     forkJoin([
@@ -74,6 +116,22 @@ export class HistoryComponent implements OnInit {
         this.data.parliamentaryElections = parliamentary;
         this.data.timeline = timeline;
         this.data.area = area;
+        this.allPartyIds = transformData(parliamentary, 4).map((p: any) => p.id);
+        this.assemblies = parliamentary
+          .filter((e: any) => e.assembly != null)
+          .map((e: any) => {
+            const d = new Date(e.date);
+            const y = d.getFullYear();
+            return {
+              assembly: e.assembly,
+              date: e.date,
+              year: y,
+              yearLabel: "'" + String(y).slice(-2),
+              ordinal: this.getAssemblyOrdinal(e.assembly),
+              monthLabel: humanDate(e.date),
+              election: e,
+            };
+          });
 
         this.loadChart(
           {
@@ -123,13 +181,17 @@ export class HistoryComponent implements OnInit {
       legend.data.push(s.id);
       legend.selected[s.id] = true;
 
-      series.push(buildLineChart(s, null, 0, 0));
+      series.push(buildLineChart(s, { lineStyle: { type: 'dotted', width: 2 } }, 0, 0));
     });
+
+    legend.data.push('activity');
+    legend.map['activity'] = 'Избирателна активност';
+    legend.selected['activity'] = true;
 
     transformData(data.parliamentaryElections, 4).forEach((party: any) => {
       legend.data.push(party.id);
       legend.selected[party.id] = true;
-      series.push(buildLineChart(party, null, 0, 0));
+      series.push(buildLineChart(party, style[party.id] ?? null, 0, 0));
     });
 
     data.area.forEach((area: any) => {
@@ -165,7 +227,7 @@ export class HistoryComponent implements OnInit {
         borderColor: '#dc2626',
       },
       color: '#dc2626',
-      lineStyle: { type: 'solid', width: 3 },
+      lineStyle: { type: 'dotted', width: 3 },
       label: { show: false },
       emphasis: {
         focus: 'series',
@@ -201,9 +263,6 @@ export class HistoryComponent implements OnInit {
         },
       },
     };
-    legend.data.push('activity');
-    legend.map['activity'] = 'Избирателна активност';
-    legend.selected['activity'] = true;
     series.push(activitySeries);
 
     // Mandates stacked area (grid 2)
@@ -213,7 +272,12 @@ export class HistoryComponent implements OnInit {
     series.push(buildCurrentDateLine(2, 3));
     series.push(parliamentaryElections(data.parliamentaryElections, style, false, 2, 3));
 
-    this.getDefault(data.parliamentaryElections, series, this.settings.legend.hide);
+    const { selected } = this.getDefault(data.parliamentaryElections, series, this.settings.legend.hide);
+    legend.selected = selected;
+    data.area.forEach((area: any) => {
+      legend.selected[area.id] = this.switches[area.id] ?? true;
+    });
+    legend.selected['parliament-elections'] = this.switches['parliament-elections'] ?? true;
 
     this.chart = historyTimeline(
       series,
@@ -227,8 +291,6 @@ export class HistoryComponent implements OnInit {
     let legend: string[] = [];
     const selected: any = {};
 
-    const last = [...elections].reverse().find((e: any) => e.metrics?.parties);
-
     series.forEach((item: any) => {
       if (item.name !== undefined) {
         legend.push(item.name);
@@ -236,13 +298,11 @@ export class HistoryComponent implements OnInit {
       }
     });
 
-    last.metrics.parties.forEach((e: any) => {
-      if (e.percent >= 4) {
-        selected[e.alias] = true;
-      }
+    this.allPartyIds.forEach((id: string) => {
+      selected[id] = true;
     });
 
-    this.settings.defaults.forEach((e: any) => {
+    (this.settings.historyDefaults ?? this.settings.defaults).forEach((e: any) => {
       selected[e] = true;
     });
 
@@ -267,6 +327,8 @@ export class HistoryComponent implements OnInit {
           });
 
           if (match) {
+            this.activeAssembly = match.assembly ?? null;
+            this.selectedStats = this.buildAssemblyStats(match);
             this.switchNs(match.date, 4, chart, this.data.parliamentaryElections);
             this.bigChart?.setContent({
               name: match.description,
@@ -282,6 +344,8 @@ export class HistoryComponent implements OnInit {
 
         if (this.bigChart?.content) {
           this.bigChart.closeDetailPanel();
+          this.activeAssembly = null;
+          this.selectedStats = null;
           this.cdr.detectChanges();
         }
       }
@@ -304,44 +368,33 @@ export class HistoryComponent implements OnInit {
 
     this.highlight(date, 'parliament-elections');
 
-    const legend: any = chartInstance.getOption()['legend'];
-    const enabled: any = [];
+    const options: any = chartInstance.getOption();
+    const current = options.legend?.[0]?.selected ?? {};
+    const next: Record<string, boolean> = {};
+
+    for (const key of Object.keys(current)) {
+      next[key] = false;
+    }
 
     this.settings.cikCharts.forEach((item: any) => {
-      if (legend[0]['selected'][item.name]) {
-        enabled.push(item.name);
-      }
+      if (current[item.name]) next[item.name] = true;
     });
 
     this.settings.remember.forEach((type: any) => {
-      if (legend[0]['selected'][type]) {
-        enabled.push(type);
-      }
+      if (current[type]) next[type] = true;
     });
-
-    this.bigChart?.hideAllLegends();
 
     const result: any = election.find((item: any) => item.date === date);
-
     result.metrics.parties.forEach((party: any) => {
-      if (party.percent >= threshold) {
-        chartInstance.dispatchAction({
-          type: 'legendSelect',
-          name: party.alias,
-        });
-      }
+      if (party.percent >= threshold) next[party.alias] = true;
     });
 
-    enabled.forEach((item: any) => {
-      chartInstance.dispatchAction({
-        type: 'legendSelect',
-        name: item,
-      });
-    });
+    chartInstance.setOption({ legend: [{ selected: next }] });
   }
 
   reset(): void {
     this.maxDate = 0;
+    this.selectedStats = null;
 
     this.loadChart(
       {
@@ -354,11 +407,170 @@ export class HistoryComponent implements OnInit {
     );
   }
 
-  restoreDefaults(): void {
-    this.maxDate = 0;
-    this.switches = { covid: false, protests: true, 'parliament-elections': true };
-    this.bigChart?.closeDetailPanel();
-    this.ngOnInit();
+  selectAllParties(): void {
+    this.setPartiesSelected(true);
+  }
+
+  deselectAllParties(): void {
+    this.setPartiesSelected(false);
+  }
+
+  resetToDefaults(): void {
+    if (!this.chartInstance) return;
+    this.activeAssembly = null;
+    this.selectedStats = null;
+    this.statsExpanded = false;
+    const options: any = this.chartInstance.getOption();
+    const current = options.legend?.[0]?.selected ?? {};
+    const next: Record<string, boolean> = {};
+    for (const key of Object.keys(current)) next[key] = false;
+    for (const id of this.allPartyIds) next[id] = true;
+    (this.settings.historyDefaults ?? this.settings.defaults).forEach((e: string) => { next[e] = true; });
+    this.data.area.forEach((area: any) => { next[area.id] = this.switches[area.id] ?? true; });
+    next['parliament-elections'] = this.switches['parliament-elections'] ?? true;
+    this.chartInstance.setOption({ legend: [{ selected: next }] });
+  }
+
+  private setPartiesSelected(value: boolean): void {
+    if (!this.chartInstance) return;
+    this.activeAssembly = null;
+    this.selectedStats = null;
+    const options: any = this.chartInstance.getOption();
+    const current = options.legend?.[0]?.selected ?? {};
+    const next = { ...current };
+    for (const name of this.allPartyIds) next[name] = value;
+    this.chartInstance.setOption({ legend: [{ selected: next }] });
+  }
+
+  selectAssembly(a: { assembly: number; date: string; election: any }): void {
+    if (!this.chartInstance) return;
+
+    if (this.activeAssembly === a.assembly) {
+      this.activeAssembly = null;
+      this.selectedStats = null;
+      this.statsExpanded = false;
+      this.unhighlight('parliament-elections');
+      this.selectAllParties();
+      return;
+    }
+
+    this.activeAssembly = a.assembly;
+    this.selectedStats = this.buildAssemblyStats(a.election);
+    if (!this.selectedStats) this.statsExpanded = false;
+    this.highlight(a.date, 'parliament-elections');
+
+    const threshold = 4;
+    const enabledParties = new Set<string>(
+      (a.election.metrics?.parties ?? [])
+        .filter((p: any) => p.percent >= threshold)
+        .map((p: any) => p.alias)
+    );
+
+    const options: any = this.chartInstance.getOption();
+    const currentSelected = options.legend?.[0]?.selected ?? {};
+    const nextSelected = { ...currentSelected };
+    for (const name of this.allPartyIds) {
+      nextSelected[name] = enabledParties.has(name);
+    }
+
+    this.chartInstance.setOption({ legend: [{ selected: nextSelected }] });
+
+    this.cdr.detectChanges();
+  }
+
+  private buildAssemblyStats(election: any): AssemblyStats | null {
+    if (!election) return null;
+    const style = this.settings?.style ?? {};
+    const fallbackPalette = ['#1e3a8a', '#b33a3a', '#1a7a5c', '#c2410c', '#7c3aed', '#0369a1', '#a16207', '#be123c', '#115e59', '#4d7c0f'];
+
+    const rawParties: any[] = election.metrics?.parties ?? [];
+    const maxPercent = rawParties.reduce((m, p) => Math.max(m, p.percent ?? 0), 0) || 1;
+
+    const parties = [...rawParties]
+      .sort((a, b) => (b.percent ?? 0) - (a.percent ?? 0))
+      .map((p: any, i: number) => {
+        const color = style[p.alias]?.lineStyle?.color ?? style[p.alias]?.itemStyle?.color ?? fallbackPalette[i % fallbackPalette.length];
+        const percent = p.percent ?? 0;
+        return {
+          alias: p.alias,
+          fullName: p.name,
+          color,
+          percent,
+          percentLabel: percent.toFixed(2),
+          votes: p.votes ?? 0,
+          mandates: p.mandates ?? 0,
+          votesDiff: p.votesDiff ?? 0,
+          mandatesDiff: p.mandatesDiff ?? 0,
+          belowThreshold: percent < 4,
+          barWidth: Math.max(2, Math.round((percent / maxPercent) * 100)),
+        };
+      });
+
+    const activity: number | null = election.activity ?? null;
+    const dialArc = activity != null ? `${Math.max(0, Math.min(100, activity)).toFixed(2)}` : '0';
+
+    const activityDiff: number | null = election.activityDiff ?? null;
+    const isFirst = activityDiff != null && activity != null && Math.abs(activityDiff - activity) < 0.001;
+    const showDiff = activityDiff != null && !isFirst;
+    const activityDiffLabel = showDiff ? `${activityDiff! > 0 ? '+' : ''}${activityDiff!.toFixed(2)}%` : '';
+    const activityDiffSign: 'up' | 'down' | 'none' = showDiff ? (activityDiff! > 0 ? 'up' : activityDiff! < 0 ? 'down' : 'none') : 'none';
+
+    let activityInt = '—';
+    let activityDec = '';
+    if (activity != null) {
+      const fixed = activity.toFixed(2);
+      const [intPart, decPart] = fixed.split('.');
+      activityInt = intPart;
+      activityDec = decPart;
+    }
+
+    return {
+      assembly: election.assembly,
+      ordinal: this.getAssemblyOrdinal(election.assembly),
+      date: election.date,
+      dateLabel: humanDate(election.date),
+      description: election.description ?? '',
+      activity,
+      activityInt,
+      activityDec,
+      activityDiff,
+      activityDiffLabel,
+      activityDiffSign,
+      voted: election.metrics?.voted?.value ?? null,
+      registered: election.metrics?.registered?.value ?? null,
+      invalid: election.metrics?.invalid?.value ?? null,
+      validTotal: election.metrics?.validTotal?.value ?? null,
+      dialArc,
+      partiesOverBarrier: parties.filter((p) => !p.belowThreshold).length,
+      sources: this.transformElectionSources(election.sources) ?? [],
+      parties,
+    };
+  }
+
+  public formatNumber(n: number | null | undefined): string {
+    if (n == null) return '—';
+    return format(n, 0);
+  }
+
+  public formatSigned(n: number | null | undefined, decimals = 2): string {
+    if (n == null || n === 0) return '';
+    const sign = n > 0 ? '+' : '';
+    return `${sign}${n.toFixed(decimals)}`;
+  }
+
+  public formatSignedInt(n: number | null | undefined): string {
+    if (n == null || n === 0) return '';
+    const sign = n > 0 ? '+' : '';
+    return `${sign}${format(n, 0)}`;
+  }
+
+  getAssemblyOrdinal(n: number): string {
+    const lastDigit = n % 10;
+    const lastTwoDigits = n % 100;
+    if (lastTwoDigits >= 11 && lastTwoDigits <= 14) return '-то';
+    if (lastDigit === 1) return '-во';
+    if (lastDigit === 2) return '-ро';
+    return '-то';
   }
 
   toggleLabels(_save = true): void {
@@ -366,25 +578,55 @@ export class HistoryComponent implements OnInit {
   }
 
   highlight(date: string, name: string): void {
-    const series: any = this.chartInstance.getOption()['series'];
-    const filteredSeries = series.filter((item: any) => item.name === name);
+    const allSeries: any[] = (this.chartInstance.getOption() as any)['series'];
+    const updates: any[] = allSeries.map(() => ({}));
+    let changed = false;
 
-    filteredSeries.forEach((series: any) => {
-      series.markLine.data.forEach((item: any) => {
-        item['lineStyle']['width'] = 1;
+    allSeries.forEach((s: any, i: number) => {
+      if (s.name !== name || !s.markLine?.data) return;
+
+      const newData = s.markLine.data.map((item: any) => {
+        const isTarget = item.xAxis === date;
+        return {
+          ...item,
+          lineStyle: {
+            ...item.lineStyle,
+            ...(isTarget ? { color: '#000' } : {}),
+            width: isTarget ? 3 : 1,
+          },
+        };
       });
 
-      const item = series.markLine.data.find((item: any) => item.xAxis === date);
-
-      item['lineStyle']['color'] = '#000';
-      item['lineStyle']['width'] = 3;
+      updates[i] = { markLine: { data: newData } };
+      changed = true;
     });
 
-    const option = this.chartInstance.getOption();
+    if (changed) {
+      this.chartInstance.setOption({ series: updates });
+    }
+  }
 
-    option['series'] = series;
+  unhighlight(name: string): void {
+    const allSeries: any[] = (this.chartInstance.getOption() as any)['series'];
+    const updates: any[] = allSeries.map(() => ({}));
+    let changed = false;
 
-    this.chartInstance.setOption(option);
+    allSeries.forEach((s: any, i: number) => {
+      if (s.name !== name || !s.markLine?.data) return;
+      updates[i] = {
+        markLine: {
+          data: s.markLine.data.map((item: any) => ({
+            ...item,
+            lineStyle: { ...item.lineStyle, width: 1 },
+          })),
+        },
+      };
+      changed = true;
+    });
+
+    if (changed) {
+      this.chartInstance.setOption({ series: updates });
+    }
   }
 
   onChartLegendSelectChanged(event: any) {
@@ -417,6 +659,12 @@ export class HistoryComponent implements OnInit {
   onDataClick(event: any): void {
     const date = event.data?.content?.date;
     if (!date || event.data?.content?.type === 'gantt') return;
+
+    const seriesConfig: any = (this.chartInstance?.getOption() as any)?.series?.[event.seriesIndex];
+    if (seriesConfig?.yAxisIndex === 3) {
+      this.bigChart?.closeDetailPanel();
+      return;
+    }
 
     const match: any = this.data.parliamentaryElections.find((el: any) => el.date === date);
     if (!match) return;
@@ -453,10 +701,15 @@ export class HistoryComponent implements OnInit {
   }
 
   onChangePreset() {
-    switchLegends(['covid'], this.switches['covid'], this.chartInstance);
-    switchLegends(['other-events'], this.switches['other-events'], this.chartInstance);
-    switchLegends(['parliament-elections'], this.switches['parliament-elections'], this.chartInstance);
-    switchLegends(['citizen-protests'], this.switches['protests'], this.chartInstance);
+    if (!this.chartInstance) return;
+    const options: any = this.chartInstance.getOption();
+    const current = options.legend?.[0]?.selected ?? {};
+    const next = { ...current };
+    next['covid'] = !!this.switches['covid'];
+    next['other-events'] = !!this.switches['other-events'];
+    next['parliament-elections'] = !!this.switches['parliament-elections'];
+    next['citizen-protests'] = !!this.switches['protests'];
+    this.chartInstance.setOption({ legend: [{ selected: next }] });
   }
 
   private transformElectionSources(sources: any): any[] | null {

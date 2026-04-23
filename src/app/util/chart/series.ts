@@ -917,15 +917,29 @@ export function buildMandatesStackedArea(elections: any[], style: any, xAxisInde
       const parliament = parliamentByDate.get(date);
       if (date === today) {
         const current = currentParliament.get(alias);
+        if (!current) {
+          return {
+            value: [date, null],
+            symbol: 'none',
+            content: { mandates: 0, alias, parties: parliament?.parties ?? [], electionLabel: parliament?.electionLabel ?? '' },
+          };
+        }
         return {
-          value: [date, current?.mandates ?? 0],
-          content: { mandates: current?.mandates ?? 0, percent: current?.percent, alias, parties: parliament?.parties ?? [], electionLabel: parliament?.electionLabel ?? '' },
+          value: [date, current.mandates],
+          content: { mandates: current.mandates, percent: current.percent, alias, parties: parliament?.parties ?? [], electionLabel: parliament?.electionLabel ?? '' },
         };
       }
       const entry = dateMap.get(date);
+      if (!entry) {
+        return {
+          value: [date, null],
+          symbol: 'none',
+          content: { mandates: 0, alias, parties: parliament?.parties ?? [], electionLabel: parliament?.electionLabel ?? '' },
+        };
+      }
       return {
-        value: [date, entry?.mandates ?? 0],
-        content: { mandates: entry?.mandates ?? 0, percent: entry?.percent, alias, parties: parliament?.parties ?? [], electionLabel: parliament?.electionLabel ?? '' },
+        value: [date, entry.mandates],
+        content: { mandates: entry.mandates, percent: entry.percent, alias, parties: parliament?.parties ?? [], electionLabel: parliament?.electionLabel ?? '' },
       };
     });
 
@@ -937,15 +951,26 @@ export function buildMandatesStackedArea(elections: any[], style: any, xAxisInde
       type: 'line',
       stack: 'mandates',
       step: 'end',
+      connectNulls: false,
       areaStyle: { opacity: 0.75 },
       emphasis: { focus: 'series' },
-      symbol: 'circle',
-      symbolSize: 4,
+      symbol: 'none',
+      showSymbol: false,
       lineStyle: { width: 1, color },
       data,
       xAxisIndex,
       yAxisIndex,
-      label: { show: false },
+      label: {
+        show: false,
+        position: 'bottom',
+        color: '#fff',
+        textShadowBlur: 2,
+        textShadowColor: 'rgba(0,0,0,0.5)',
+        formatter: (params: any) => {
+          const v = params.data?.value?.[1];
+          return v != null && v > 0 ? String(v) : '';
+        },
+      },
       itemStyle: { color },
       tooltip: { show: false },
     };

@@ -6,16 +6,8 @@
   @if (bigChart?.chartInstance) {
     <div class="container mx-auto px-6">
       <div class="card py-3 px-5 mb-5">
-        <!-- Row 1: Actions + Presets + Labels + Magnitude -->
+        <!-- Row 1: Presets + Labels -->
         <div class="flex items-center gap-5 flex-wrap">
-          <div class="flex items-center gap-1">
-            <button (click)="restoreDefaults()" class="action-btn"><lucide-icon name="refresh-cw"></lucide-icon><span class="action-tooltip">Презареди</span></button>
-            <button (click)="bigChart!.saveImage()" class="action-btn"><lucide-icon name="download"></lucide-icon><span class="action-tooltip">Запази като снимка</span></button>
-            <button (click)="bigChart!.unselectAll()" class="action-btn"><lucide-icon name="x-circle"></lucide-icon><span class="action-tooltip">Премахни селекция</span></button>
-          </div>
-
-          <div class="vdivider h-6"></div>
-
           <div class="toggle-group">
             <div class="toggle-option">
               <input [(ngModel)]="switches['parliament-elections']" (change)="onChangePreset()" type="checkbox" id="sw-parliament-elections">
@@ -38,8 +30,114 @@
             <input type="checkbox" [(ngModel)]="switches['labels']" (change)="toggleLabels()" id="sw-labels">
             <span class="toggle-track"></span>
           </label>
+
+          <div class="ml-auto flex items-center gap-2">
+            <button type="button" class="party-btn" (click)="selectAllParties()">Всички партии</button>
+            <button type="button" class="party-btn" (click)="deselectAllParties()">Скрии партии</button>
+
+            <div class="vdivider h-6"></div>
+
+            <button type="button" class="party-btn party-btn--icon" (click)="resetToDefaults()" title="Върни по подразбиране" aria-label="Върни по подразбиране">
+              <lucide-icon name="refresh-cw"></lucide-icon>
+            </button>
+            <button type="button" class="party-btn party-btn--icon" (click)="bigChart!.saveImage('izboren-den')" title="Запази като снимка" aria-label="Запази като снимка">
+              <lucide-icon name="download"></lucide-icon>
+            </button>
+          </div>
         </div>
 
+        <!-- Row 2: Chronology strip — select an assembly to reveal its parties -->
+        @if (assemblies.length) {
+          <div class="assembly-strip" role="group" aria-label="Народни събрания">
+            <div class="assembly-strip__label">Народно събрание</div>
+            <div class="assembly-strip__track">
+              @for (a of assemblies; track a.assembly) {
+                <button
+                  type="button"
+                  class="assembly-pill"
+                  [class.is-active]="activeAssembly === a.assembly"
+                  (click)="selectAssembly(a)">
+                  <span class="assembly-pill__num">{{ a.assembly }}</span>
+                  <span class="assembly-pill__tick" aria-hidden="true"></span>
+                  <span class="assembly-pill__year">{{ a.yearLabel }}</span>
+                  <span class="assembly-pill__tip">
+                    <strong>{{ a.assembly }}{{ a.ordinal }} Народно събрание</strong>
+                    <em>{{ a.monthLabel }}</em>
+                  </span>
+                </button>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  }
+
+  @if (selectedStats) {
+    <div class="container mx-auto px-6 mb-5">
+      <div class="stats-compact" [class.is-expanded]="statsExpanded">
+        <div class="stats-compact__head">
+          <span class="stats-compact__date">{{ selectedStats.dateLabel }}</span>
+          <button type="button" class="stats-compact__toggle" (click)="statsExpanded = !statsExpanded" [attr.aria-expanded]="statsExpanded">
+            <lucide-icon [name]="statsExpanded ? 'chevron-up' : 'chevron-down'"></lucide-icon>
+          </button>
+        </div>
+        @if (statsExpanded) {
+          <div class="stats-compact__body">
+            <ol class="stats-compact__parties" role="list">
+              @for (p of selectedStats.parties; track p.alias; let i = $index) {
+                <li class="stats-compact__party" [class.is-below]="p.belowThreshold" [style.--party-color]="p.color">
+                  <span class="stats-compact__party-rank">{{ i + 1 }}</span>
+                  <span class="stats-compact__party-mark" aria-hidden="true"></span>
+                  <span class="stats-compact__party-name" [appTooltip]="p.fullName"><span class="stats-compact__party-name-text">{{ p.fullName }}</span></span>
+                  <span class="stats-compact__party-bar" aria-hidden="true">
+                    <span class="stats-compact__party-bar-fill" [style.width.%]="p.barWidth"></span>
+                  </span>
+                  <span class="stats-compact__party-pct">{{ p.percentLabel }}%</span>
+                  <span class="stats-compact__party-votes">{{ formatNumber(p.votes) }}</span>
+                  <span class="stats-compact__party-votes-diff">
+                    @if (p.votesDiff && p.votesDiff !== p.votes) {
+                      <span class="stats-compact__party-diff" [class.is-up]="p.votesDiff > 0" [class.is-down]="p.votesDiff < 0">{{ formatSignedInt(p.votesDiff) }}</span>
+                    }
+                  </span>
+                  <span class="stats-compact__party-seats">{{ p.mandates }}</span>
+                  <span class="stats-compact__party-seats-diff">
+                    @if (p.mandatesDiff && p.mandatesDiff !== p.mandates) {
+                      <span class="stats-compact__party-diff" [class.is-up]="p.mandatesDiff > 0" [class.is-down]="p.mandatesDiff < 0">{{ formatSignedInt(p.mandatesDiff) }}</span>
+                    }
+                  </span>
+                </li>
+              }
+            </ol>
+            <aside class="stats-compact__activity-block" [class.is-empty]="selectedStats.activity == null">
+              <div class="dial dial--compact" [style.--arc]="selectedStats.dialArc">
+                <div class="dial__ring"></div>
+                <div class="dial__core">
+                  <span class="dial__value">
+                    <span class="dial__int">{{ selectedStats.activityInt }}</span>
+                    @if (selectedStats.activity != null) {
+                      <span class="dial__pct">%</span>
+                    }
+                  </span>
+                </div>
+              </div>
+              <span class="stats-compact__activity-label">Избирателна активност</span>
+              @if (selectedStats.activityDiffLabel) {
+                <span class="stats-compact__activity-diff" [class.is-up]="selectedStats.activityDiffSign === 'up'" [class.is-down]="selectedStats.activityDiffSign === 'down'">
+                  {{ selectedStats.activityDiffLabel }}
+                </span>
+              }
+            </aside>
+          </div>
+          @if (selectedStats.sources.length) {
+            <div class="stats-compact__sources">
+              <span class="stats-compact__sources-label">Източник:</span>
+              @for (src of selectedStats.sources; track src.url[0]) {
+                <a [href]="src.url[0]" target="_blank" rel="noopener" class="stats-compact__source-link">{{ src.name }}</a>
+              }
+            </div>
+          }
+        }
       </div>
     </div>
   }
@@ -48,7 +146,7 @@
   <div class="bg-white py-4">
     <app-big-chart
       [options]="chart"
-      height="85vh"
+      height="80vh"
       (chartReady)="onChartReady($event)"
       (dataClick)="onDataClick($event)"
       (legendSelectChanged)="onChartLegendSelectChanged($event)">

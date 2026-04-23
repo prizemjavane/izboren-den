@@ -174,24 +174,31 @@ export class BigChartComponent {
   }
 
   addMarkPoint(seriesIndex: number, dataIndex: number, color?: string): void {
-    this.removeMarkPoint();
-
     const options: any = this.chartInstance.getOption();
     const series = options.series[seriesIndex];
     if (!series?.data?.[dataIndex]) return;
 
     const coord = series.data[dataIndex].value;
     const resolvedColor = color || series.lineStyle?.color || series.itemStyle?.color || series.color || '#333';
-    const originalData = series.markPoint?.data || [];
 
-    this.markedPoint = { seriesIndex, originalData };
+    const baseline =
+      this.markedPoint && this.markedPoint.seriesIndex === seriesIndex
+        ? this.markedPoint.originalData
+        : series.markPoint?.data || [];
 
     const updates: any[] = options.series.map(() => ({}));
+
+    if (this.markedPoint && this.markedPoint.seriesIndex !== seriesIndex) {
+      updates[this.markedPoint.seriesIndex] = {
+        markPoint: { data: this.markedPoint.originalData },
+      };
+    }
+
     updates[seriesIndex] = {
       markPoint: {
         silent: true,
         data: [
-          ...originalData,
+          ...baseline,
           {
             coord,
             symbol: 'circle',
@@ -205,6 +212,7 @@ export class BigChartComponent {
       },
     };
 
+    this.markedPoint = { seriesIndex, originalData: baseline };
     this.chartInstance.setOption({ series: updates });
   }
 

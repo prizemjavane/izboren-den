@@ -55,13 +55,13 @@ export function historyTimeline(series: any, yAxisGantt: any, legend: { data: st
     },
     grid: showMandates
       ? [
-          { containLabel: false, right: '25%', left: '14%', top: '47%', bottom: '3%' },
-          { top: '4%', bottom: '79%', right: '25%', left: '14%' },
-          { top: '24%', bottom: '56%', right: '25%', left: '14%' },
+          { containLabel: false, right: 443, left: '14%', top: '47%', bottom: '3%' },
+          { top: '4%', bottom: '79%', right: 443, left: '14%' },
+          { top: '24%', bottom: '56%', right: 443, left: '14%' },
         ]
       : [
-          { containLabel: false, right: '25%', left: '14%', top: '31%', bottom: '3%' },
-          { top: '5%', bottom: '71%', right: '25%', left: '14%' },
+          { containLabel: false, right: 443, left: '14%', top: '31%', bottom: '3%' },
+          { top: '5%', bottom: '71%', right: 443, left: '14%' },
         ],
     legend: {
       inactiveColor: '#999',
@@ -70,6 +70,7 @@ export function historyTimeline(series: any, yAxisGantt: any, legend: { data: st
       right: 5,
       top: 20,
       bottom: 20,
+      width: 400,
       data: legend.data,
       formatter: function (name: any) {
         const text = legend.map[name] || name;
@@ -131,6 +132,7 @@ export function historyTimeline(series: any, yAxisGantt: any, legend: { data: st
           fontSize: 14,
           customValues: axisLabels,
           formatter: '{yyyy}',
+          hideOverlap: true,
         },
       },
       {
@@ -206,6 +208,11 @@ export function historyTimeline(series: any, yAxisGantt: any, legend: { data: st
               type: 'value',
               max: 240,
               splitNumber: 4,
+              name: 'Мандати',
+              nameLocation: 'middle',
+              nameRotate: 0,
+              nameGap: 45,
+              nameTextStyle: { fontSize: 13, color: '#64748b' },
               axisLabel: { fontSize: 12 },
               splitLine: { show: true },
             },

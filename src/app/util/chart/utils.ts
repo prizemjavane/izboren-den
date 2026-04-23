@@ -1,5 +1,4 @@
 import { ECharts } from 'echarts';
-import moment from 'moment';
 
 import { buildGanttChart, buildLineChart, buildMarkArea, buildMarkLine, buildCurrentDateLine, buildMediaChart } from './series';
 import { sortArrayByReference } from '@util/utils';
@@ -62,7 +61,7 @@ export function saveAsImage(chartInstance: ECharts, prefix = ''): void {
 
   const link = document.createElement('a');
   link.href = dataURL;
-  link.download = `${prefix}-${moment().format('YYYY-MM-DD')}.png`;
+  link.download = `${prefix || 'chart'}.png`;
   link.click();
 }
 
@@ -143,11 +142,29 @@ export function filterSeries(series: any, placeholders: string[]): string[] {
 
 export function showHideLabels(chartInstance: any, show: boolean): void {
   const options: any = chartInstance.getOption();
-  const charts = options.series.filter((item: any) => item.type === 'line');
-
-  charts.forEach((item: any) => {
-    item.label.show = show;
+  const updates = options.series.map((s: any) => {
+    if (s.type !== 'line') return {};
+    if (s.yAxisIndex === 3) {
+      return {
+        symbol: show ? 'circle' : 'none',
+        symbolSize: show ? 4 : 0,
+        showSymbol: show,
+        label: {
+          show,
+          position: 'bottom',
+          color: '#fff',
+          fontWeight: 'bold',
+          fontSize: 12,
+          textShadowBlur: 2,
+          textShadowColor: 'rgba(0,0,0,0.5)',
+          formatter: (params: any) => {
+            const v = params.data?.value?.[1];
+            return v != null && v > 0 ? String(v) : '';
+          },
+        },
+      };
+    }
+    return { label: { show } };
   });
-
-  chartInstance.setOption(options);
+  chartInstance.setOption({ series: updates });
 }

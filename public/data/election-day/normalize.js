@@ -10,6 +10,8 @@ const alias = [
       'Движение за права и свободи - ДПС',
       'Движение за права и свободи – ДПС',
       'ПП "Движение за Права и Свободи"',
+      'Движение за права и свободи',
+      'ДПС (ДПС - Либерален съюз - Евророма)',
     ],
   },
   { alias: 'АТАКА', versions: ['Партия АТАКА', 'ПП "Атака"', 'АТАКА', 'КОАЛИЦИЯ \"АТАКА\"'] },
@@ -26,6 +28,10 @@ const alias = [
       'КОАЛИЦИЯ ЗА БЪЛГАРИЯ',
       'КП "Коалиция за България"',
       '"КОАЛИЦИЯ ЗА БЪЛГАРИЯ - БСП, ПБС, ПД - СОЦИАЛДЕМОКРАТИ, ДСХ, П. "РОМА", КПБ, БЗНС - АЛ. СТАМБОЛИЙСКИ, ЗПБ"',
+      'Предизборен съюз на БСП, БЛП, ОПТ, ПХЖД, ХРП, НЛП "Ст. Стамболов", СМС, ФБСМ, СДПД "Ера-3"',
+      'Коалиция - БСП, БЗНС "Ал. Стамболийски" и ПК "Екогласност"',
+      'Демократична левица - БСП, ПК "Екогласност"',
+      'Коалиция за България',
     ],
   },
   { alias: 'АПС', versions: ['АЛИАНС ЗА ПРАВА И СВОБОДИ – АПС'] },
@@ -49,7 +55,24 @@ const alias = [
   { alias: 'БЪЛГАРИЯ БЕЗ ЦЕНЗУРА', versions: ['КП БЪЛГАРИЯ БЕЗ ЦЕНЗУРА'] },
   { alias: 'България на Гражданите', versions: ['ПП "Движение България на Гражданите"'] },
   { alias: 'НФСБ', versions: ['ПП "Национален Фронт за Спасение на България"'] },
-  { alias: 'НДСВ', versions: ['НАЦИОНАЛНО ДВИЖЕНИЕ СИМЕОН ВТОРИ (НДСВ)', 'НДСВ'] },
+  { alias: 'НДСВ', versions: ['НАЦИОНАЛНО ДВИЖЕНИЕ СИМЕОН ВТОРИ (НДСВ)', 'НДСВ', 'Национално движение Симеон Втори'] },
+  {
+    alias: 'СДС',
+    versions: [
+      'Съюз на демократичните сили',
+      'Обединени демократични сили - СДС, ДП, БЗНС, БСДП',
+      'Обединени Демократични Сили - СДС, Народен съюз: БЗНС - НС и ДП, БСДП, Национално ДПС',
+    ],
+  },
+  { alias: 'БББ', versions: ['Български Бизнес Блок', 'Български Бизнес Блок - БББ'] },
+  { alias: 'Народен съюз', versions: ['Народен съюз - БЗНС, ДП'] },
+  {
+    alias: 'ОНС',
+    versions: [
+      'Обединение за национално спасение - БЗНС-Никола Петков, ДПС, Зелена партия, Партия на демократичния център, Нов избор, Федерация Царство България',
+    ],
+  },
+  { alias: 'Евролевица', versions: ['Евролевица'] },
 ];
 
 // Elections from 2009-07-05, 2013-05-12 and 2014-10-05 have only data for the total number of valid votes.
@@ -77,23 +100,42 @@ function getAliasByVersion(version) {
   return version;
 }
 
-function sumVotesAndPercent(data, a, b) {
-  const candidateA = data.find((candidate) => candidate.alias === a);
-  const candidateB = data.find((candidate) => candidate.alias === b);
+// Synthesizes a combined "ДПС (АПС + ДПС-Ново начало)" party entry by summing
+// the shares of ДПС, АПС and ДПС-Ново начало. Mutates `election.metrics.parties`
+// and tracks running diffs via the shared `diff` accumulator.
+function addCombinedDpsParty(election, diff) {
+  if (!election.metrics?.parties) return;
 
-  if (candidateA && candidateB) {
-    const totalVotes = candidateA.votes + candidateB.votes;
-    const totalPercent = parseFloat((candidateA.percent + candidateB.percent).toFixed(2));
+  const sources = ['ДПС-Ново начало', 'АПС', 'ДПС'];
+  const combinedAlias = 'ДПС (АПС + ДПС-Ново начало)';
 
-    return {
-      name: `${a} + ${b}`,
-      votes: totalVotes,
-      percent: totalPercent,
-      alias: `${a} + ${b}`,
-    };
-  }
+  let sumVotes = 0;
+  let sumPercent = 0;
+  let sumMandates = 0;
 
-  return null;
+  election.metrics.parties.forEach((party) => {
+    if (sources.includes(party.alias)) {
+      sumVotes += party.votes;
+      sumPercent += party.percent;
+      sumMandates += party.mandates;
+    }
+  });
+
+  const votesDiff = sumVotes - (diff[combinedAlias + '-total'] ?? 0);
+  diff[combinedAlias + '-total'] = sumVotes;
+  const mandatesDiff = sumMandates - (diff[combinedAlias + '-total-mandates'] ?? 0);
+  diff[combinedAlias + '-total-mandates'] = sumMandates;
+
+  election.metrics.parties.push({
+    name: combinedAlias,
+    alias: combinedAlias,
+    votes: sumVotes,
+    percent: sumPercent,
+    mandates: sumMandates,
+    votesDiff,
+    votesDiffPercent: sumVotes ? parseFloat(((votesDiff / sumVotes) * 100).toFixed(2)) : 0,
+    mandatesDiff,
+  });
 }
 
 const fs = require('fs');
@@ -123,9 +165,10 @@ dataJson.forEach((election) => {
   }
 
   // Add info for total number of valid votes for the elections that don't have that info (example 2024-06-09, 2024-10-27).
-  if (election.metrics.validTotal === undefined) {
+  // Only compute when validForParties is actually present — otherwise leave validTotal undefined so the chart skips it.
+  if (election.metrics.validTotal === undefined && election.metrics.validForParties) {
     election.metrics.validTotal = {
-      value: (election.metrics.validForParties?.value ?? 0) + (election.metrics.validNone?.value ?? 0),
+      value: election.metrics.validForParties.value + (election.metrics.validNone?.value ?? 0),
       meta_source: 'calculated',
       meta_destination: 'validForParties + validNone',
     };
@@ -138,15 +181,6 @@ dataJson.forEach((election) => {
 
   for (const key in election.metrics) {
     if (key === 'parties') {
-      election.metrics.parties.push({
-        name: 'ДПС (АПС + ДПС-Ново начало)',
-        alias: 'ДПС (АПС + ДПС-Ново начало)',
-        votes: 0,
-        percent: 0,
-        mandates: 0,
-        diff: 0,
-      });
-
       election.metrics.parties.forEach((party) => {
         party.alias = getAliasByVersion(party.name);
         party.mandates = party.mandates ?? 0;
@@ -162,31 +196,8 @@ dataJson.forEach((election) => {
     }
   }
 
-  let sumVotes = 0;
-  let sumPercent = 0;
-  let sumMandates = 0;
-
-  election.metrics.parties.forEach((party) => {
-    if (party.alias === 'ДПС-Ново начало' || party.alias === 'АПС' || party.alias === 'ДПС') {
-      sumVotes += party.votes;
-      sumPercent += party.percent;
-      sumMandates += party.mandates;
-    }
-  });
-
-  election.metrics.parties.forEach((party) => {
-    if (party.alias === 'ДПС (АПС + ДПС-Ново начало)') {
-      party.votes = sumVotes;
-      party.percent = sumPercent;
-      party.mandates = sumMandates;
-
-      party.votesDiff = party.votes - (diff[party.alias + '-total'] ?? 0);
-      party.votesDiffPercent = parseFloat(((party.votesDiff / party.votes) * 100).toFixed(2));
-      diff[party.alias + '-total'] = party.votes;
-      party.mandatesDiff = party.mandates - (diff[party.alias + '-total-mandates'] ?? 0);
-      diff[party.alias + '-total-mandates'] = party.mandates;
-    }
-  });
+  // Synthesized "ДПС (АПС + ДПС-Ново начало)" aggregate — disabled.
+  // addCombinedDpsParty(election, diff);
 
   result.push(election);
 });
