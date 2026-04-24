@@ -1,13 +1,24 @@
 import { humanDate, humanDateDiff } from '@util/bg-format';
 import { buildTooltipCard, formatDataPointTooltip, toNow } from '@util/chart/series';
 
-export function historyTimeline(series: any, yAxisGantt: any, legend: { data: string[]; map: any; selected: object }, options?: { mandatesGrid?: boolean }) {
+export function historyTimeline(series: any, yAxisGantt: any, legend: { data: string[]; map: any; selected: object }) {
   const axisLabels = getAllYearsFromDates(getUniqueDates(series));
   const maxDate = new Date(new Date().setMonth(new Date().getMonth() + 3)).toISOString().slice(0, 10);
-  const showMandates = options?.mandatesGrid ?? false;
 
   return {
     tooltip: {
+      confine: true,
+      transitionDuration: 0,
+      position: (point: number[], _params: any, _dom: any, _rect: any, size: any) => {
+        const [px, py] = point;
+        const [tw, th] = size.contentSize;
+        const [vw] = size.viewSize;
+        let x = px + 20;
+        let y = py - th - 10;
+        if (x + tw > vw) x = px - tw - 20;
+        if (y < 0) y = py + 20;
+        return [Math.round(x), Math.round(y)];
+      },
       axisPointer: {
         type: 'cross',
       },
@@ -53,16 +64,11 @@ export function historyTimeline(series: any, yAxisGantt: any, legend: { data: st
         return formatDataPointTooltip(params, params.seriesName, '', '', '', '');
       },
     },
-    grid: showMandates
-      ? [
-          { containLabel: false, right: 443, left: '14%', top: '47%', bottom: '3%' },
-          { top: '1%', bottom: '79%', right: 443, left: '14%' },
-          { top: '24%', bottom: '56%', right: 443, left: '14%' },
-        ]
-      : [
-          { containLabel: false, right: 443, left: '14%', top: '31%', bottom: '3%' },
-          { top: '1%', bottom: '71%', right: 443, left: '14%' },
-        ],
+    grid: [
+      { containLabel: false, right: 443, left: 230, top: '48%', bottom: '3%', outerBoundsMode: 'none' },
+      { top: '2%', bottom: '77%', right: 443, left: 230, outerBoundsMode: 'none' },
+      { top: '25.5%', bottom: '54.5%', right: 443, left: 230, outerBoundsMode: 'none' },
+    ],
     legend: {
       inactiveColor: '#999',
       type: 'scroll',
@@ -84,7 +90,7 @@ export function historyTimeline(series: any, yAxisGantt: any, legend: { data: st
     dataZoom: [
       {
         type: 'inside',
-        xAxisIndex: showMandates ? [0, 1, 2] : [0, 1],
+        xAxisIndex: [0, 1, 2],
         filterMode: 'none',
       },
     ],
@@ -127,21 +133,17 @@ export function historyTimeline(series: any, yAxisGantt: any, legend: { data: st
         axisPointer: { show: false },
         gridIndex: 1,
       },
-      ...(showMandates
-        ? [
-            {
-              show: true,
-              type: 'time',
-              splitLine: { show: true },
-              min: `${axisLabels[0]}-01-01`,
-              max: maxDate,
-              axisTick: { show: false },
-              axisLabel: { show: false },
-              axisPointer: { show: false },
-              gridIndex: 2,
-            },
-          ]
-        : []),
+      {
+        show: true,
+        type: 'time',
+        splitLine: { show: true },
+        min: `${axisLabels[0]}-01-01`,
+        max: maxDate,
+        axisTick: { show: false },
+        axisLabel: { show: false },
+        axisPointer: { show: false },
+        gridIndex: 2,
+      },
     ],
     yAxis: [
       {
@@ -174,23 +176,19 @@ export function historyTimeline(series: any, yAxisGantt: any, legend: { data: st
         axisTick: { show: true },
         splitLine: { show: false },
       },
-      ...(showMandates
-        ? [
-            {
-              gridIndex: 2,
-              type: 'value',
-              max: 240,
-              splitNumber: 4,
-              name: 'Мандати',
-              nameLocation: 'middle',
-              nameRotate: 0,
-              nameGap: 45,
-              nameTextStyle: { fontSize: 13, color: '#64748b' },
-              axisLabel: { fontSize: 12 },
-              splitLine: { show: true },
-            },
-          ]
-        : []),
+      {
+        gridIndex: 2,
+        type: 'value',
+        max: 240,
+        splitNumber: 4,
+        name: 'Мандати',
+        nameLocation: 'middle',
+        nameRotate: 0,
+        nameGap: 45,
+        nameTextStyle: { fontSize: 13, color: '#64748b' },
+        axisLabel: { fontSize: 12 },
+        splitLine: { show: true },
+      },
     ],
     animation: false,
     series: series,

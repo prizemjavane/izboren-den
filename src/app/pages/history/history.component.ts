@@ -101,6 +101,7 @@ export class HistoryComponent implements OnInit {
   private dataService = inject(DataService);
   private cdr = inject(ChangeDetectorRef);
   private allPartyIds: string[] = [];
+  private voteSeriesNames: string[] = [];
 
   ngOnInit(): void {
     forkJoin([
@@ -155,6 +156,11 @@ export class HistoryComponent implements OnInit {
     const map = charts.reduce((acc: [], item: any) => ({ ...acc, [item.code]: item.name }), {});
 
     const legend: any = { data: [], map: map, selected: {} };
+
+    this.voteSeriesNames = [
+      ...charts.map((e: any) => e.code),
+      ...this.allPartyIds,
+    ];
 
     series.push(parliamentaryElections(data.parliamentaryElections, style, false, 0, 0));
     series.push(parliamentaryElections(data.parliamentaryElections, style, true, 1, 1));
@@ -282,8 +288,7 @@ export class HistoryComponent implements OnInit {
     this.chart = historyTimeline(
       series,
       gantt.map((group: any) => group.name),
-      legend,
-      { mandatesGrid: true }
+      legend
     );
   }
 
@@ -389,7 +394,7 @@ export class HistoryComponent implements OnInit {
       if (party.percent >= threshold) next[party.alias] = true;
     });
 
-    chartInstance.setOption({ legend: [{ selected: next }] });
+    chartInstance.setOption({ legend: [{ selected: next }], yAxis: this.yAxisUpdatesFor(next) });
   }
 
   reset(): void {
@@ -428,7 +433,7 @@ export class HistoryComponent implements OnInit {
     (this.settings.historyDefaults ?? this.settings.defaults).forEach((e: string) => { next[e] = true; });
     this.data.area.forEach((area: any) => { next[area.id] = this.switches[area.id] ?? true; });
     next['parliament-elections'] = this.switches['parliament-elections'] ?? true;
-    this.chartInstance.setOption({ legend: [{ selected: next }] });
+    this.chartInstance.setOption({ legend: [{ selected: next }], yAxis: this.yAxisUpdatesFor(next) });
   }
 
   private setPartiesSelected(value: boolean): void {
@@ -439,7 +444,7 @@ export class HistoryComponent implements OnInit {
     const current = options.legend?.[0]?.selected ?? {};
     const next = { ...current };
     for (const name of this.allPartyIds) next[name] = value;
-    this.chartInstance.setOption({ legend: [{ selected: next }] });
+    this.chartInstance.setOption({ legend: [{ selected: next }], yAxis: this.yAxisUpdatesFor(next) });
   }
 
   selectAssembly(a: { assembly: number; date: string; election: any }): void {
@@ -473,7 +478,7 @@ export class HistoryComponent implements OnInit {
       nextSelected[name] = enabledParties.has(name);
     }
 
-    this.chartInstance.setOption({ legend: [{ selected: nextSelected }] });
+    this.chartInstance.setOption({ legend: [{ selected: nextSelected }], yAxis: this.yAxisUpdatesFor(nextSelected) });
 
     this.cdr.detectChanges();
   }
@@ -630,6 +635,9 @@ export class HistoryComponent implements OnInit {
   }
 
   onChartLegendSelectChanged(event: any) {
+    const selected = event?.selected ?? (this.chartInstance.getOption() as any).legend?.[0]?.selected ?? {};
+    const update: any = { yAxis: this.yAxisUpdatesFor(selected) };
+
     let maxDate: any = null;
     const options: any = this.chartInstance.getOption();
 
@@ -637,23 +645,20 @@ export class HistoryComponent implements OnInit {
       return item.name === event.name;
     });
 
-    s.markLine?.data.forEach((item: any) => {
+    s?.markLine?.data.forEach((item: any) => {
       if (maxDate === null || new Date(item.xAxis) > maxDate) {
         maxDate = new Date(item.xAxis);
       }
     });
 
-    if (!maxDate) {
-      return;
+    if (maxDate) {
+      const max = moment(maxDate).add(6, 'months').format('YYYY-MM-DD');
+      if (options['xAxis'][0]['max'] === undefined || new Date(options['xAxis'][0]['max']) < maxDate) {
+        update.xAxis = [{ max: max }, { max: max }];
+      }
     }
 
-    const max = moment(maxDate).add(6, 'months').format('YYYY-MM-DD');
-
-    if (options['xAxis'][0]['max'] === undefined || new Date(options['xAxis'][0]['max']) < maxDate) {
-      this.chartInstance.setOption({
-        xAxis: [{ max: max }, { max: max }],
-      });
-    }
+    this.chartInstance.setOption(update);
   }
 
   onDataClick(event: any): void {
@@ -710,15 +715,27 @@ export class HistoryComponent implements OnInit {
     next['other-events'] = !!this.switches['other-events'];
     next['parliament-elections'] = !!this.switches['parliament-elections'];
     next['citizen-protests'] = !!this.switches['protests'];
-    this.chartInstance.setOption({ legend: [{ selected: next }] });
+    this.chartInstance.setOption({ legend: [{ selected: next }], yAxis: this.yAxisUpdatesFor(next) });
+  }
+
+  private yAxisUpdatesFor(selected: Record<string, boolean>): any[] {
+    const votesShow = this.voteSeriesNames.some((n) => !!selected[n]);
+    const activityShow = !!selected['activity'];
+    return [
+      { show: votesShow, splitLine: { show: votesShow } },
+      {},
+      { show: activityShow, offset: votesShow ? 80 : 0, splitLine: { show: !votesShow && activityShow } },
+      {},
+    ];
   }
 
   private transformElectionSources(sources: any): any[] | null {
     if (!Array.isArray(sources) || !sources.length) return null;
-    return [...sources].sort((a, b) => {
-      const aExt = typeof a.url === 'string' && a.url.startsWith('http');
-      const bExt = typeof b.url === 'string' && b.url.startsWith('http');
-      return aExt === bExt ? 0 : aExt ? -1 : 1;
-    });
+    const rank = (s: any): number => {
+      if (s.name === 'Wikipedia (БГ)') return 0;
+      if (typeof s.url === 'string' && s.url.startsWith('http')) return 1;
+      return 2;
+    };
+    return [...sources].sort((a, b) => rank(a) - rank(b));
   }
 }

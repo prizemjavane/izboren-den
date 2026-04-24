@@ -1,5 +1,36 @@
 @use '../../../assets/scss/common' as *;
 
+// ── Layout shells ──────────────────────────────────────
+// Replaces inline `.container mx-auto px-6` so we can shrink horizontal
+// padding on narrow screens without fighting Tailwind utilities.
+.history-container {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 8px;
+}
+
+.toolbar-card {
+  padding: 12px 20px;
+}
+
+.toolbar-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.toolbar-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.history-chart-frame {
+  // Nothing on desktop — mobile overrides below.
+}
+
 .toggle-switch {
   display: flex;
   align-items: center;
@@ -60,6 +91,9 @@
     line-height: 1;
   }
 
+  // Scrollable at every width: when pills fit they just sit inline with no
+  // scrollbar; when they don't (narrow desktop / tablet / phone) we get
+  // horizontal scroll inside the card instead of blowing out the body.
   &__track {
     position: relative;
     display: flex;
@@ -69,6 +103,13 @@
     flex: 1;
     min-width: 0;
     padding: 2px 2px 4px;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar { display: none; }
   }
 
   &__actions {
@@ -157,39 +198,11 @@
     transition: color 0.12s ease;
   }
 
-  &__tip {
-    position: absolute;
-    bottom: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%) translateY(4px);
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding: 7px 11px;
-    background: #111827;
-    color: #f9fafb;
-    border-radius: 7px;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    white-space: nowrap;
-    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
-    z-index: 20;
-    box-shadow: 0 8px 24px rgba(17, 24, 39, 0.18);
-
-    strong { font-size: 12px; font-weight: 600; letter-spacing: 0.01em; }
-    em { font-size: 10.5px; font-style: normal; font-weight: 500; color: #9ca3af; letter-spacing: 0.02em; }
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 5px solid transparent;
-      border-top-color: #111827;
-    }
-  }
+  // Tip is retained in the DOM (template compatibility) but always hidden —
+  // the scrollable track on narrow viewports would clip it anyway, and the
+  // pill's visible label (e.g. "36 '91") plus the stats panel cover the same
+  // information on click/tap.
+  &__tip { display: none; }
 
   &:hover {
     background: #f4f5f7;
@@ -197,11 +210,6 @@
     color: #111827;
 
     .assembly-pill__year { color: #4b5563; }
-    .assembly-pill__tip {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(-50%) translateY(0);
-    }
   }
 
   &:focus-visible {
@@ -902,4 +910,222 @@
 @keyframes bar-fill {
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }
+}
+
+// ──────────────────────────────────────────────────────────────
+// Mobile responsiveness
+// ──────────────────────────────────────────────────────────────
+
+// Any width where the full pill row might not fit: fade the right edge of
+// the strip to signal "scroll for more". Above ~1600 all ~17 assemblies fit
+// inline with the label taken into account.
+@media (max-width: 1600px) {
+  .assembly-strip__track {
+    mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 32px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 32px), transparent 100%);
+  }
+}
+
+// Tablet — tighten paddings and let the action cluster breathe.
+@media (max-width: 1024px) {
+  .history-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .toolbar-card { padding: 12px 16px; }
+
+  .toolbar-row { gap: 14px; }
+}
+
+// ≤768px — dominant mobile layout:
+//  • Stack the action cluster under the toggles instead of pinning to the right.
+//  • Make the assembly strip scroll horizontally, with the label on its own row.
+//  • Hide the hover-only assembly pill tip (prevents body overflow from absolute tips).
+//  • Shrink the outer chart padding.
+@media (max-width: 768px) {
+  .history-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .toolbar-card { padding: 10px 12px; }
+
+  .toolbar-row {
+    gap: 10px 12px;
+  }
+
+  // Divider collapses on mobile — rows read as separate blocks.
+  .toolbar-divider { display: none; }
+
+  // Action cluster becomes a full-width row under the toggles,
+  // separated by a subtle top rule so it reads as its own group.
+  .toolbar-actions {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 2px;
+    padding-top: 10px;
+    border-top: 1px dashed color-mix(in oklab, $bdr 85%, transparent);
+    flex-wrap: wrap;
+    gap: 6px;
+
+    // Bump icon buttons to a 40×40 tap target — Apple/Google mobile guidance.
+    .party-btn--icon {
+      padding: 10px 12px;
+      min-width: 40px;
+      min-height: 40px;
+
+      lucide-icon, lucide-icon svg { width: 18px; height: 18px; }
+    }
+  }
+
+  // Tighter segmented toggles — still readable.
+  :host .toggle-group { padding: 2px; }
+  :host .toggle-option label {
+    padding: 6px 10px;
+    font-size: 12.5px;
+  }
+
+  .toggle-switch .toggle-label { font-size: 14px; }
+
+  // Assembly strip: stack label above, scroll pills horizontally
+  .assembly-strip {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    margin-top: 12px;
+    padding-top: 12px;
+
+    &__label {
+      padding-right: 0;
+      border-right: 0;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+    }
+
+    // Pills track keeps the base scrollable behavior (defined above) but adds
+    // mobile-only padding + snap hints.
+    &__track {
+      padding: 2px 0 6px;
+      scroll-snap-type: x proximity;
+      scroll-padding-inline: 4px;
+    }
+  }
+
+  // Active pill on mobile gets a soft shadow so the selected assembly stays
+  // spottable even when the stats panel pushes it upscreen.
+  .assembly-pill.is-active {
+    box-shadow: 0 3px 10px rgba(17, 24, 39, 0.22);
+  }
+
+  .assembly-pill {
+    scroll-snap-align: start;
+    padding: 6px 10px;
+    min-height: 36px;
+
+    &__num { font-size: 14px; }
+    &__year { font-size: 10.5px; }
+  }
+
+  // Stats compact — reduce padding, tighten date header
+  .stats-compact {
+    &__head { padding: 8px 10px; }
+    &__date { font-size: 15px; }
+    &__toggle { right: 8px; width: 30px; height: 30px; }
+
+    &__parties { padding: 6px 8px 8px; }
+    &__party { padding: 6px 4px; gap: 8px; }
+    &__party-name { font-size: 13px; font-weight: 600; }
+    &__party-pct { font-size: 13px; }
+    &__party-seats { font-size: 15px; }
+
+    &__sources { padding: 8px 10px; }
+  }
+
+  // Big chart frame — compact outer padding so the chart uses more width.
+  // Deep targeting because big-chart.component.html hard-codes px-10.
+  :host ::ng-deep .history-chart-frame {
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    app-big-chart > .w-full {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+}
+
+// ≤480px — smallest phones: single-column toggle presets,
+// kill the "Покажи числа" label (keep the switch as visual-only action).
+@media (max-width: 480px) {
+  .history-container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  // The 80×80 GitHub corner (fixed top-right, rendered by AppComponent) would
+  // otherwise eat the last ~60px of the title on narrow phones. Reserve room.
+  // !important needed because the encapsulated header rule has equal specificity.
+  :host ::ng-deep app-header .header-masthead { padding-right: 72px !important; }
+
+  .toolbar-card { padding: 10px; }
+
+  .toolbar-row { gap: 8px; }
+
+  // Toggle group spans the row on the smallest screens.
+  :host .toggle-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+  :host .toggle-option { flex: 1 1 0; }
+  :host .toggle-option label {
+    width: 100%;
+    text-align: center;
+    padding: 6px 6px;
+    font-size: 12px;
+  }
+
+  // The "Покажи числа" switch floats on its own row, left-aligned.
+  .toggle-switch { order: 2; }
+
+  // Action buttons fill the row evenly for larger tap targets.
+  .toolbar-actions {
+    order: 3;
+
+    .party-btn {
+      flex: 1 1 auto;
+      min-width: 0;
+      justify-content: center;
+      padding: 7px 8px;
+      font-size: 12.5px;
+    }
+
+    // Keep icon buttons as ≥40px squares — text-button rules above would
+    // otherwise collapse them down to content size.
+    .party-btn--icon {
+      flex: 0 0 auto;
+      padding: 10px 12px;
+      min-width: 40px;
+      min-height: 40px;
+
+      lucide-icon, lucide-icon svg { width: 18px; height: 18px; }
+    }
+  }
+
+  // Hide the secondary "36 години..." line inside the header on the tiniest
+  // screens — it wraps to 3 lines and crowds the logo.
+  :host ::ng-deep .header-prehod { display: none; }
+
+  // Footer credit card
+  :host .history-container .card.text-sm { padding: 10px 12px; font-size: 12px; }
+}
+
+// Shorter viewports — the chart is pinned to 80vh, but on landscape phones
+// that crushes it. Drop to a fixed minimum so axes stay legible.
+@media (max-height: 520px) and (max-width: 900px) {
+  :host ::ng-deep .history-chart-frame app-big-chart > .w-full > [echarts] {
+    height: 420px !important;
+  }
 }

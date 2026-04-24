@@ -57,6 +57,8 @@ export class BigChartComponent {
     return `${environment.githubUrl}/edit/main/public/data/${this.content?.file}`;
   }
 
+  readonly wikiDisclaimerUrl = `${environment.githubUrl}/blob/main/public/data/election-day/README.md`;
+
   private static readonly STORAGE_KEY = 'visitedSources';
   visitedUrls = new Set<string>();
 
@@ -97,6 +99,7 @@ export class BigChartComponent {
   }
 
   onChartClick(event: any): void {
+    this.clearVisited();
     this.content = event.data.content;
 
     if (event.data.content?.sources) {
@@ -155,11 +158,13 @@ export class BigChartComponent {
   }
 
   setContent(data: any): void {
+    this.clearVisited();
     this.content = data;
     this.resizeChartAfterPanel();
   }
 
   closeDetailPanel(): void {
+    this.clearVisited();
     this.content = null;
     this.clickedPoint = null;
     this.removeMarkPoint();

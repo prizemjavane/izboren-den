@@ -104,6 +104,12 @@
             </li>
           }
         </ol>
+        @if (content.sources.some(s => sourceUrl(s).includes('wikipedia.org'))) {
+          <p class="source-disclaimer">
+            Данните в Wikipedia може да се различават от официалните данни на ЦИК. Вижте
+            <a [href]="wikiDisclaimerUrl" target="_blank" rel="noopener">подробна валидация</a>.
+          </p>
+        }
       }
       @if (content.file) {
         <div class="card-footer">

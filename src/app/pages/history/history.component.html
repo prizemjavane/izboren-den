@@ -4,10 +4,10 @@
   </div>
 
   @if (bigChart?.chartInstance) {
-    <div class="container mx-auto px-6">
-      <div class="card py-3 px-5 mb-5">
+    <div class="container mx-auto history-container">
+      <div class="card toolbar-card mb-5">
         <!-- Row 1: Presets + Labels -->
-        <div class="flex items-center gap-5 flex-wrap">
+        <div class="toolbar-row">
           <div class="toggle-group">
             <div class="toggle-option">
               <input [(ngModel)]="switches['parliament-elections']" (change)="onChangePreset()" type="checkbox" id="sw-parliament-elections">
@@ -23,7 +23,7 @@
             </div>
           </div>
 
-          <div class="vdivider h-6"></div>
+          <div class="vdivider h-6 toolbar-divider"></div>
 
           <label for="sw-labels" class="toggle-switch">
             <span class="toggle-label">Покажи числа</span>
@@ -31,11 +31,11 @@
             <span class="toggle-track"></span>
           </label>
 
-          <div class="ml-auto flex items-center gap-2">
+          <div class="toolbar-actions">
             <button type="button" class="party-btn" (click)="selectAllParties()">Всички партии</button>
             <button type="button" class="party-btn" (click)="deselectAllParties()">Скрии партии</button>
 
-            <div class="vdivider h-6"></div>
+            <div class="vdivider h-6 toolbar-divider"></div>
 
             <button type="button" class="party-btn party-btn--icon" (click)="resetToDefaults()" title="Върни по подразбиране" aria-label="Върни по подразбиране">
               <lucide-icon name="refresh-cw"></lucide-icon>
@@ -74,7 +74,7 @@
   }
 
   @if (selectedStats) {
-    <div class="container mx-auto px-6 mb-5">
+    <div class="container mx-auto history-container mb-5">
       <div class="stats-compact" [class.is-expanded]="statsExpanded">
         <div class="stats-compact__head">
           <span class="stats-compact__date">{{ selectedStats.dateLabel }}</span>
@@ -143,7 +143,7 @@
   }
 
   <!-- Chart -->
-  <div class="bg-white py-4">
+  <div class="bg-white py-4 history-chart-frame">
     <app-big-chart
       [options]="chart"
       height="80vh"
@@ -153,7 +153,7 @@
     </app-big-chart>
   </div>
 
-  <div class="container mx-auto px-6 mt-5 mb-8">
+  <div class="container mx-auto history-container mt-5 mb-8">
     <div class="card py-3 px-5 text-sm text-gray-500">
       Всички данни са базирани на официалните данни от ЦИК:
       <a href="https://results.cik.bg/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">results.cik.bg</a>.

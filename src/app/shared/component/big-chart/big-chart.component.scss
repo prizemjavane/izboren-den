@@ -233,6 +233,16 @@
     color: #475569;
     background: #f1f5f9;
   }
+
+  ::ng-deep .app-tooltip {
+    left: 0;
+    transform: none;
+
+    &::after {
+      left: 13px;
+      transform: none;
+    }
+  }
 }
 
 /* ── Source list (compact numbered) ── */
@@ -329,6 +339,23 @@
   &:hover {
     background: #dbeafe;
     color: #2563eb;
+  }
+}
+
+/* ── Wikipedia disclaimer ── */
+
+.source-disclaimer {
+  margin: 10px 0 0;
+  padding: 8px 10px;
+  font-size: 0.75rem;
+  color: #64748b;
+  background: #f8fafc;
+  border-left: 3px solid #cbd5e1;
+  border-radius: 0 4px 4px 0;
+
+  a {
+    color: #2563eb;
+    text-decoration: underline;
   }
 }
 
